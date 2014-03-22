@@ -1,5 +1,11 @@
 var UTIL = (function($) {
 	var util = {}, stream2vlc = "/sc2/stream2vlc.php";
+
+	function findFirst(obj) {
+		for (var key in obj) {
+			return obj[key];
+		}
+	}
 	$("a.jlink").each(function(index, a) {
 		var id = a.id;
 		$.post(stream2vlc, {
@@ -7,12 +13,11 @@ var UTIL = (function($) {
 			hoster: "justin"
 		}).done(function(data) {
 			console.log(data);
-			if (data && data.responseText && data.responseText.length > 250) {
-				var respTxt = data.responseText.substr(17);
-				respTxt = respTxt.substr(0, respTxt.length - 2);
-				console.log(id + " " + respTxt);
+			if (data && data.length > 250) {
+				var url = findFirst($.parseJSON(data));
+				console.log(id + "---" + url);
 				$("a#" + id).eq("0").attr({
-					"href": respTxt
+					"href": url
 				})
 			}
 		});
