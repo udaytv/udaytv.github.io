@@ -8,8 +8,9 @@ var UTIL = (function($) {
 		}).done(function(data) {
 			console.log(data);
 			if (data && data.responseText && data.responseText.length > 250) {
-				var respTxt = resp.responseText.substr(17);
+				var respTxt = data.responseText.substr(17);
 				respTxt = respTxt.substr(0, respTxt.length - 2);
+				console.log(id + " " + respTxt);
 				$("a#" + id).eq("0").attr({
 					"href": respTxt
 				})
