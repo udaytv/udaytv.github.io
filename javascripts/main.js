@@ -6,21 +6,24 @@ var UTIL = (function($) {
 			return obj[key];
 		}
 	}
-	$("a.jlink").each(function(index, a) {
-		var id = a.id;
-		$.post(stream2vlc, {
-			channelname: id,
-			hoster: "justin"
-		}).done(function(data) {
-			console.log(data);
-			if (data && data.length > 250) {
-				var url = findFirst($.parseJSON(data));
-				console.log(id + "---" + url);
-				$("a#" + id).eq("0").attr({
-					"href": url
-				})
-			}
-		});
+	util.load = function() {
+		$("a.jlink").each(function(index, a) {
+			var id = a.id;
+			$.post(stream2vlc, {
+				channelname: id,
+				hoster: "justin"
+			}).done(function(data) {
+				console.log(data);
+				if (data && data.length > 250) {
+					var url = findFirst($.parseJSON(data));
+					console.log(id + "---" + url);
+					$("a#" + id).eq("0").attr({
+						"href": url
+					})
+				}
+			});
 
-	});
+		});
+	};
+	return util;
 }(jQuery));
