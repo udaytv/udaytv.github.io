@@ -16,4 +16,7 @@ object {
 		width: 200px;
 		height: 150px;
 	}
+	.block {
+		display: block;
+	}
 }
