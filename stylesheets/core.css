@@ -5,3 +5,15 @@
 a.jlink {
 	padding-right: 100px;
 }
+
+object {
+	width: 400px;
+	height: 300px;
+}
+
+@media only screen and (max-width: 768px) {
+	object {
+		width: 200px;
+		height: 150px;
+	}
+}
