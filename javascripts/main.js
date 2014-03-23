@@ -1,5 +1,5 @@
-var UTIL = (function($) {
-	var util = {}, stream2vlc = "/sc2/stream2vlc.php";
+var UTIL = (function(util, $) {
+	var stream2vlc = "/sc2/stream2vlc.php";
 
 	function findFirst(obj) {
 		for (var key in obj) {
@@ -26,8 +26,8 @@ var UTIL = (function($) {
 		});
 	};
 	return util;
-}(jQuery));
+}(util || {}, jQuery));
 
 $(function() {
-		UTIL.load();
+	UTIL.load();
 });
