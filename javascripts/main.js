@@ -27,3 +27,7 @@ var UTIL = (function($) {
 	};
 	return util;
 }(jQuery));
+
+$(function() {
+		UTIL.load();
+});
