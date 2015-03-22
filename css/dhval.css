@@ -1,0 +1,160 @@
+body:before, body:after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: #fff;
+    color: #000;
+    content: "";
+}
+body:before {
+   background: url(http://dhval.github.io/img/navbg.png);
+  top: 0;
+}
+body:after {
+  content: "© 1998-2015 Fork It!";
+  padding-top: 15px;
+  text-align: center;
+  bottom: 0;
+}
+body {
+    background: url(http://dhval.github.io/img/4x4-light.png);  
+}
+div.navbar {
+  height: 40px;
+}
+span.navbar {
+  position: fixed;
+  top: -5px;
+  left: 50px;
+  font-weight : bold;
+  color: #fff;
+  line-height: 40px;
+  padding: 10px;
+}
+div.wrapper {
+  padding-top: 60px;
+}
+span.circle {  /** display span as circle **/
+    display:block;
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    color:#fff;
+    line-height:30px;
+    text-align:center;
+    background:#0088cc
+}
+table.table tbody>tr:nth-child(odd) {
+    background-color: #e5e5e5;
+    table-layout: fixed;
+}
+.odd {
+    background-color: #ebebeb;
+}
+/**
+	This is applicable only responsive browsers that support changing table layout.
+**/
+@media only screen and ( max-width : 767px) {
+    /* Force table to not be like tables anymore */
+    .no-table table,.no-table thead,.no-table tbody,.no-table th,.no-table td,.no-table tr
+    {
+        display: block;
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    .no-table thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    .no-table tr {
+        border: 1px solid #ccc;
+    }
+    .no-table td {
+        /* Behave  like a "row" */
+        border: none;
+        position: relative;
+        padding-left: 40%;
+        min-height: 1em;
+        white-space: normal;
+        text-align: left;
+    }
+    .no-table td:before {
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+    }
+
+    /* #7EBFFF;
+    Label the data
+    */
+    .no-table td:before {
+        content: attr(data-title);
+    }
+    .no-table td:nth-of-type(1) {
+        padding-left: 0;
+    }
+    td.summary {
+        text-align: left;
+    }
+}
+
+/** Dancing dashes logo **/
+ul.loader{
+position: absolute;
+  top: 10px;
+    right: 10px;
+  padding: 0;
+  margin: 0;
+    width: 30px;
+    height: 20px;
+  list-style: none;
+  box-sizing: content-box;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  background-color: rgba(0,0,0,0.2);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.1),0 1px 0 rgba(255,255,255,0.075);
+}
+
+@-webkit-keyframes 'loadbars' {
+    0%{
+        height: 5px;
+        margin-top: 25px;
+    }
+    50%{
+        height:20px;
+        margin-top: 0px;
+    }
+    100%{
+        height:5px;
+        margin-top: 25px;
+    }
+}
+
+.loader li {
+    background-color: white;
+    width: 2px;
+    height: 10px;
+    float: right;    
+    margin:4px 6px 0 0;
+    padding: 0;
+    box-shadow: 0px 100px 20px rgba(0,0,0,0.2);
+}
+.loading li:first-child {
+            -webkit-animation: loadbars 0.6s cubic-bezier(0.645,0.045,0.355,1) infinite 0s;
+}
+.loading li:nth-child(2) {
+            -webkit-animation: loadbars 0.6s ease-in-out  infinite -0.2s;
+}
+.loading li:nth-child(3) {
+            -webkit-animation: loadbars 0.6s ease-in-out infinite -0.4s;
+ }
+

@@ -1,0 +1,619 @@
+#container.init {
+    opacity: 1;
+    transition: all .25s;
+    max-width: 1000px;
+}
+#container,
+#container.init[ng-cloak] {
+    display: block !important;
+    opacity: 0;
+}
+
+#nav h1 {
+    line-height: 40px;
+}
+.ajax-blocker-container .ajax-blocker-bg {
+    background: rgba(0,0,0,.1);
+}
+
+a.nolink {
+    cursor: pointer;
+    display: block;
+    color: #000;
+}
+
+a.nolink:hover,a.nolink:active,a.nolink:focus{
+    text-decoration:none;
+    color: #f89406;
+}
+a.nolink:active,a.nolink:focus{
+    position:relative;
+    top:1px;
+}
+a.active {
+    text-decoration:none;
+    color: #0088cc;
+}
+div#wrapper {
+    padding-bottom: 40px;
+}
+/*----------------------------------------------------------------------------*/
+
+#formView {
+    padding: 20px;
+    -moz-box-shadow: 0 1px 2px 0px rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 1px 2px 0px rgba(0,0,0,.5);
+    box-shadow: 0 1px 2px 0px rgba(0,0,0,.5);
+    margin-bottom: 20px;
+}
+.ie #formView {
+    box-shadow: 0 1px 5px 1px rgba(0,0,0,.5);
+}
+
+#formView > form {
+    margin: 0;
+}
+#domainInfoPanel label, #criteriaPanel label {
+    line-height: 30px;
+    margin: 0 7px;
+    text-align: left;
+}
+#domainInfoPanel select, #criteriaPanel select,
+    #domainInfoPanel textarea, #criteriaPanel textarea {
+    float: right;
+    width: 99%;
+}
+.controls textarea {
+    width: 98%;
+}
+#domainInfoPanel, #criteriaPanel {
+    margin-bottom: 10px;
+}
+/*
+.where {
+    font-style: italic;
+    float: left;
+    line-height: 30px;
+}
+&/
+#criteriaPanel {
+  /*  padding-left: 50px; */
+}
+/*
+#criteriaPanel {
+    font-size: 0;
+}
+#criteriaPanel > div {
+    display: inline-block;
+    width: 33.3333333333333333333%;
+    padding: 0;
+    box-sizing: border-box;
+}
+#criteriaPanel > div:nth-child(1) {
+    padding-right: 5px;
+}
+#criteriaPanel > div:nth-child(2) {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+#criteriaPanel > div:nth-child(3) {
+    padding-left: 5px;
+}
+#criteriaPanel select,
+#criteriaPanel input {
+    box-sizing: border-box;
+    height: 30px;
+    width: 100%;
+}*/
+
+@media only screen and (min-width: 1024px) {
+    #criteriaPanel textarea, #domainInfoPanel textarea {
+        width: 66%;
+    }
+    #criteriaPanel select, #domainInfoPanel select {
+        width: 67%;
+    }
+    .controls textarea {
+        width: 99.5%;
+    }
+}
+
+/*----------------------------------------------------------------------------*/
+
+#tableView {
+    padding: 20px;
+    -moz-box-shadow: 0 1px 2px 0px rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 1px 2px 0px rgba(0,0,0,.5);
+    box-shadow: 0 1px 2px 0px rgba(0,0,0,.5);
+}
+.ie #tableView {
+    box-shadow: 0 1px 4px 1px rgba(0,0,0,.5);
+}
+
+.tableView-header {
+    margin: -20px;
+    margin-bottom: 5px;
+    padding: 0px;
+    background: #f7f7f7;
+    border-bottom: 1px solid #eee;
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+.tableView-header > span:first-child {
+    font-weight: bold;
+    color: #777;
+    text-shadow: 0 1px 0 #fff;
+    font-size: 20px;
+    line-height: 30px;
+}
+.actionBar {
+    position: fixed;
+    bottom: -100px;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 10px;
+    background: #fff;
+    border-top: 1px solid #ddd;
+    -moz-box-shadow: 0 0 3px 0 rgba(0,0,0,.2);
+    -webkit-box-shadow: 0 0 3px 0 rgba(0,0,0,.2);
+    box-shadow: 0 0 3px 0 rgba(0,0,0,.2);
+    transition: all .5s;
+}
+.ie .actionBar {
+    box-shadow: 0 0 6px 1px rgba(0,0,0,.2);
+}
+.actionBar-active .actionBar {
+    bottom: 0;
+}
+#submit {
+    max-width: 250px;
+    margin: 0 auto;
+}
+.submitButton, .clearButton, .viewPdf {
+    width: 200px;
+}
+button.viewPdf {
+    float:right;
+}
+
+label, label.control-label {
+    text-transform: uppercase;
+    display: block;
+    text-align: left;
+}
+label * { text-transform: none; }
+
+/*----------------------------------------------------------------------------*/
+
+.userLi {
+    margin-bottom: 20px;
+    border-left: 8px solid firebrick;
+    padding: 20px;
+    background: rgba(0,0,0,.01);
+    -moz-box-shadow: 0 1px 2px 0px rgba(0,0,0,.2);
+    -webkit-box-shadow: 0 1px 2px 0px rgba(0,0,0,.2);
+    box-shadow: 0 1px 2px 0px rgba(0,0,0,.2);
+}
+.ie .userLi {
+    box-shadow: 0 1px 4px 1px rgba(0,0,0,.2);
+}
+.userLi:last-child {
+    margin-bottom: 0;
+}
+
+.user {
+    font-size: 0;
+}
+.user > dl,
+.user dt,
+.user dd {
+    margin: 0;
+}
+.user > dl {
+    vertical-align: top;
+}
+.user > dl > dt {
+    float: left;
+    min-width: 100px;
+}
+.user > dl > dt:after {
+    content: ':';
+}
+.user > dl > dd {
+    overflow: auto;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+    min-height: 20px;
+}
+.user > dl > dd:last-child {
+    margin-bottom: 0;
+}
+.user > dl {
+    display: inline-block;
+    font-size: 14px;
+    width: 33.33333333333333333%
+}
+
+.user {
+    transition: all 1s;
+}
+
+
+
+table.table tr td {
+    word-wrap: break-word;
+    vertical-align: middle;
+}
+.table th, .table td {
+    padding: 8px;
+    line-height: 20px;
+    text-align: left;
+    vertical-align: top;
+    border-top: 1px solid #dddddd;
+}
+
+table tr {
+    cursor: pointer;
+}
+
+.ellipsis {
+    width: 195px;
+    cursor: pointer;
+    white-space: nowrap;
+    word-wrap: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+}
+
+.tooltip {
+    opacity: .9;
+    background: #eee;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    margin: 8px;
+    padding: 8px;
+}
+
+.table-striped tbody>tr:nth-child(odd)>td,.table-striped tbody>tr:nth-child(odd)>th
+{
+    background-color: #e5e5e5;
+    table-layout: fixed;
+}
+
+.odd {
+    background-color: #ebebeb;
+}
+
+/**
+    This is applicable only responsive browsers that support changing table layout.
+**/
+@media only screen and ( max-width : 767px) {
+    .dl-horizontal dd {
+        margin-left: 0;
+        /* display: inline; */
+    }
+    /* Force table to not be like tables anymore */
+    .no-table table,.no-table thead,.no-table tbody,.no-table th,.no-table td,.no-table tr
+    {
+        display: block;
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    .no-table thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    .no-table tr {
+        border: 1px solid #ccc;
+    }
+    .table.no-table td {
+        /* Behave  like a "row" */
+        border: none;
+        position: relative;
+        padding-left: 40%;
+        min-height: 1em;
+        white-space: normal;
+        text-align: left;
+    }
+    .no-table td:before {
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+    }
+
+    /* #7EBFFF;
+    Label the data
+    */
+    .no-table td:before {
+        content: attr(data-title);
+    }
+    .no-table td:nth-of-type(1) {
+        padding-left: 0;
+    }
+    td.summary {
+        text-align: left;
+    }
+}
+
+span.ajax-success {
+    width:100%;
+    background-color: #0088cc;
+    transition: background-color 10s ease;
+    display: none;
+    opacity: 0.9;
+    z-index: 999;
+}
+span.ajax-success:hover {
+    background-color: green;
+}
+
+span.circle {
+    display:block;
+    position: relative;
+    left: 2%;
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    color:#fff;
+    line-height:30px;
+    text-align:center;
+    background:#0088cc
+}
+
+a.active {
+    -webkit-transition: color 2s ease-out;
+    -moz-transition: color 2s ease-out;
+    -o-transition: color 2s ease-out;
+    transition: color 2s ease-out;
+}
+
+
+span.circle {
+    -webkit-transition: color 2s ease-out;
+    -moz-transition: color 2s ease-out;
+    -o-transition: color 2s ease-out;
+    transition: color 2s ease-out;
+}
+
+span.circle:hover {
+    color: black;
+    cursor: pointer;
+}
+.help-block {
+    border-radius: 5px;
+    line-height: 20px;
+    margin-left: 3px;
+    padding: 5px;
+    background-color: #eee;
+    color: maroon;
+    position: relative;
+    background: #eee;
+    border: 2px solid #d59392;
+}
+.help-block:after, .help-block:before {
+    bottom: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+.help-block:after {
+    border-color: rgba(238, 238, 238, 0);
+    border-bottom-color: #eee;
+    border-width: 6px;
+    margin-left: -6px;
+}
+.help-block:before {
+    border-color: rgba(213, 147, 146, 0);
+    border-bottom-color: #d59392;
+    border-width: 9px;
+    margin-left: -9px;
+}
+
+/** Bootstrap 2.x style to match existing styles. **/
+.form-group {
+    margin-bottom: 0px;
+}
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"],
+input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"],
+input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"],
+input[type="tel"], input[type="color"], .uneditable-input {
+    display: inline-block;
+    width: 206px;
+    padding: 4px 6px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #555555;
+    vertical-align: middle;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+    transition: border linear 0.2s, box-shadow linear 0.2s;
+}
+input[disabled], select[disabled], textarea[disabled], input[readonly], select[readonly], textarea[readonly] {
+    cursor: not-allowed;
+    background-color: #eeeeee;
+}
+ul.unstyled, ol.unstyled {
+    margin-left: 0;
+    list-style: none;
+}
+li {
+    line-height: 20px;
+}
+.pagination {
+    margin: 10px 0;
+}
+.pager {
+    margin: 10px 0;
+}
+.pagination ul {
+    display: inline-block;
+    margin-bottom: 0;
+    margin-left: 0;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+.pagination ul > li:first-child > a, .pagination ul > li:first-child > span {
+    border-left-width: 1px;
+    -webkit-border-bottom-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    -webkit-border-top-left-radius: 4px;
+    border-top-left-radius: 4px;
+    -moz-border-radius-bottomleft: 4px;
+    -moz-border-radius-topleft: 4px;
+}
+.pagination ul > .disabled > span, .pagination ul > .disabled > a, .pagination ul > .disabled > a:hover, .pagination ul > .disabled > a:focus {
+    color: #999999;
+    cursor: default;
+    background-color: transparent;
+}
+.pagination ul > li > a, .pagination ul > li > span {
+    float: left;
+    padding: 4px 12px;
+    line-height: 20px;
+    text-decoration: none;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-left-width: 0;
+}
+
+
+.btn {
+    display: inline-block;
+    padding: 4px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 30px;
+    color: #333333;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: #f5f5f5;
+    background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+    background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+    background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+    background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+    background-repeat: repeat-x;
+    border: 1px solid #cccccc;
+    border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    border-bottom-color: #b3b3b3;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.btn-primary {
+    color: #ffffff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    background-color: #006dcc;
+    background-image: -moz-linear-gradient(top, #0088cc, #0044cc);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0044cc));
+    background-image: -webkit-linear-gradient(top, #0088cc, #0044cc);
+    background-image: -o-linear-gradient(top, #0088cc, #0044cc);
+    background-image: linear-gradient(to bottom, #0088cc, #0044cc);
+    background-repeat: repeat-x;
+    border-color: #0044cc #0044cc #002a80;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0044cc', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+
+/** Dancing dashes logo **/
+ul.loader {
+    z-index: 999;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 0;
+    margin: 0;
+    width: 30px;
+    height: 30px;
+    list-style: none;
+    box-sizing: content-box;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    background-color: rgba(0,0,0,0.2);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.1),0 1px 0 rgba(255,255,255,0.075);
+}
+.loader li {
+    background-color: white;
+    width: 20px;
+    height: 2px;
+    float: right;
+    margin: 6px 5px 0 0;
+    padding: 0;
+    box-shadow: 0px 100px 20px rgba(0,0,0,0.2);
+}
+@-webkit-keyframes loadbars {
+    0%, 100% {
+        height: 2px;
+        margin-top: 5px;
+    }
+    50%{
+        height:10px;
+        margin-top: 0px;
+    }
+}
+
+@keyframes loadbars {
+    0%, 100% {
+        height: 5px;
+        margin-top: 5px;
+    }
+    50%{
+        height:20px;
+        margin-top: 0px;
+    }
+}
+
+.loading li:first-child {
+    -webkit-animation: loadbars 0.6s cubic-bezier(0.645,0.045,0.355,1) infinite 0s;
+    animation: loadbars 0.6s cubic-bezier(0.645,0.045,0.355,1) infinite 0s;
+}
+.loading li:nth-child(2) {
+    -webkit-animation: loadbars 0.6s ease-in-out  infinite -0.2s;
+    animation: loadbars 0.6s ease-in-out  infinite -0.2s;
+}
+.loading li:nth-child(3) {
+    -webkit-animation: loadbars 0.6s ease-in-out infinite -0.4s;
+    animation: loadbars 0.6s ease-in-out infinite -0.4s;
+}

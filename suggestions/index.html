@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html> 
+<head>
+<title>Suggestions</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+<!-- Twitter Bootstrap css -->
+<link href="../css/font-awesome.min.css">
+<link href="../dist/bootstrap/css/bootstrap.css" rel="stylesheet">
+<!-- Your css -->
+<link href="../css/base-war.css" rel="stylesheet">
+<link href="../css/dhval.css" rel="stylesheet">
+<link href="../css/style.css" rel="stylesheet">
+<link href="../css/responsive.css" rel="stylesheet">
+<!-- Vendor js -->
+<script type="text/javascript" data-main="../../" charset="utf-8" src="../dist/requirejs/require.js"></script>
+<script type="text/javascript" charset="utf-8" src="../dist/modernizr/modernizr.js"></script>
+<!-- Your js -->
+<script type="text/javascript" charset="utf-8" src="../js/require.config.js"></script>
+<script type="text/javascript">
+require.config({
+   baseUrl: "../../"
+});
+</script>
+<style type="text/css">
+body:after {
+  content: "";
+}
+footer {
+  position: fixed;
+  z-index: 1;
+  bottom: 5px;
+  left: 50%
+}
+footer a {
+    color:grey;
+}
+</style>
+</head>
+
+<body>
+        
+<div class="navbar">
+  <span class="navbar">Your Suggestions</span>
+</div>
+
+<div id="container" ng-controller="appController as appCtrl">
+ <div class="notification">
+    <span class="ajax-success ajax-alert" ng-style="{'display':appCtrl.submitSuccess?'inline-block':'none'}">
+        <i class="icon-ok-circle"></i>
+        <span class="ajax-alert-msg">Your record was successfully updated.</span>
+    </span>
+ </div>
+<div id="formView"  ng-controller="formController" class="container-fluid">
+<form name="userForm" class="form-vertical" ng-submit="handleSubmit()">
+    <div class="col-md-4 col-sm-4">
+        <div class="form-group">
+            <label class="control-label" for="name">Name</label>
+            <input id="name" name="name" pattern="[0-9a-zA-Z- .]{5,30}" type="text" placeholder="Your Name" ng-model="domainInfo.name">
+         </div>  
+        <div class="form-group">
+            <label class="control-label" for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="Your Email" ng-model="domainInfo.email">
+         </div>  
+        <div class="form-group">
+            <label class="control-label" for="phone">Phone</label>
+                <input id="phone" name="phone" type="text" placeholder="Your Phone" ng-model="domainInfo.phone">
+         </div>  
+    </div>
+    <div class="col-md-8 col-sm-8">
+        <div class="form-group">
+            <label class="control-label" for="description">Your Suggestion</label>
+                <textarea id="description" name="description" rows="5" placeholder="Suggestion" ng-minlength="10" required=""
+                    ng-model="domainInfo.description" class="form-control">
+                </textarea>
+        </div>
+        <button ng-disabled="appCtrl.submitSuccess" type="submit" class="btn btn-primary btn-block">Submit</button>
+    </div>
+</form>
+</div>
+</div><!-- END #container -->
+
+<footer>
+   © 1998-2015 <a href='https://github.com/dhval/dhval.github.io'>Fork It!</a> 
+</footer>
+
+<script>
+    require(['angular', 'jquery', 'js/app']);
+</script>
+
+</body>
+</html>
