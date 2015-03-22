@@ -11,12 +11,6 @@ body:before {
    background: url(http://dhval.github.io/img/navbg.png);
   top: 0;
 }
-body:after {
-  content: "© 1998-2015 Fork It!";
-  padding-top: 15px;
-  text-align: center;
-  bottom: 0;
-}
 body {
     background: url(http://dhval.github.io/img/4x4-light.png);  
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>A developers toolkit – Dhval Mudawal – Rants</title>
+    <title>Jekyll post.excerpt layout – Dhval Mudawal – Rants</title>
 
         <meta charset="utf-8" />
     <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
@@ -9,14 +9,14 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
 
     
-    <meta name="description" content="What text editor to use? Sass or plain old CSS? What on earth is Compass? Command    line? I'm not touching that. Sound like you? Welcome, I was once like you and this is the guide I wish someone had given me." />
-    <meta property="og:description" content="What text editor to use? Sass or plain old CSS? What on earth is Compass? Command    line? I'm not touching that. Sound like you? Welcome, I was once like you and this is the guide I wish someone had given me." />
+    <meta name="description" content="I was able to build this blog using Jekyll in less than an hour. Run into setting up posts and found quick answer on Stack Overflow." />
+    <meta property="og:description" content="I was able to build this blog using Jekyll in less than an hour. Run into setting up posts and found quick answer on Stack Overflow." />
     
     <meta name="author" content="Dhval Mudawal" />
 
     
-    <meta property="og:title" content="A developers toolkit" />
-    <meta property="twitter:title" content="A developers toolkit" />
+    <meta property="og:title" content="Jekyll post.excerpt layout" />
+    <meta property="twitter:title" content="Jekyll post.excerpt layout" />
     
 
     <!--[if lt IE 9]>
@@ -62,19 +62,23 @@
 
     <div id="main" role="main" class="container">
       <article class="post">
-  <h1>A developers toolkit</h1>
+  <h1>Jekyll post.excerpt layout</h1>
 
   <div class="entry">
-    <p>Next you can update your site name, avatar and other options using the _config.yml file in the root of your repository (shown below).</p>
+    <p>I was able to build this blog using Jekyll in less than an hour. Run into setting up posts and found quick answer on Stack Overflow.</p>
 
-<p><img src="/images/config.png" alt="_config.yml"></p>
-
-<p>The easiest way to make your first post is to edit this one. Go into /_posts/ and update the Hello World markdown file. For more instructions head over to the <a href="https://github.com/barryclark/jekyll-now">Jekyll Now repository</a> on GitHub.</p>
-
+<p>The easiest way to setup you your post headers is to add below yml at the top of your page. This is will override everything else.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">---
+layout: post
+title: Jekyll post.excerpt layout
+date: 4 March, 2010
+excerpt: I was able to build this blog using Jekyll ...
+---
+</code></pre></div>
   </div>
 
   <div class="date">
-    Written on December 14, 2012
+    Written on March  1, 2015
   </div>
 
   

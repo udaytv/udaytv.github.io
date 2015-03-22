@@ -7,16 +7,54 @@
     <atom:link href="http://udaytv.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
-        <title>A developers toolkit</title>
-        <description>&lt;p&gt;Next you can update your site name, avatar and other options using the _config.yml file in the root of your repository (shown below).&lt;/p&gt;
+        <title>Install RabbitMQ on Ubuntu LTS</title>
+        <description>&lt;p&gt;I was looking for a reliable and fast open source MQ for my personnel cloud. Here is upto date documentation for installing RabbitMQ on &lt;a href=&quot;https://www.rabbitmq.com/install-debian.html&quot;&gt;Ubuntu&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/config.png&quot; alt=&quot;_config.yml&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/rabbitmq-screen.png&quot; alt=&quot;_config.yml&quot;&gt;&lt;/p&gt;
 
-&lt;p&gt;The easiest way to make your first post is to edit this one. Go into /_posts/ and update the Hello World markdown file. For more instructions head over to the &lt;a href=&quot;https://github.com/barryclark/jekyll-now&quot;&gt;Jekyll Now repository&lt;/a&gt; on GitHub.&lt;/p&gt;
-</description>
-        <pubDate>Fri, 14 Dec 2012 00:00:00 -0500</pubDate>
-        <link>http://udaytv.github.io/Welcome/</link>
-        <guid isPermaLink="true">http://udaytv.github.io/Welcome/</guid>
+&lt;p&gt;RabbitMQ is included in Debain and Ubuntu but is v3.2 while the latest available is v3.5. You need to update APT repositoty. Make sure you get &amp;#39;stable&amp;#39; branch.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;echo &amp;quot;deb http://www.rabbitmq.com/debian/ stable main&amp;quot;  | sudo tee  /etc/apt/sources.list.d/rabbitmq.list &amp;gt; /dev/null
+sudo wget http://www.rabbitmq.com/rabbitmq-signing-key-public.asc
+sudo apt-key add rabbitmq-signing-key-public.asc
+sudo apt-get update
+sudo apt-get install rabbitmq-server -y
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Next you can check users, new &amp;#39;rabbitmq&amp;#39; user would be added. Also if you do service &lt;code&gt;--status-all&lt;/code&gt;, you should see &lt;code&gt;rabbitmq-server&lt;/code&gt; service.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;sudo service rabbitmq-server start | stop | restart
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;You can install management console on port 15672, default user is guest and passord is guest.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;sudo rabbitmq-plugins enable rabbitmq_management
+sudo service rabbitmq-server restart
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;You can monitor usage on command line using &lt;code&gt;rabbitmqctl status&lt;/code&gt;. You can use web console if you do not like rabbitmqctl CLI. &lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;sudo rabbitmqctl stop | restart | status
+sudo rabbitmqctl add_user user_name password_for_this_user
+sudo rabbitmqctl set_user_tags user_name administrator
+sudo rabbitmqctl set_permissions -p / user_name &amp;quot;.*&amp;quot; &amp;quot;.*&amp;quot; &amp;quot;.*&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Delete guest user &lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;sudo rabbitmqctl delete_user guest
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+        <pubDate>Tue, 03 Mar 2015 00:00:00 -0500</pubDate>
+        <link>http://udaytv.github.io/Install-RabbitMQ/</link>
+        <guid isPermaLink="true">http://udaytv.github.io/Install-RabbitMQ/</guid>
+      </item>
+    
+      <item>
+        <title>Jekyll post.excerpt layout</title>
+        <description>&lt;p&gt;I was able to build this blog using Jekyll in less than an hour. Run into setting up posts and found quick answer on Stack Overflow.&lt;/p&gt;
+
+&lt;p&gt;The easiest way to setup you your post headers is to add below yml at the top of your page. This is will override everything else.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;---
+layout: post
+title: Jekyll post.excerpt layout
+date: 4 March, 2010
+excerpt: I was able to build this blog using Jekyll ...
+---
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+        <pubDate>Sun, 01 Mar 2015 00:00:00 -0500</pubDate>
+        <link>http://udaytv.github.io/Jekyll-Post-Layout/</link>
+        <guid isPermaLink="true">http://udaytv.github.io/Jekyll-Post-Layout/</guid>
       </item>
     
   </channel>
