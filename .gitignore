@@ -1,0 +1,28 @@
+# Cloud9IDE
+*.c9revisions
+*.7z
+*.log
+
+#gradle build files
+.gradle
+build
+
+# intellij files
+.idea/*
+*.ipr
+*.iws
+*.iml
+target/
+out/*
+*/temp/
+
+# OS & IDE specific
+*.settings
+*.DS_STORE
+*.project
+
+node_modules/
+bower_components/
+old/
+lib/
+
