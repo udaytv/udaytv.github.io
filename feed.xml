@@ -7,14 +7,14 @@
     <atom:link href="http://udaytv.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
-        <title>You&#39;re up and running!</title>
+        <title>A developers toolkit</title>
         <description>&lt;p&gt;Next you can update your site name, avatar and other options using the _config.yml file in the root of your repository (shown below).&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/config.png&quot; alt=&quot;_config.yml&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;The easiest way to make your first post is to edit this one. Go into /_posts/ and update the Hello World markdown file. For more instructions head over to the &lt;a href=&quot;https://github.com/barryclark/jekyll-now&quot;&gt;Jekyll Now repository&lt;/a&gt; on GitHub.&lt;/p&gt;
 </description>
-        <pubDate>Tue, 03 Mar 2015 00:00:00 -0500</pubDate>
+        <pubDate>Fri, 14 Dec 2012 00:00:00 -0500</pubDate>
         <link>http://udaytv.github.io/Welcome/</link>
         <guid isPermaLink="true">http://udaytv.github.io/Welcome/</guid>
       </item>
