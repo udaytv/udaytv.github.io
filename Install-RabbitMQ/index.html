@@ -78,6 +78,8 @@ sudo apt-key add rabbitmq-signing-key-public.asc
 sudo apt-get update
 sudo apt-get install rabbitmq-server -y
 </code></pre></div>
+<p>If there is an erlang already installed you might have to remove it manually <code>sudo apt-get remove erlang-nox</code></p>
+
 <p>Next you can check users, new &#39;rabbitmq&#39; user would be added. Also if you do service <code>--status-all</code>, you should see <code>rabbitmq-server</code> service.</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">sudo service rabbitmq-server start | stop | restart
 </code></pre></div>
@@ -94,6 +96,14 @@ sudo rabbitmqctl set_permissions -p / user_name &quot;.*&quot; &quot;.*&quot; &q
 <p>Delete guest user </p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">sudo rabbitmqctl delete_user guest
 </code></pre></div>
+<h5>Read ...</h5>
+
+<ol>
+<li><a href="https://www.rabbitmq.com/install-debian.html">Install RabbitMQ on Ubuntu</a></li>
+<li><a href="http://java.dzone.com/category/tags/rabbitmq">RabbitMQ on DZone</a></li>
+<li><a href="https://github.com/rabbitmq">RabbitMQ samples on github</a></li>
+</ol>
+
   </div>
 
   <div class="date">
@@ -110,11 +120,11 @@ sudo rabbitmqctl set_permissions -p / user_name &quot;.*&quot; &quot;.*&quot; &q
         <footer class="footer">
           
 
-
+<a href="http://facebook.com/dhval.mudawal"><i class="svg-icon facebook"></i></a>
 
 <a href="http://github.com/dhval"><i class="svg-icon github"></i></a>
 
-
+<a href="http://linkedin.com/in/dhvalmudawal"><i class="svg-icon linkedin"></i></a>
 
 
 <a href="http://twitter.com/jekyllrb"><i class="svg-icon twitter"></i></a>

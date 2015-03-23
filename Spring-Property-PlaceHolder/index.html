@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Jekyll post.excerpt layout – Dhval Mudawal – Rants</title>
+    <title>Using spring property place holder – Dhval Mudawal – Rants</title>
 
         <meta charset="utf-8" />
     <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
@@ -9,14 +9,16 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
 
     
-    <meta name="description" content="I was able to build this blog using Jekyll in less than an hour. Ran into setting up posts and found quick answer on Stack Overflow." />
-    <meta property="og:description" content="I was able to build this blog using Jekyll in less than an hour. Ran into setting up posts and found quick answer on Stack Overflow." />
+    <meta name="description" content="We all freqently, use spring property holder in our spring based applications. But there are few cavets that are worth revisiting.
+" />
+    <meta property="og:description" content="We all freqently, use spring property holder in our spring based applications. But there are few cavets that are worth revisiting.
+" />
     
     <meta name="author" content="Dhval Mudawal" />
 
     
-    <meta property="og:title" content="Jekyll post.excerpt layout" />
-    <meta property="twitter:title" content="Jekyll post.excerpt layout" />
+    <meta property="og:title" content="Using spring property place holder" />
+    <meta property="twitter:title" content="Using spring property place holder" />
     
 
     <!--[if lt IE 9]>
@@ -62,25 +64,52 @@
 
     <div id="main" role="main" class="container">
       <article class="post">
-  <h1>Jekyll post.excerpt layout</h1>
+  <h1>Using spring property place holder</h1>
 
   <div class="entry">
-    <p>I was able to build this blog using Jekyll in less than an hour. Run into setting up posts and found quick answer on Stack Overflow.</p>
+    <p>We all freqently, use spring property holder in our spring based applications. But there are few cavets that are worth revisiting.</p>
 
-<p>The easiest way to setup you your post headers is to add below yml at the top of your page. This is will override everything else.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">---
-layout: post
-title: Jekyll post.excerpt layout
-date: 4 March, 2010
-excerpt: I was able to build this blog using Jekyll ...
----
+<p>Old Way</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;context:property-placeholder location=&quot;application.properties&quot;/&gt;
 </code></pre></div>
-<p><a href="http://jekyllrb.com/docs/posts/#post-excerpts">Read Documentation</a></p>
+<p>Spring 3.1</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">---spring.xml---
+
+&lt;bean class=&quot;org.springframework.context.support.PropertySourcesPlaceholderConfigurer&quot;&gt;
+  &lt;property name=&quot;locations&quot;&gt;
+   &lt;list&gt;
+    &lt;value&gt;classpath:application.properties&lt;/value&gt;
+    &lt;value&gt;classpath:rabbitmq.properties&lt;/value&gt;
+   &lt;/list&gt;
+&lt;/property&gt;
+  &lt;property name=&quot;ignoreUnresolvablePlaceholders&quot; value=&quot;true&quot;/&gt;
+&lt;/bean&gt;
+</code></pre></div>
+<p>The real goodness happens below. The @Autowired together with @Value let spring initilize component with w/o no argument constructor. Note &#39;:&#39; in @Value is used to specify default value.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">@Component
+public class QueueConsumer extends EndPoint implements Runnable, Consumer {
+
+    @Autowired
+    public QueueConsumer( @Value(&quot;${rabbit.host:192.168.0.112}&quot;) String host,
+                          @Value(&quot;${rabbit.endpoint:queue}&quot;) String endPointName) throws IOException{
+        super(host, endPointName);
+    }
+
+...
+}    
+</code></pre></div>
+<p>And lastly, obtaining properties via the new Environment APIs.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">@Autowired
+private Environment env;
+
+dataSource.setUrl(env.getProperty(&quot;jdbc.url&quot;));
+</code></pre></div>
+<p><a href="http://www.baeldung.com/2012/02/06/properties-with-spring/">Read ...</a></p>
 
   </div>
 
   <div class="date">
-    Written on March  1, 2015
+    Written on March  2, 2015
   </div>
 
   

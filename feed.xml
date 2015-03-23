@@ -19,6 +19,8 @@ sudo apt-key add rabbitmq-signing-key-public.asc
 sudo apt-get update
 sudo apt-get install rabbitmq-server -y
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;If there is an erlang already installed you might have to remove it manually &lt;code&gt;sudo apt-get remove erlang-nox&lt;/code&gt;&lt;/p&gt;
+
 &lt;p&gt;Next you can check users, new &amp;#39;rabbitmq&amp;#39; user would be added. Also if you do service &lt;code&gt;--status-all&lt;/code&gt;, you should see &lt;code&gt;rabbitmq-server&lt;/code&gt; service.&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;sudo service rabbitmq-server start | stop | restart
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -34,10 +36,64 @@ sudo rabbitmqctl set_permissions -p / user_name &amp;quot;.*&amp;quot; &amp;quot
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Delete guest user &lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;sudo rabbitmqctl delete_user guest
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h5&gt;Read ...&lt;/h5&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.rabbitmq.com/install-debian.html&quot;&gt;Install RabbitMQ on Ubuntu&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://java.dzone.com/category/tags/rabbitmq&quot;&gt;RabbitMQ on DZone&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/rabbitmq&quot;&gt;RabbitMQ samples on github&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
         <pubDate>Tue, 03 Mar 2015 00:00:00 -0500</pubDate>
         <link>http://udaytv.github.io/Install-RabbitMQ/</link>
         <guid isPermaLink="true">http://udaytv.github.io/Install-RabbitMQ/</guid>
+      </item>
+    
+      <item>
+        <title>Using spring property place holder</title>
+        <description>&lt;p&gt;We all freqently, use spring property holder in our spring based applications. But there are few cavets that are worth revisiting.&lt;/p&gt;
+
+&lt;p&gt;Old Way&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;context:property-placeholder location=&amp;quot;application.properties&amp;quot;/&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Spring 3.1&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;---spring.xml---
+
+&amp;lt;bean class=&amp;quot;org.springframework.context.support.PropertySourcesPlaceholderConfigurer&amp;quot;&amp;gt;
+  &amp;lt;property name=&amp;quot;locations&amp;quot;&amp;gt;
+   &amp;lt;list&amp;gt;
+    &amp;lt;value&amp;gt;classpath:application.properties&amp;lt;/value&amp;gt;
+    &amp;lt;value&amp;gt;classpath:rabbitmq.properties&amp;lt;/value&amp;gt;
+   &amp;lt;/list&amp;gt;
+&amp;lt;/property&amp;gt;
+  &amp;lt;property name=&amp;quot;ignoreUnresolvablePlaceholders&amp;quot; value=&amp;quot;true&amp;quot;/&amp;gt;
+&amp;lt;/bean&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The real goodness happens below. The @Autowired together with @Value let spring initilize component with w/o no argument constructor. Note &amp;#39;:&amp;#39; in @Value is used to specify default value.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;@Component
+public class QueueConsumer extends EndPoint implements Runnable, Consumer {
+
+    @Autowired
+    public QueueConsumer( @Value(&amp;quot;${rabbit.host:192.168.0.112}&amp;quot;) String host,
+                          @Value(&amp;quot;${rabbit.endpoint:queue}&amp;quot;) String endPointName) throws IOException{
+        super(host, endPointName);
+    }
+
+...
+}    
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And lastly, obtaining properties via the new Environment APIs.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;@Autowired
+private Environment env;
+
+dataSource.setUrl(env.getProperty(&amp;quot;jdbc.url&amp;quot;));
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.baeldung.com/2012/02/06/properties-with-spring/&quot;&gt;Read ...&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 02 Mar 2015 00:00:00 -0500</pubDate>
+        <link>http://udaytv.github.io/Spring-Property-PlaceHolder/</link>
+        <guid isPermaLink="true">http://udaytv.github.io/Spring-Property-PlaceHolder/</guid>
       </item>
     
       <item>
@@ -51,7 +107,9 @@ title: Jekyll post.excerpt layout
 date: 4 March, 2010
 excerpt: I was able to build this blog using Jekyll ...
 ---
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href=&quot;http://jekyllrb.com/docs/posts/#post-excerpts&quot;&gt;Read Documentation&lt;/a&gt;&lt;/p&gt;
+</description>
         <pubDate>Sun, 01 Mar 2015 00:00:00 -0500</pubDate>
         <link>http://udaytv.github.io/Jekyll-Post-Layout/</link>
         <guid isPermaLink="true">http://udaytv.github.io/Jekyll-Post-Layout/</guid>
