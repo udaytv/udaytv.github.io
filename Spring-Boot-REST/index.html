@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Using spring boot for a simple JPA and REST. – Dhval Mudawal – Rants</title>
+
+        <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="With spring-boot it is incredibly easy to create a JavaEE project using embedded container. Unlike Spring-ROO it is very easy to migrate to production environement. Without any boiler plate code you can be sure of not using deprecated spring api&#39;s from wild. 
+" />
+    <meta property="og:description" content="With spring-boot it is incredibly easy to create a JavaEE project using embedded container. Unlike Spring-ROO it is very easy to migrate to production environement. Without any boiler plate code you can be sure of not using deprecated spring api&#39;s from wild. 
+" />
+    
+    <meta name="author" content="Dhval Mudawal" />
+
+    
+    <meta property="og:title" content="Using spring boot for a simple JPA and REST." />
+    <meta property="twitter:title" content="Using spring boot for a simple JPA and REST." />
+    
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Twitter Bootstrap css -->
+    <link href="/css/font-awesome.min.css">
+    <link href="/dist/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!-- Your css -->
+    <link href="/css/base-war.css" rel="stylesheet">
+    <link href="/css/dhval.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/responsive.css" rel="stylesheet">
+    <!-- Vendor js -->
+    <script type="text/javascript" charset="utf-8" src="/dist/requirejs/require.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/dist/modernizr/modernizr.js"></script>
+    <!-- Your js -->
+    <script type="text/javascript" charset="utf-8" src="/js/require.config.js"></script>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Dhval Mudawal - Rants" href="/feed.xml" />
+
+  </head>
+
+  <body>
+    <div class="wrapper-masthead">
+      <div class="container">
+        <header class="masthead clearfix">
+          <a href="/" class="site-avatar"><img src="https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="/">Dhval Mudawal</a></h1>
+            <p class="site-description">Rants</p>
+          </div>
+
+          <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+          </nav>
+        </header>
+      </div>
+    </div>
+
+    <div id="main" role="main" class="container">
+      <article class="post">
+  <h1>Using spring boot for a simple JPA and REST.</h1>
+
+  <div class="entry">
+    <p>With <a href="http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/">spring-boot</a> it is incredibly easy to create a JavaEE project using embedded container. Unlike Spring-ROO it is very easy to migrate to production environement. Without any boiler plate code you can be sure of not using deprecated spring api&#39;s from wild. </p>
+
+<p>You can view complete source code on <a href="https://github.com/dhval/spring-boot-rest">github</a>.</p>
+
+<h5>How to run this sample.</h5>
+
+<p>1.<strong>Using IDE.</strong></p>
+
+<p>It is web (war) <code>mvn package</code> package that can easily be deployed using your favorite Java IDE with a web container.</p>
+
+<p>You would need to create a JNDI Datasource, /var/lib/tomcat7/conf/context.xml. The JPA-Hibernate would take care of generating tables and sql-ddl. </p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;Resource auth=&quot;Container&quot; driverClassName=&quot;com.mysql.jdbc.Driver&quot; maxActive=&quot;10&quot; maxIdle=&quot;5&quot; maxWait=&quot;1000&quot; name=&quot;jdbc/earth&quot; type=&quot;javax.sql.DataSource&quot; maxAge=&quot;180000&quot; testOnBorrow=&quot;true&quot; testWhileIdle=&quot;true&quot; validationInterval=&quot;0&quot; url=&quot;jdbc:mysql://localhost:3306/motherearth?autoReconnect=true&quot; username=&quot;user&quot; password=&quot;password&quot; /&gt;
+</code></pre></div>
+<p>2.<strong>Command Line</strong></p>
+
+<p>To run using spring boot, <code>mvn spring-boot:run</code>. Embedded server do not have any JNDI by default, you can create it <a href="http://stackoverflow.com/questions/24941829/how-to-create-jndi-context-in-spring-boot-with-embedded-tomcat-container">programmatically</a> or just use plain datasource as follows. </p>
+
+<p>Update pom.xml packaging to jar.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;packaging&gt;jar&lt;/packaging&gt;
+</code></pre></div>
+<p>Instead of using JNDI-Datasource <code>spring.datasource.jndi-name</code>, define your connection parameters in application.properties file. </p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">spring.datasource.driverClassName=com.mysql.jdbc.Driver
+spring.datasource.url=jdbc:mysql://${mysql.host}:${mysql.port}/${mysql.database-name}?autoReconnect=true
+spring.datasource.username=${mysql.user}
+spring.datasource.password=${mysql.pass}
+</code></pre></div>
+  </div>
+
+  <div class="date">
+    Written on October 27, 2014
+  </div>
+
+  
+</article>
+
+    </div>
+
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          
+
+<a href="http://facebook.com/dhval.mudawal"><i class="svg-icon facebook"></i></a>
+
+<a href="http://github.com/dhval"><i class="svg-icon github"></i></a>
+
+<a href="http://linkedin.com/in/dhvalmudawal"><i class="svg-icon linkedin"></i></a>
+
+
+<a href="http://twitter.com/jekyllrb"><i class="svg-icon twitter"></i></a>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+  </body>
+</html>

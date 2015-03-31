@@ -85,6 +85,7 @@ sudo apt-get install rabbitmq-server -y
 </code></pre></div>
 <p>You can install management console on port 15672, default user is guest and passord is guest.</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">sudo rabbitmq-plugins enable rabbitmq_management
+sudo rabbitmq-plugins enable rabbitmq_stomp
 sudo service rabbitmq-server restart
 </code></pre></div>
 <p>You can monitor usage on command line using <code>rabbitmqctl status</code>. You can use web console if you do not like rabbitmqctl CLI. </p>

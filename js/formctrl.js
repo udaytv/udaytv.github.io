@@ -134,8 +134,8 @@ define([
     });
 
     module.controller('formController', function ($scope, $rootScope, $http, $log, $timeout, services) {
-   //    var baseUrl = '/services/api';
-        var baseUrl = "http://madhu.noip.me:8080/services/api";
+   //  var baseUrl = '/services/api';
+      var baseUrl = "http://madhu.noip.me:9090/services/api";
         var appCtrl = $scope.appCtrl;
         $scope.hasError = appCtrl.hasError;
         $scope.domainInfo = {};

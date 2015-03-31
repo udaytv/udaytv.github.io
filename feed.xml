@@ -26,6 +26,7 @@ sudo apt-get install rabbitmq-server -y
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;You can install management console on port 15672, default user is guest and passord is guest.&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;sudo rabbitmq-plugins enable rabbitmq_management
+sudo rabbitmq-plugins enable rabbitmq_stomp
 sudo service rabbitmq-server restart
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;You can monitor usage on command line using &lt;code&gt;rabbitmqctl status&lt;/code&gt;. You can use web console if you do not like rabbitmqctl CLI. &lt;/p&gt;
@@ -48,6 +49,39 @@ sudo rabbitmqctl set_permissions -p / user_name &amp;quot;.*&amp;quot; &amp;quot
         <pubDate>Tue, 03 Mar 2015 00:00:00 -0500</pubDate>
         <link>http://udaytv.github.io/Install-RabbitMQ/</link>
         <guid isPermaLink="true">http://udaytv.github.io/Install-RabbitMQ/</guid>
+      </item>
+    
+      <item>
+        <title>Using spring boot for a simple JPA and REST.</title>
+        <description>&lt;p&gt;With &lt;a href=&quot;http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/&quot;&gt;spring-boot&lt;/a&gt; it is incredibly easy to create a JavaEE project using embedded container. Unlike Spring-ROO it is very easy to migrate to production environement. Without any boiler plate code you can be sure of not using deprecated spring api&amp;#39;s from wild. &lt;/p&gt;
+
+&lt;p&gt;You can view complete source code on &lt;a href=&quot;https://github.com/dhval/spring-boot-rest&quot;&gt;github&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h5&gt;How to run this sample.&lt;/h5&gt;
+
+&lt;p&gt;1.&lt;strong&gt;Using IDE.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;It is web (war) &lt;code&gt;mvn package&lt;/code&gt; package that can easily be deployed using your favorite Java IDE with a web container.&lt;/p&gt;
+
+&lt;p&gt;You would need to create a JNDI Datasource, /var/lib/tomcat7/conf/context.xml. The JPA-Hibernate would take care of generating tables and sql-ddl. &lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;Resource auth=&amp;quot;Container&amp;quot; driverClassName=&amp;quot;com.mysql.jdbc.Driver&amp;quot; maxActive=&amp;quot;10&amp;quot; maxIdle=&amp;quot;5&amp;quot; maxWait=&amp;quot;1000&amp;quot; name=&amp;quot;jdbc/earth&amp;quot; type=&amp;quot;javax.sql.DataSource&amp;quot; maxAge=&amp;quot;180000&amp;quot; testOnBorrow=&amp;quot;true&amp;quot; testWhileIdle=&amp;quot;true&amp;quot; validationInterval=&amp;quot;0&amp;quot; url=&amp;quot;jdbc:mysql://localhost:3306/motherearth?autoReconnect=true&amp;quot; username=&amp;quot;user&amp;quot; password=&amp;quot;password&amp;quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;2.&lt;strong&gt;Command Line&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;To run using spring boot, &lt;code&gt;mvn spring-boot:run&lt;/code&gt;. Embedded server do not have any JNDI by default, you can create it &lt;a href=&quot;http://stackoverflow.com/questions/24941829/how-to-create-jndi-context-in-spring-boot-with-embedded-tomcat-container&quot;&gt;programmatically&lt;/a&gt; or just use plain datasource as follows. &lt;/p&gt;
+
+&lt;p&gt;Update pom.xml packaging to jar.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;packaging&amp;gt;jar&amp;lt;/packaging&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Instead of using JNDI-Datasource &lt;code&gt;spring.datasource.jndi-name&lt;/code&gt;, define your connection parameters in application.properties file. &lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;spring.datasource.driverClassName=com.mysql.jdbc.Driver
+spring.datasource.url=jdbc:mysql://${mysql.host}:${mysql.port}/${mysql.database-name}?autoReconnect=true
+spring.datasource.username=${mysql.user}
+spring.datasource.password=${mysql.pass}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+        <pubDate>Mon, 27 Oct 2014 00:00:00 -0400</pubDate>
+        <link>http://udaytv.github.io/Spring-Boot-REST/</link>
+        <guid isPermaLink="true">http://udaytv.github.io/Spring-Boot-REST/</guid>
       </item>
     
       <item>
@@ -91,7 +125,7 @@ dataSource.setUrl(env.getProperty(&amp;quot;jdbc.url&amp;quot;));
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;a href=&quot;http://www.baeldung.com/2012/02/06/properties-with-spring/&quot;&gt;Read ...&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Mon, 02 Mar 2015 00:00:00 -0500</pubDate>
+        <pubDate>Mon, 03 Mar 2014 00:00:00 -0500</pubDate>
         <link>http://udaytv.github.io/Spring-Property-PlaceHolder/</link>
         <guid isPermaLink="true">http://udaytv.github.io/Spring-Property-PlaceHolder/</guid>
       </item>
@@ -110,7 +144,7 @@ excerpt: I was able to build this blog using Jekyll ...
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;a href=&quot;http://jekyllrb.com/docs/posts/#post-excerpts&quot;&gt;Read Documentation&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Sun, 01 Mar 2015 00:00:00 -0500</pubDate>
+        <pubDate>Sat, 01 Mar 2014 00:00:00 -0500</pubDate>
         <link>http://udaytv.github.io/Jekyll-Post-Layout/</link>
         <guid isPermaLink="true">http://udaytv.github.io/Jekyll-Post-Layout/</guid>
       </item>
