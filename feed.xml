@@ -52,8 +52,8 @@ sudo rabbitmqctl set_permissions -p / user_name &amp;quot;.*&amp;quot; &amp;quot
       </item>
     
       <item>
-        <title>Using spring boot for a simple JPA and REST.</title>
-        <description>&lt;p&gt;With &lt;a href=&quot;http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/&quot;&gt;spring-boot&lt;/a&gt; it is incredibly easy to create a JavaEE project using embedded container. Unlike Spring-ROO it is very easy to migrate to production environement. Without any boiler plate code you can be sure of not using deprecated spring api&amp;#39;s from wild. &lt;/p&gt;
+        <title>Using spring boot for REST service using JPA</title>
+        <description>&lt;p&gt;With &lt;a href=&quot;http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/&quot;&gt;spring-boot&lt;/a&gt; it is incredibly easy to create a JavaEE project using embedded container. Unlike Spring-ROO it is very easy to migrate to production environment. Without any boiler plate code you can be sure of not using deprecated spring api&amp;#39;s from wild. &lt;/p&gt;
 
 &lt;p&gt;You can view complete source code on &lt;a href=&quot;https://github.com/dhval/spring-boot-rest&quot;&gt;github&lt;/a&gt;.&lt;/p&gt;
 
@@ -82,6 +82,123 @@ spring.datasource.password=${mysql.pass}
         <pubDate>Mon, 27 Oct 2014 00:00:00 -0400</pubDate>
         <link>http://udaytv.github.io/Spring-Boot-REST/</link>
         <guid isPermaLink="true">http://udaytv.github.io/Spring-Boot-REST/</guid>
+      </item>
+    
+      <item>
+        <title>From Java web jar to bower registry</title>
+        <description>&lt;p&gt;Java web jars provide static resources for web projects, it supports very good integration with maven (or gradle) by creating overlays that can be unzipped and used inside war. Maven war plugin makes this drop-dead simple.&lt;/p&gt;
+
+&lt;p&gt;By using &lt;a href=&quot;http://bower.io/&quot;&gt;bower&lt;/a&gt; you can manage all your web resources much easier, it is significantly easier to update dependecies to newer versions. It start to make more sense if you use node-grunt tooling instead of hacking your way around maven with bunch of odd custom shell scripts. &lt;/p&gt;
+
+&lt;p&gt;Once you start using bower then it is time to eat your own dog food. Bower facilitates you to publish your web resources (internally or externally) to a git server, all you have to do is &amp;#39;git tag&amp;#39; and push your files. Bower look at tarballs associted with tags to infer version.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;quot;dependencies&amp;quot;: {
+    &amp;quot;json3&amp;quot;: &amp;quot;^3.3.0&amp;quot;,
+        ....
+    &amp;quot;common&amp;quot;: &amp;quot;git://github.com/user/base-web.git&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;You can reference dependency from another git project like below, notice .git/ at end.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;quot;dependencies&amp;quot;: {
+    &amp;quot;json3&amp;quot;: &amp;quot;^3.3.0&amp;quot;,
+        ....
+    &amp;quot;common&amp;quot;: &amp;quot;/Users/dhval/java/git-repository/jnet/base-web/.git/&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Here is a sample flow of publishing a existing github project as npm registry.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;git tag &amp;quot;v0.0.0&amp;quot;
+git push origin --tags
+
+bower register common git://github.com/user/base-web.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;To automate above steps you can use &lt;a href=&quot;https://github.com/vojtajina/grunt-bump&quot;&gt;grunt-bump&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;grunt.initConfig({
+bump: {
+    options: {
+        files: [
+            &amp;quot;package.json&amp;quot;,
+            &amp;quot;bower.json&amp;quot;
+        ],
+        push: &amp;quot;true&amp;quot;,
+        pushTo: &amp;#39;origin&amp;#39;
+    }
+}
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Time to tell &lt;a href=&quot;http://maven.apache.org/plugins/maven-war-plugin/index.html&quot;&gt;maven-war-plugin&lt;/a&gt; to copy all resources from Project_Root/dist into exploded-war directory. So that all maven based IDE like IntelliJ can create war naturally. Note web resources are different from regular resources like xml, properties, schema beans etc. You use &lt;a href=&quot;https://maven.apache.org/plugins/maven-resources-plugin/index.html&quot;&gt;maven-resources-plugin&lt;/a&gt; and &lt;code&gt;mvn resources:copy-resources&lt;/code&gt; for them.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Before&lt;/strong&gt; &lt;code&gt;mvn war:exploded&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;Root
+|---dist
+    |---common &amp;lt;!-- Bower created internal resources here--&amp;gt;
+    |---....
+    |---json3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;After&lt;/strong&gt; I need my internal dependencies in web/{ js| css} and external dependencies in web/dist/dependency-name/ with their licenses.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;target
+|---&amp;lt;app-name&amp;gt;
+    |
+    |----dist/json3
+    |----js/common
+    |----css/common
+    |----css/img
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We need to add &lt;code&gt;webReources&lt;/code&gt; element in our war-plugin config.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;build&amp;gt;
+&amp;lt;plugins&amp;gt;   
+&amp;lt;plugin&amp;gt;
+&amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt;
+&amp;lt;artifactId&amp;gt;maven-war-plugin&amp;lt;/artifactId&amp;gt;
+&amp;lt;version&amp;gt;2.3&amp;lt;/version&amp;gt;
+&amp;lt;configuration&amp;gt;
+    &amp;lt;archive&amp;gt;
+        &amp;lt;manifest&amp;gt;
+            &amp;lt;classpathPrefix&amp;gt;WEB-INF/lib/&amp;lt;/classpathPrefix&amp;gt;
+            &amp;lt;addClasspath&amp;gt;true&amp;lt;/addClasspath&amp;gt;
+        &amp;lt;/manifest&amp;gt;
+    &amp;lt;/archive&amp;gt;
+    &amp;lt;!-- Filter, replace properties with values. --&amp;gt;
+    &amp;lt;filters&amp;gt;
+        &amp;lt;filter&amp;gt;src/main/resources/application.properties&amp;lt;/filter&amp;gt;
+    &amp;lt;/filters&amp;gt;
+    &amp;lt;nonFilteredFileExtensions&amp;gt;
+        &amp;lt;!-- default value contains jpg,jpeg,gif,bmp,png --&amp;gt;
+        &amp;lt;nonFilteredFileExtension&amp;gt;pdf&amp;lt;/nonFilteredFileExtension&amp;gt;
+    &amp;lt;/nonFilteredFileExtensions&amp;gt;
+    &amp;lt;!-- Copy resources to different directories. --&amp;gt;
+    &amp;lt;webResources&amp;gt;
+        &amp;lt;resource&amp;gt;
+            &amp;lt;excludes&amp;gt;
+                &amp;lt;exclude&amp;gt;**/common/**&amp;lt;/exclude&amp;gt;
+            &amp;lt;/excludes&amp;gt;
+            &amp;lt;directory&amp;gt;dist&amp;lt;/directory&amp;gt;
+            &amp;lt;targetPath&amp;gt;dist&amp;lt;/targetPath&amp;gt;
+            &amp;lt;!-- it&amp;#39;s not a good idea to filter binary files --&amp;gt;
+            &amp;lt;filtering&amp;gt;false&amp;lt;/filtering&amp;gt;
+        &amp;lt;/resource&amp;gt;
+        &amp;lt;resource&amp;gt;
+            &amp;lt;directory&amp;gt;dist/common/js&amp;lt;/directory&amp;gt;
+            &amp;lt;targetPath&amp;gt;js/common&amp;lt;/targetPath&amp;gt;
+            &amp;lt;filtering&amp;gt;false&amp;lt;/filtering&amp;gt;
+        &amp;lt;/resource&amp;gt;
+        &amp;lt;resource&amp;gt;
+            &amp;lt;directory&amp;gt;dist/common/css&amp;lt;/directory&amp;gt;
+            &amp;lt;targetPath&amp;gt;css/common&amp;lt;/targetPath&amp;gt;
+            &amp;lt;filtering&amp;gt;false&amp;lt;/filtering&amp;gt;
+        &amp;lt;/resource&amp;gt;
+        &amp;lt;resource&amp;gt;
+            &amp;lt;directory&amp;gt;dist/common/img&amp;lt;/directory&amp;gt;
+            &amp;lt;targetPath&amp;gt;css/img&amp;lt;/targetPath&amp;gt;
+            &amp;lt;filtering&amp;gt;false&amp;lt;/filtering&amp;gt;
+        &amp;lt;/resource&amp;gt;
+    &amp;lt;/webResources&amp;gt;
+&amp;lt;/configuration&amp;gt;
+&amp;lt;/plugin&amp;gt;
+&amp;lt;/plugins&amp;gt;
+&amp;lt;/build&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+        <pubDate>Sat, 02 Aug 2014 00:00:00 -0400</pubDate>
+        <link>http://udaytv.github.io/Bower-Registry/</link>
+        <guid isPermaLink="true">http://udaytv.github.io/Bower-Registry/</guid>
       </item>
     
       <item>

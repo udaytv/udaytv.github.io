@@ -34,7 +34,7 @@ If you have any suggesitons please send me [here](http://dhval.github.io/suggest
 
 #### Hosted Java backend for your local angular apps.
 
-You can use hosted Rest services using localhost or github.io for CORS origin check. The rest backend is running on UBUNTU LTS 14.4 with ng-inx, mysql, apache tomcat 8, Java Rest 2.1 and Hibernate JPA. You can look complete source code [here](http://dhval.github.io/services) or file an [issue](http://dhval.github.io/services/issues).
+You can use hosted Rest services using localhost or github.io for CORS origin check. The rest backend is running on UBUNTU LTS 14.4 with ng-inx, mysql, apache tomcat 8, Rabbit MQ, Java Rest 2.1 and Hibernate JPA. You can look complete source code [here](http://dhval.github.io/spring-boot-rest) or file an [issue](http://dhval.github.io/spring-boot-rest/issues).
 
 
 

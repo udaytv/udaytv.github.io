@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>From Java web jar to bower registry – Dhval Mudawal – Rants</title>
+
+        <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="Java web jars provide static resources for web projects, it supports very good integration with maven (or gradle) by creating overlays that can be unzipped and used inside war. Maven war plugin makes this drop-dead simple.
+" />
+    <meta property="og:description" content="Java web jars provide static resources for web projects, it supports very good integration with maven (or gradle) by creating overlays that can be unzipped and used inside war. Maven war plugin makes this drop-dead simple.
+" />
+    
+    <meta name="author" content="Dhval Mudawal" />
+
+    
+    <meta property="og:title" content="From Java web jar to bower registry" />
+    <meta property="twitter:title" content="From Java web jar to bower registry" />
+    
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Twitter Bootstrap css -->
+    <link href="/css/font-awesome.min.css">
+    <link href="/dist/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!-- Your css -->
+    <link href="/css/base-war.css" rel="stylesheet">
+    <link href="/css/dhval.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/responsive.css" rel="stylesheet">
+    <!-- Vendor js -->
+    <script type="text/javascript" charset="utf-8" src="/dist/requirejs/require.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/dist/modernizr/modernizr.js"></script>
+    <!-- Your js -->
+    <script type="text/javascript" charset="utf-8" src="/js/require.config.js"></script>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Dhval Mudawal - Rants" href="/feed.xml" />
+
+  </head>
+
+  <body>
+    <div class="wrapper-masthead">
+      <div class="container">
+        <header class="masthead clearfix">
+          <a href="/" class="site-avatar"><img src="https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="/">Dhval Mudawal</a></h1>
+            <p class="site-description">Rants</p>
+          </div>
+
+          <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+          </nav>
+        </header>
+      </div>
+    </div>
+
+    <div id="main" role="main" class="container">
+      <article class="post">
+  <h1>From Java web jar to bower registry</h1>
+
+  <div class="entry">
+    <p>Java web jars provide static resources for web projects, it supports very good integration with maven (or gradle) by creating overlays that can be unzipped and used inside war. Maven war plugin makes this drop-dead simple.</p>
+
+<p>By using <a href="http://bower.io/">bower</a> you can manage all your web resources much easier, it is significantly easier to update dependecies to newer versions. It start to make more sense if you use node-grunt tooling instead of hacking your way around maven with bunch of odd custom shell scripts. </p>
+
+<p>Once you start using bower then it is time to eat your own dog food. Bower facilitates you to publish your web resources (internally or externally) to a git server, all you have to do is &#39;git tag&#39; and push your files. Bower look at tarballs associted with tags to infer version.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&quot;dependencies&quot;: {
+    &quot;json3&quot;: &quot;^3.3.0&quot;,
+        ....
+    &quot;common&quot;: &quot;git://github.com/user/base-web.git&quot;
+}
+</code></pre></div>
+<p>You can reference dependency from another git project like below, notice .git/ at end.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&quot;dependencies&quot;: {
+    &quot;json3&quot;: &quot;^3.3.0&quot;,
+        ....
+    &quot;common&quot;: &quot;/Users/dhval/java/git-repository/jnet/base-web/.git/&quot;
+}
+</code></pre></div>
+<p>Here is a sample flow of publishing a existing github project as npm registry.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">git tag &quot;v0.0.0&quot;
+git push origin --tags
+
+bower register common git://github.com/user/base-web.git
+</code></pre></div>
+<p>To automate above steps you can use <a href="https://github.com/vojtajina/grunt-bump">grunt-bump</a>.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">grunt.initConfig({
+bump: {
+    options: {
+        files: [
+            &quot;package.json&quot;,
+            &quot;bower.json&quot;
+        ],
+        push: &quot;true&quot;,
+        pushTo: &#39;origin&#39;
+    }
+}
+});
+</code></pre></div>
+<p>Time to tell <a href="http://maven.apache.org/plugins/maven-war-plugin/index.html">maven-war-plugin</a> to copy all resources from Project_Root/dist into exploded-war directory. So that all maven based IDE like IntelliJ can create war naturally. Note web resources are different from regular resources like xml, properties, schema beans etc. You use <a href="https://maven.apache.org/plugins/maven-resources-plugin/index.html">maven-resources-plugin</a> and <code>mvn resources:copy-resources</code> for them.</p>
+
+<p><strong>Before</strong> <code>mvn war:exploded</code></p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Root
+|---dist
+    |---common &lt;!-- Bower created internal resources here--&gt;
+    |---....
+    |---json3
+</code></pre></div>
+<p><strong>After</strong> I need my internal dependencies in web/{ js| css} and external dependencies in web/dist/dependency-name/ with their licenses.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">target
+|---&lt;app-name&gt;
+    |
+    |----dist/json3
+    |----js/common
+    |----css/common
+    |----css/img
+</code></pre></div>
+<p>We need to add <code>webReources</code> element in our war-plugin config.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;build&gt;
+&lt;plugins&gt;   
+&lt;plugin&gt;
+&lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+&lt;artifactId&gt;maven-war-plugin&lt;/artifactId&gt;
+&lt;version&gt;2.3&lt;/version&gt;
+&lt;configuration&gt;
+    &lt;archive&gt;
+        &lt;manifest&gt;
+            &lt;classpathPrefix&gt;WEB-INF/lib/&lt;/classpathPrefix&gt;
+            &lt;addClasspath&gt;true&lt;/addClasspath&gt;
+        &lt;/manifest&gt;
+    &lt;/archive&gt;
+    &lt;!-- Filter, replace properties with values. --&gt;
+    &lt;filters&gt;
+        &lt;filter&gt;src/main/resources/application.properties&lt;/filter&gt;
+    &lt;/filters&gt;
+    &lt;nonFilteredFileExtensions&gt;
+        &lt;!-- default value contains jpg,jpeg,gif,bmp,png --&gt;
+        &lt;nonFilteredFileExtension&gt;pdf&lt;/nonFilteredFileExtension&gt;
+    &lt;/nonFilteredFileExtensions&gt;
+    &lt;!-- Copy resources to different directories. --&gt;
+    &lt;webResources&gt;
+        &lt;resource&gt;
+            &lt;excludes&gt;
+                &lt;exclude&gt;**/common/**&lt;/exclude&gt;
+            &lt;/excludes&gt;
+            &lt;directory&gt;dist&lt;/directory&gt;
+            &lt;targetPath&gt;dist&lt;/targetPath&gt;
+            &lt;!-- it&#39;s not a good idea to filter binary files --&gt;
+            &lt;filtering&gt;false&lt;/filtering&gt;
+        &lt;/resource&gt;
+        &lt;resource&gt;
+            &lt;directory&gt;dist/common/js&lt;/directory&gt;
+            &lt;targetPath&gt;js/common&lt;/targetPath&gt;
+            &lt;filtering&gt;false&lt;/filtering&gt;
+        &lt;/resource&gt;
+        &lt;resource&gt;
+            &lt;directory&gt;dist/common/css&lt;/directory&gt;
+            &lt;targetPath&gt;css/common&lt;/targetPath&gt;
+            &lt;filtering&gt;false&lt;/filtering&gt;
+        &lt;/resource&gt;
+        &lt;resource&gt;
+            &lt;directory&gt;dist/common/img&lt;/directory&gt;
+            &lt;targetPath&gt;css/img&lt;/targetPath&gt;
+            &lt;filtering&gt;false&lt;/filtering&gt;
+        &lt;/resource&gt;
+    &lt;/webResources&gt;
+&lt;/configuration&gt;
+&lt;/plugin&gt;
+&lt;/plugins&gt;
+&lt;/build&gt;
+</code></pre></div>
+  </div>
+
+  <div class="date">
+    Written on August  2, 2014
+  </div>
+
+  
+</article>
+
+    </div>
+
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          
+
+<a href="http://facebook.com/dhval.mudawal"><i class="svg-icon facebook"></i></a>
+
+<a href="http://github.com/dhval"><i class="svg-icon github"></i></a>
+
+<a href="http://linkedin.com/in/dhvalmudawal"><i class="svg-icon linkedin"></i></a>
+
+
+<a href="http://twitter.com/jekyllrb"><i class="svg-icon twitter"></i></a>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+  </body>
+</html>

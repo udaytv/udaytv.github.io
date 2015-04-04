@@ -3,7 +3,7 @@ define(['angular', 'ajax-loader'], function (angular, ajaxLoader) {
 
     module.service('services', ['$http', '$q', '$timeout', '$log', function ($http, $q, $timeout, $log) {
         var status, method, manager, lead, contact, benefit, affiliation, apps, count, enhancements;
-       var preUrl = "http://madhu.noip.me:9090/services/api";
+       var preUrl = "http://madhu.noip.me/services/api";
  //       var preUrl = "/services/api";
         var animate = function() {
             $("ul.loader", "#wrapper").addClass("loading");
