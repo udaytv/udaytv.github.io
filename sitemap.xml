@@ -6,6 +6,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>http://udaytv.github.io/Endianess/</loc>
+    <lastmod>2015-03-03T00:00:00-05:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>http://udaytv.github.io/Spring-Boot-REST/</loc>
     <lastmod>2014-10-27T00:00:00-04:00</lastmod>
     <priority>0.8</priority>
@@ -27,19 +32,19 @@
   </url>
   <url>
     <loc>http://udaytv.github.io/404.html</loc>
-    <lastmod>2015-04-04T11:31:16-04:00</lastmod>
+    <lastmod>2015-08-20T14:07:19-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://udaytv.github.io/about/</loc>
-    <lastmod>2015-04-04T11:31:16-04:00</lastmod>
+    <lastmod>2015-08-20T14:07:19-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://udaytv.github.io/</loc>
-    <lastmod>2015-04-04T11:31:16-04:00</lastmod>
+    <lastmod>2015-08-20T14:07:19-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
