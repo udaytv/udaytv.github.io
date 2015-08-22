@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bucket and radix sorting – Dhval Mudawal – Rants</title>
+
+        <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="Bucket and radix sorting" />
+    <meta property="og:description" content="Bucket and radix sorting" />
+    
+    <meta name="author" content="Dhval Mudawal" />
+
+    
+    <meta property="og:title" content="Bucket and radix sorting" />
+    <meta property="twitter:title" content="Bucket and radix sorting" />
+    
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Twitter Bootstrap css -->
+    <link href="/css/font-awesome.min.css">
+    <link href="/dist/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!-- Your css -->
+    <link href="/css/base-war.css" rel="stylesheet">
+    <link href="/css/dhval.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/responsive.css" rel="stylesheet">
+    <!-- Vendor js -->
+    <script type="text/javascript" charset="utf-8" src="/dist/requirejs/require.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/dist/modernizr/modernizr.js"></script>
+    <!-- Your js -->
+    <script type="text/javascript" charset="utf-8" src="/js/require.config.js"></script>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Dhval Mudawal - Rants" href="/feed.xml" />
+
+  </head>
+
+  <body>
+    <div class="wrapper-masthead">
+      <div class="container">
+        <header class="masthead clearfix">
+          <a href="/" class="site-avatar"><img src="https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="/">Dhval Mudawal</a></h1>
+            <p class="site-description">Rants</p>
+          </div>
+
+          <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+          </nav>
+        </header>
+      </div>
+    </div>
+
+    <div id="main" role="main" class="container">
+      <article class="post">
+  <h1>Bucket and radix sorting</h1>
+
+  <div class="entry">
+    <p><en-note style="background-attachment: scroll; background-color: transparent; background-image: none; border: 0px none rgb(0, 0, 0); border-collapse: separate; border-spacing: 0px; bottom: auto; caption-side: top; clear: none; clip: auto; color: rgb(0, 0, 0); content: none; counter-increment: none; counter-reset: none; cursor: auto; direction: ltr; display: block; float: none; font-family: serif; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; left: auto; letter-spacing: normal; line-height: 20px; list-style: disc outside none; margin: 8px; opacity: 1; outline: rgb(0, 0, 0) none 0px; outline-offset: 0px; overflow: visible; padding: 0px; page-break-after: auto; page-break-before: auto; pointer-events: auto; position: static; quotes: “, ”, ‘, ’; right: auto; table-layout: auto; text-align: start; text-decoration: none; text-indent: 0px; text-shadow: none; text-transform: none; top: auto; unicode-bidi: embed; vertical-align: baseline; visibility: visible; white-space: normal; word-spacing: 0px; z-index: auto; background-clip: border-box; background-origin: padding-box; background-size: auto; border-bottom-left-radius: 0px; border-bottom-right-radius: 0px; border-top-left-radius: 0px; border-top-right-radius: 0px; box-shadow: none; resize: none; word-wrap: break-word; clip-path: none; clip-rule: nonzero; color-interpolation: srgb; color-interpolation-filters: linearrgb; dominant-baseline: auto; fill: #000000; fill-opacity: 1; fill-rule: nonzero; filter: none; flood-color: #000000; flood-opacity: 1; lighting-color: #ffffff; image-rendering: auto; mask: none; marker-end: none; marker-mid: none; marker-start: none; shape-rendering: auto; stop-color: #000000; stop-opacity: 1; stroke: none; stroke-dasharray: none; stroke-dashoffset: 0px; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-opacity: 1; stroke-width: 1px; text-anchor: start; text-rendering: auto; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space; background-position: 0% 0%; background-repeat: repeat repeat;">
+<div><b>Counting sort   </b></div>
+<div><br/></div>
+<div>We can implement a simple counting sort using array[k] when sorting 1…k numbers.</div>
+<div>When k is smaller than n. E.g. suppose <b>you want to sort 10000 people by birthday</b>; n=10000, k=366, so time = O(n) and memory O(k).</div>
+<div>We need an ARRAY[k] to hold frequency of each number occurrence and then merge at end.</div>
+<div><br/></div>
+<div><b>Radix sort   -  </b><span style="font-size: 14px;"><span style="font-family: 'Open Sans', Helvetica, Arial, Verdana, sans-serif;"><a href="http://www.geeksforgeeks.org/how-to-efficiently-sort-a-big-list-dates-in-20s/" style="padding: 0px; border: 0px; vertical-align: baseline; outline: none; color: rgb(236, 78, 32); text-decoration: none;" title="How to efficiently sort a big list dates in 20’s">How to efficiently sort a big list dates in 20’s</a></span></span></div>
+<div><span style="font-size: 13px;"><span style="font-family: 'Open Sans', Helvetica, Arial, Verdana, sans-serif;"><br/></span></span></div>
+<div>What to do when k is large? Think about the decimal representation of a number. For any number we need <u>log(number) digits</u>.</div>
+<div><br/></div>
+<div>x = a + 10 b + 100 c + 1000 d + … where a,b,c etc all in range 0..9. These digits are easily small enough to do bucket sort.</div>
+<div><br/></div>
+<div>    radix sort(L):</div>
+<div>    {<br/>
+    bucket sort by a<br/>
+    bucket sort by b<br/>
+    bucket sort by c<br/>
+    ...<br/>
+    }<br/></div>
+<div><br/></div>
+<ul>
+<li>We do k passes where k is the number of digit.</li>
+<li><b>Start from LSD so in last pass we handle the MSB and it is when all numbers settle in the final place.</b> For MSB first we would need recursion similar to merge sort. By contrast to bucket sort, radix sorting never splits up the list; it just applies bucket sorting several times to the same list.</li>
+</ul>
+<div><br/></div>
+<div><b>Sorting floating point numbers</b></div>
+<div><br/></div>
+<div>Floating point represents numbers roughly in the form x = a * 2^b. If all numbers had same value of b, we could just bucket sort by a. Different b&#39;s complicate the picture but basically b is more important than a so sort by a first (radix sort) then one more bucket sort by b.</div>
+</en-note></p>
+
+  </div>
+
+  <div class="date">
+    Written on December  4, 2011
+  </div>
+
+  
+</article>
+
+    </div>
+
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          
+
+<a href="http://facebook.com/dhval.mudawal"><i class="svg-icon facebook"></i></a>
+
+<a href="http://github.com/dhval"><i class="svg-icon github"></i></a>
+
+<a href="http://linkedin.com/in/dhvalmudawal"><i class="svg-icon linkedin"></i></a>
+
+
+<a href="http://twitter.com/jekyllrb"><i class="svg-icon twitter"></i></a>
+
+
+        </footer>
+      </div>
+      <p style="text-align:center;">© I do not claim ownership of this content. Please PM me, if this infringes any copyright. </p>
+    </div>
+
+    
+
+  </body>
+</html>

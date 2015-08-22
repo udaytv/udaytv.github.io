@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TCP-IP QA – Dhval Mudawal – Rants</title>
+
+        <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="TCP-IP QA" />
+    <meta property="og:description" content="TCP-IP QA" />
+    
+    <meta name="author" content="Dhval Mudawal" />
+
+    
+    <meta property="og:title" content="TCP-IP QA" />
+    <meta property="twitter:title" content="TCP-IP QA" />
+    
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Twitter Bootstrap css -->
+    <link href="/css/font-awesome.min.css">
+    <link href="/dist/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!-- Your css -->
+    <link href="/css/base-war.css" rel="stylesheet">
+    <link href="/css/dhval.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/responsive.css" rel="stylesheet">
+    <!-- Vendor js -->
+    <script type="text/javascript" charset="utf-8" src="/dist/requirejs/require.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/dist/modernizr/modernizr.js"></script>
+    <!-- Your js -->
+    <script type="text/javascript" charset="utf-8" src="/js/require.config.js"></script>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Dhval Mudawal - Rants" href="/feed.xml" />
+
+  </head>
+
+  <body>
+    <div class="wrapper-masthead">
+      <div class="container">
+        <header class="masthead clearfix">
+          <a href="/" class="site-avatar"><img src="https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="/">Dhval Mudawal</a></h1>
+            <p class="site-description">Rants</p>
+          </div>
+
+          <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+          </nav>
+        </header>
+      </div>
+    </div>
+
+    <div id="main" role="main" class="container">
+      <article class="post">
+  <h1>TCP-IP QA</h1>
+
+  <div class="entry">
+    <p><en-note style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;">
+<div style="background-color: rgb(255, 255, 255);">Common Terms - </div>
+<div style="background-color: rgb(255, 255, 255);"><span style="font-size: 16px;"><br/></span></div>
+<ul>
+<li style="background-color: rgb(255, 255, 255);"><span style="font-size: 16px;">OSI vs TCP-IP &amp; layers</span></li>
+<li><span style="font-size: 16px;">hub, switch &amp; router</span></li>
+<li><span style="font-size: 16px;">ARP vs DHCP</span></li>
+</ul>
+<div style="background-color: rgb(255, 255, 255);"><span style="font-size: 16px;"><b><br/></b></span></div>
+<div style="background-color: rgb(255, 255, 255);"><span style="font-size: 16px;"><b>What is &quot;Segment&quot;?</b></span></div>
+<div style="background-attachment: scroll; background-clip: border-box; background-image: none; background-origin: padding-box; border: 0px none rgb(0, 0, 0); border-bottom-left-radius: 0px; border-bottom-right-radius: 0px; border-collapse: separate; border-spacing: 0px; border-top-left-radius: 0px; border-top-right-radius: 0px; bottom: auto; box-shadow: none; caption-side: top; clear: none; clip: auto; content: none; counter-increment: none; counter-reset: none; cursor: auto; direction: ltr; empty-cells: show; float: none; height: auto; left: auto; list-style: disc outside none; margin: 0px; max-height: none; max-width: none; min-height: 0px; min-width: 0px; opacity: 1; outline: rgb(0, 0, 0) none 0px; outline-offset: 0px; overflow: visible; padding: 0px; page-break-after: auto; page-break-before: auto; pointer-events: auto; position: static; resize: none; right: auto; table-layout: auto; text-overflow: clip; text-shadow: none; top: auto; unicode-bidi: embed; vertical-align: baseline; visibility: visible; width: auto; word-wrap: normal; z-index: auto; clip-path: none; clip-rule: nonzero; color-interpolation: srgb; color-interpolation-filters: linearrgb; dominant-baseline: auto; fill: #000000; fill-opacity: 1; fill-rule: nonzero; filter: none; flood-color: #000000; flood-opacity: 1; image-rendering: auto; lighting-color: #ffffff; marker-end: none; marker-mid: none; marker-start: none; mask: none; shape-rendering: auto; stop-color: #000000; stop-opacity: 1; stroke: none; stroke-dasharray: none; stroke-dashoffset: 0px; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-opacity: 1; stroke-width: 1px; text-anchor: start; text-rendering: auto; background-position: 0% 0%;">
+<div style="clear: left;">
+<div style="font-family: serif; font-size: 16px;">
+<p><span style="border-collapse: separate; font-family: Tahoma; border-spacing: 0px;">&quot;Segment&quot; is a PDU (Protocol Data Unit) of Transport layer of OSI model. It is the data unit of transport layer.</span></p>
+</div>
+</div>
+</div>
+<div style="background-color: rgb(255, 255, 255); font-size: 16px;">
+<h2 style="font-size: 23px;"><span style="border-collapse: separate; border-spacing: 0px;"><font size="3" style="font-size: 16px;">What is the PDU of &quot;Network layer&quot; and &quot;Data link layer&quot;.</font></span></h2>
+</div>
+<div><span style="font-size: 16px;"><span style="border-collapse: separate; border-spacing: 0px;">PDU for <i>Network Layer aka IP</i> is: &quot;Packet&quot; and PDU for <i>Data Link Layer aka Ethernet</i> is :&quot;Frame&quot;</span></span></div>
+<div><span style="font-size: 16px;">PDU for TCP is segments and for UDP is datagram.</span></div>
+<div><span style="font-size: 16px;"><br/></span></div>
+<div><span style="font-size: 16px;">*** TCP is a stream protocol and so do not see data as packets. IP layer beneath it combines the fragmented packets. </span></div>
+<div><b><span style="font-size: 16px;"><br/></span></b></div>
+<div><span style="font-size: 23px;"><b><span style="border-collapse: separate; border-spacing: 0px;"><font size="3" style="font-size: 16px;">You have one IP: 192.168.10.29. In which layer this IP works?</font></span></b></span></div>
+<div style="background-color: rgb(255, 255, 255); font-size: 16px;">
+<div>
+<p><span style="border-collapse: separate; border-spacing: 0px;">Network layer.</span></p>
+</div>
+</div>
+<div style="background-color: rgb(255, 255, 255); font-size: 16px;">
+<h2 style="font-size: 23px;"><span style="border-collapse: separate; border-spacing: 0px;"><font size="3" style="font-size: 16px;">DNS uses which protocol? Why?</font></span></h2>
+</div>
+<div style="background-color: rgb(255, 255, 255); font-size: 16px;">
+<p><span style="border-collapse: separate; border-spacing: 0px;">DNS uses both TCP or UDP or both. UDP can handle only 512bytes. If data size is withing 512 bytes UDP is used, otherwise, TCP is used.</span></p>
+</div>
+<div style="background-color: rgb(255, 255, 255); font-size: 16px;"><span style="border-collapse: separate; border-spacing: 0px;"><b>Which layer is closer to the user?</b></span></div>
+<div><br/></div>
+<div style="font-size: 16px;">Layer 7 or Application layer is closer to the user.</div>
+<div style="background-color: rgb(255, 255, 255);">
+<h2 style="font-size: 23px;"><font size="3" style="font-size: 16px;">Differentiate between forward lookup and reverse lookup in DNS?</font></h2>
+<ul style="font-size: 16px;">
+<li>Forward lookup is: name-to-address,</li>
+<li>Reverse lookup is: address-to-name.</li>
+</ul>
+</div>
+<div><br/></div>
+<div style="font-size: 23px; font-weight: bold;"><font size="3" style="font-size: 16px;">What are the difference between TCP and UDP?</font></div>
+<div style="background-color: rgb(255, 255, 255);">
+<ul style="font-size: 16px;">
+<li>TCP: Connection oriented protocol, acknowledged one, Point to point communication.</li>
+<li>UDP: Connection less protocol, unreliable, less traffic</li>
+</ul>
+<h2 style="font-size: 23px;"><font size="3" style="font-size: 16px;">What is IPSec?</font></h2>
+<p style="font-size: 16px;">IPSec is &quot;Internet Protocol Security&quot;. It is a suite of protocols for securing Internet Protocol(IP) communications.</p>
+<h2><span style="font-size: 16px;">What is the difference between flow control and error control?</span></h2>
+<ul style="font-size: 16px;">
+<li><u>Flow control:</u> adjust and confirm data flow rate for successful transmission.</li>
+<li><u>Error Control:</u> a way to recover corrupted data .</li>
+</ul>
+<h2><span style="font-size: 16px;">What is the responsibilities of Network Layer?</span></h2>
+</div>
+<div style="background-color: rgb(255, 255, 255);">
+<ul style="font-size: 16px;">
+<li>Logical addressing</li>
+<li>Best effort delivery</li>
+</ul>
+<h2 style="font-size: 23px;"><font size="3" style="font-size: 16px;">Data link layer is sub-divide into how many groups?</font></h2>
+<ul style="font-size: 16px;">
+<li>2 sub-divided groups: MAC Layer and LLC layer</li>
+<li>MAC: Media Access Control/Medium Access Control</li>
+<li>LLC: Logical Link Control</li>
+</ul>
+<h2 style="font-size: 23px;"><font size="3" style="font-size: 16px;">What is the port number of Telnet and DNS?</font></h2>
+<p style="font-size: 16px;">Telnet = 23 and DNS = 53</p>
+<h2 style="font-size: 23px;"><font size="3" style="font-size: 16px;">What is the port number of ftp(data) and ftp?</font></h2>
+<p style="font-size: 16px;">ftp(data) = 20 and ftp=21</p>
+<h2 style="font-size: 23px;"><font size="3" style="font-size: 16px;">ARP resolves what? MAC Address or IP?</font></h2>
+<p style="font-size: 16px;">ARP stands for Address Resolution Protocol. It helps to find the hardware address or MAC address when IP address is known.</p>
+<h2 style="font-size: 23px;"><font size="3" style="font-size: 16px;">Which layer of OSI is responsible for end-to-end communication?</font></h2>
+<p style="font-size: 16px;">Transport layer.</p>
+<h2 style="font-size: 23px;"><font size="3" style="font-size: 16px;">Why we have to use router?</font></h2>
+<p style="font-size: 16px;">To communicate several networks, routers are used. Routers have both broadcast domain and collision domain.</p>
+<h2 style="font-size: 23px;"><font size="3" style="font-size: 16px;">RARP resolves what? Address or IP?</font></h2>
+<p style="font-size: 16px;">RARP stands for Reverse Address Resolution Protocol. It helps to find the IP address when physical or hardware or MAC address is known.</p>
+<h2 style="font-size: 23px;"><font size="3" style="font-size: 16px;">What is OSI model?</font></h2>
+<p style="font-size: 16px;">OSI model is a reference model containing 7 layers such as physical layer, data link layer, network layer, transport layer, session layer, presentation layer and application layer.</p>
+<h2 style="font-size: 23px;"><font size="3" style="font-size: 16px;">What is TCP/IP model?</font></h2>
+<p style="font-size: 16px;">TCP/IP model is an implementation of OSI reference model. It has five layers. They are: Network layer, Internet layer, Transport layer and Application layer.</p>
+<h2 style="font-size: 23px;"><font size="3" style="font-size: 16px;">What is the full form of OSI and TCP/IP model?</font></h2>
+<ul style="font-size: 16px;">
+<li>OSI stands for = Open Systems Interconnection (OSI) model</li>
+<li>TCP/IP stands for = Transmission Control Protocol/ Internet Protocol</li>
+</ul>
+<h2 style="font-size: 23px;"><font size="3" style="font-size: 16px;">What are the differences between OSI and TCP/IP model?</font></h2>
+<p style="font-size: 16px;">Important differences are:</p>
+<p style="font-size: 16px;">OSI is a reference model and TCP/IP is an implementation of OSI model.</p>
+<p style="font-size: 16px;">OSI has 7 layers whereas TCP/IP has only 4 layers The upper 3 layers of the OSI model is combined on the TCP/IP model.</p>
+<p style="font-size: 16px;">OSI has: physical layer, data link layer, network layer, transport layer, session layer, presentation layer and application layer TCP/IP has : Network layer, Internet layer, transport layer and application layer.</p>
+<h2 style="font-size: 23px;"><font size="3" style="font-size: 16px;">What are the differences among router, switch, bridge and hub?</font></h2>
+<p style="font-size: 16px;">All of them are devices and are used in network. Their differences are:</p>
+<ul style="font-size: 16px;">
+<li>Router: Layer 3 device, can work on physical, data and network layer.</li>
+<li>Switch: Layer 2 device, can work on data link layer</li>
+<li>Bridge: Layer 2 device, can work on data link layer.</li>
+<li>Hub: Layer 1device, just a multi-port repeater and works on physical layer</li>
+</ul>
+<p style="font-size: 16px;"><span style="font-weight: bold;">Switch operates on which layer of OSI model?</span></p>
+</div>
+<div style="background-color: rgb(255, 255, 255);">
+<p style="font-size: 16px;">Normal switch operates at Layer 2 i.e. data link layer and Intelligent switch operates at Layer 3 i.e. network layer.</p>
+</div>
+<div><b><font size="3" style="font-size: 16px;">Name 4 example of application layer?</font></b></div>
+<div style="background-color: rgb(255, 255, 255);">
+<p style="font-size: 16px;">DNS, FTP, Telnet, http</p>
+<h2 style="font-size: 23px;"><font size="3" style="font-size: 16px;">How does ARP response the request?</font></h2>
+<p style="font-size: 16px;">ARP sents the request in broadcast, response is unicast</p>
+<h2 style="font-size: 23px;"><font size="3" style="font-size: 16px;">Error control is down in which layer?</font></h2>
+<p style="font-size: 16px;">Layer 4</p>
+<h2 style="font-size: 23px;"><font size="3" style="font-size: 16px;">Name the 2 sublayers of data link layer.</font></h2>
+<p style="font-size: 16px;">MAC sublayer and LLC sublayer</p>
+<h2 style="font-size: 23px;"><font size="3" style="font-size: 16px;">How is data send by IP layer?</font></h2>
+<p style="font-size: 16px;">IP layer PDU is &quot;packet&quot;. So, data is send as packet.</p>
+<h2 style="font-size: 23px;"><font size="3" style="font-size: 16px;">TCP/IP has how many layers?</font></h2>
+<p style="font-size: 16px;">5 layers: Network layer, Internet layer, Transport layer and Application layer.</p>
+<h2><span style="font-size: 16px;">What are the differences of MAC sublayer and LLC sublayer?</span></h2>
+<p style="font-size: 16px;">In fact, Data Link layer has 2 sublayes: MAC sublayer &amp; LLC sublayer.</p>
+<ul>
+<li style="font-size: 16px;">MAC sublayer(802.3): defines how to transmit data on physical layer</li>
+<li style="font-size: 16px;">LLC sublayer(802.2): responsible for identifying different protocol logically &amp; encapsulate them.</li>
+</ul>
+</div>
+<div>
+<h2 style="font-size: 23px;"><font style="font-size: 16px;">Can I determine remote machines MAC Address</font></h2>
+</div>
+<div><br/></div>
+<div style="font-size: 16px;">No, You need access to execute command on remote machine like psexec. You can try using trace route to see the last gw host.   </div>
+<div style="font-size: 16px;"><br/></div>
+<div style="font-size: 16px;"><b><span style="font-size: 16px;">Explain in detail the process of sending a piece of information from a host on subnet A to a host on subnet B.</span></b></div>
+<div><a href="http://arstechnica.com/civis/viewtopic.php?f=10&amp;t=1162848"><span style="font-size: 16px;">What I&#39;m looking for:</span></a></div>
+<div><span style="font-size: 16px;"><br/></span></div>
+<div><span style="font-size: 16px;">Some knowledge of the OSI model</span></div>
+<div><span style="font-size: 16px;">The concept of layers, layer units, and encapsulation.<br/>
+The concept of MTU/fragmentation (not required, but nice if they know it)<br/>
+The address resolution process at layer 3 (DNS)<br/>
+The determination of local vs. non-local addresses (subnet masks/what are subnets/when to use a default gateway)<br/>
+The address resolution process at layer 2 (ARP)<br/>
+At least a vague understanding of layer 1 and associated issues<br/>
+<br/>
+<b>What is the difference between TCP and UDP? When would you use each of them?</b></span></div>
+<div><span style="font-size: 16px;"><br/></span></div>
+<div style="font-size: 16px;">
+<div>What I&#39;m looking for: someone who not only parrots the &quot;connectionless vs. connection-oriented&quot; idea, but can demonstrate they understand the reasons you might choose one or the other.<br/>
+<br/>
+<b>What is a traceroute, and how does it work?<br/></b><br/></div>
+<div>What I&#39;m looking for: understanding of ICMP, TTL, and routing hops. Bonus points if they also know UDP trace routing.<br/>
+<br/>
+<b>What is IPv6, and how does it differ from IPv4?</b><br/>
+<br/></div>
+</div>
+<div><span style="font-size: 16px;">What I&#39;m looking for: basic understanding of the IPv6 address structure, differences such as ARP v. ND, and any associated knowledge of current IPv6 &#39;state of the internet&#39;.</span></div>
+<div><span style="font-size: 16px;"><br/>
+<b>What is QoS? How does it work? Where would you apply it? When is it enforced?</b><br/>
+<br/>
+What I&#39;m looking for: knowledge of traffic prioritization schemes, at least a vague understanding of classification levels at the header level, understanding of judicious application to time and latency sensitive protocols, and knowledge of contention vs. non-contention<br/>
+<br/>
+<b>What is an MX record? An A record? A PTR?</b></span>
+<div><span style="font-size: 16px;"><br/></span></div>
+</div>
+<div><b><span style="font-size: 16px;">What is NAT? Where would you use it? How does it work? What are some limitations? </span></b></div>
+</en-note></p>
+
+  </div>
+
+  <div class="date">
+    Written on October  8, 2012
+  </div>
+
+  
+</article>
+
+    </div>
+
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          
+
+<a href="http://facebook.com/dhval.mudawal"><i class="svg-icon facebook"></i></a>
+
+<a href="http://github.com/dhval"><i class="svg-icon github"></i></a>
+
+<a href="http://linkedin.com/in/dhvalmudawal"><i class="svg-icon linkedin"></i></a>
+
+
+<a href="http://twitter.com/jekyllrb"><i class="svg-icon twitter"></i></a>
+
+
+        </footer>
+      </div>
+      <p style="text-align:center;">© I do not claim ownership of this content. Please PM me, if this infringes any copyright. </p>
+    </div>
+
+    
+
+  </body>
+</html>
