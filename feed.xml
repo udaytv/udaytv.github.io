@@ -54,13 +54,15 @@
 &lt;/en-note&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 21 Aug 2015 00:00:00 -0400</pubDate>
-        <link>http://udaytv.github.io/UnderstandingIPv6/</link>
-        <guid isPermaLink="true">http://udaytv.github.io/UnderstandingIPv6/</guid>
+        <link>http://udaytv.github.io/Understanding.IPv6/</link>
+        <guid isPermaLink="true">http://udaytv.github.io/Understanding.IPv6/</guid>
       </item>
     
       <item>
-        <title>Dot Product of two vectors</title>
+        <title>Dot &amp; Cross product of vectors</title>
         <description>&lt;p&gt;&lt;en-note&gt;
+&lt;div&gt;&lt;font color=&quot;#222222&quot; face=&quot;Georgia&quot;&gt;Vector is an object with magnitude and direction. Vector product has lot of application in solving directed graphs.&lt;/font&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style=&quot;font-family: Georgia, &#39;Times New Roman&#39;, Times, serif;&quot;&gt;&lt;span style=&quot;color: rgb(34, 34, 34);&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
 &lt;div&gt;&lt;span style=&quot;font-family: Georgia, &#39;Times New Roman&#39;, Times, serif;&quot;&gt;&lt;span style=&quot;color: rgb(34, 34, 34);&quot;&gt;&lt;span style=&quot;font-size: 100%;&quot;&gt;In Euclidean space, a Euclidean vector is a geometrical object that possesses both a magnitude and a direction. A vector can be pictured as an arrow. Its magnitude is its length, and its direction is the direction the arrow points. The magnitude of a vector A is denoted by&lt;/span&gt;&lt;span style=&quot;font-size: 100%;&quot;&gt; ||A||. &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
 &lt;div style=&quot;background-image: url(http://cdn.sstatic.net/math/img/bg-site.png?v=09a720444763); background-color: rgb(255, 255, 255); background-position: 0% 0%; background-repeat: repeat repeat;&quot;&gt;
 &lt;div style=&quot;box-sizing: content-box; background-color: rgb(254, 254, 254); text-align: left;&quot;&gt;
@@ -104,8 +106,8 @@
 &lt;/en-note&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 17 Aug 2015 00:00:00 -0400</pubDate>
-        <link>http://udaytv.github.io/DotProductoftwovectors/</link>
-        <guid isPermaLink="true">http://udaytv.github.io/DotProductoftwovectors/</guid>
+        <link>http://udaytv.github.io/Dot.Cross.product.of.vectors/</link>
+        <guid isPermaLink="true">http://udaytv.github.io/Dot.Cross.product.of.vectors/</guid>
       </item>
     
       <item>
@@ -525,8 +527,8 @@ What I&amp;#39;m looking for: knowledge of traffic prioritization schemes, at le
 &lt;/en-note&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 08 Oct 2012 00:00:00 -0400</pubDate>
-        <link>http://udaytv.github.io/TCP-IPQA/</link>
-        <guid isPermaLink="true">http://udaytv.github.io/TCP-IPQA/</guid>
+        <link>http://udaytv.github.io/TCP.IP.QA/</link>
+        <guid isPermaLink="true">http://udaytv.github.io/TCP.IP.QA/</guid>
       </item>
     
       <item>
@@ -649,8 +651,8 @@ What I&amp;#39;m looking for: knowledge of traffic prioritization schemes, at le
 &lt;/en-note&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 26 Jun 2012 00:00:00 -0400</pubDate>
-        <link>http://udaytv.github.io/Endianness-ByteOrderMarker/</link>
-        <guid isPermaLink="true">http://udaytv.github.io/Endianness-ByteOrderMarker/</guid>
+        <link>http://udaytv.github.io/Endianness.Byte.Order.Marker/</link>
+        <guid isPermaLink="true">http://udaytv.github.io/Endianness.Byte.Order.Marker/</guid>
       </item>
     
       <item>
@@ -687,8 +689,8 @@ What I&amp;#39;m looking for: knowledge of traffic prioritization schemes, at le
 &lt;/en-note&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 04 Dec 2011 00:00:00 -0500</pubDate>
-        <link>http://udaytv.github.io/Bucketandradixsorting/</link>
-        <guid isPermaLink="true">http://udaytv.github.io/Bucketandradixsorting/</guid>
+        <link>http://udaytv.github.io/Bucket.and.radix.sorting/</link>
+        <guid isPermaLink="true">http://udaytv.github.io/Bucket.and.radix.sorting/</guid>
       </item>
     
       <item>

@@ -8,6 +8,6 @@ while read R; do
 		echo "Current Line: " "$R"	 	
   		NAME="$(echo "$NOTE" | tr -d ' ')"
         echo "Generating... " "$NOTE" " to " "$NAME"".md"
-        geeknote "jekyll" "$NOTE" > _posts/"2015-01-01-""$NAME"".md"
+        geeknote "jekyll" "$NOTE"
   fi
 done < "$FILE" 
