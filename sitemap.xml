@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://udaytv.github.io/http:/www.tutorialspoint.com/ipv6/ipv6_special_addresses.htm</loc>
+    <loc>http://udaytv.github.io/UnderstandingIPv6/</loc>
     <lastmod>2015-08-21T00:00:00-04:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://udaytv.github.io/http:/math.stackexchange.com/questions/414776/what-is-the-use-of-the-dot-product-of-two-vectors</loc>
+    <loc>http://udaytv.github.io/DotProductoftwovectors/</loc>
     <lastmod>2015-08-17T00:00:00-04:00</lastmod>
     <priority>0.8</priority>
   </url>
@@ -31,45 +31,45 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://udaytv.github.io/http:/rancidtaste.hubpages.com/hub/OSI-Reference-Model-and-TCP-IP-Model-Interview-Questions-and-Answers</loc>
+    <loc>http://udaytv.github.io/TCP-IPQA/</loc>
     <lastmod>2012-10-08T00:00:00-04:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://udaytv.github.io/http:/betterexplained.com/articles/understanding-big-and-little-endian-byte-order/</loc>
+    <loc>http://udaytv.github.io/Endianness-ByteOrderMarker/</loc>
     <lastmod>2012-06-26T00:00:00-04:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://udaytv.github.io/http:/www.ics.uci.edu/~eppstein/161/960123.html</loc>
+    <loc>http://udaytv.github.io/Bucketandradixsorting/</loc>
     <lastmod>2011-12-04T00:00:00-05:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://udaytv.github.io/Jekyll-Post-Layout/</loc>
-    <lastmod>2010-03-01T00:00:00-05:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>http://udaytv.github.io/http:/www.sorting-algorithms.com/</loc>
+    <loc>http://udaytv.github.io/Sorting/</loc>
     <lastmod>2009-11-17T00:00:00-05:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>http://udaytv.github.io/Setup</loc>
+    <lastmod>2009-03-01T00:00:00-05:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>http://udaytv.github.io/404.html</loc>
-    <lastmod>2015-08-22T16:32:57-04:00</lastmod>
+    <lastmod>2015-08-23T10:10:26-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://udaytv.github.io/about/</loc>
-    <lastmod>2015-08-22T16:32:57-04:00</lastmod>
+    <lastmod>2015-08-23T10:10:26-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://udaytv.github.io/</loc>
-    <lastmod>2015-08-22T16:32:57-04:00</lastmod>
+    <lastmod>2015-08-23T10:10:26-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>

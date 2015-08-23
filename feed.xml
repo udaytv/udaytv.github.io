@@ -54,8 +54,8 @@
 &lt;/en-note&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 21 Aug 2015 00:00:00 -0400</pubDate>
-        <link>http://udaytv.github.io/http:/www.tutorialspoint.com/ipv6/ipv6_special_addresses.htm</link>
-        <guid isPermaLink="true">http://udaytv.github.io/http:/www.tutorialspoint.com/ipv6/ipv6_special_addresses.htm</guid>
+        <link>http://udaytv.github.io/UnderstandingIPv6/</link>
+        <guid isPermaLink="true">http://udaytv.github.io/UnderstandingIPv6/</guid>
       </item>
     
       <item>
@@ -104,8 +104,8 @@
 &lt;/en-note&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 17 Aug 2015 00:00:00 -0400</pubDate>
-        <link>http://udaytv.github.io/http:/math.stackexchange.com/questions/414776/what-is-the-use-of-the-dot-product-of-two-vectors</link>
-        <guid isPermaLink="true">http://udaytv.github.io/http:/math.stackexchange.com/questions/414776/what-is-the-use-of-the-dot-product-of-two-vectors</guid>
+        <link>http://udaytv.github.io/DotProductoftwovectors/</link>
+        <guid isPermaLink="true">http://udaytv.github.io/DotProductoftwovectors/</guid>
       </item>
     
       <item>
@@ -525,8 +525,8 @@ What I&amp;#39;m looking for: knowledge of traffic prioritization schemes, at le
 &lt;/en-note&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 08 Oct 2012 00:00:00 -0400</pubDate>
-        <link>http://udaytv.github.io/http:/rancidtaste.hubpages.com/hub/OSI-Reference-Model-and-TCP-IP-Model-Interview-Questions-and-Answers</link>
-        <guid isPermaLink="true">http://udaytv.github.io/http:/rancidtaste.hubpages.com/hub/OSI-Reference-Model-and-TCP-IP-Model-Interview-Questions-and-Answers</guid>
+        <link>http://udaytv.github.io/TCP-IPQA/</link>
+        <guid isPermaLink="true">http://udaytv.github.io/TCP-IPQA/</guid>
       </item>
     
       <item>
@@ -649,8 +649,8 @@ What I&amp;#39;m looking for: knowledge of traffic prioritization schemes, at le
 &lt;/en-note&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 26 Jun 2012 00:00:00 -0400</pubDate>
-        <link>http://udaytv.github.io/http:/betterexplained.com/articles/understanding-big-and-little-endian-byte-order/</link>
-        <guid isPermaLink="true">http://udaytv.github.io/http:/betterexplained.com/articles/understanding-big-and-little-endian-byte-order/</guid>
+        <link>http://udaytv.github.io/Endianness-ByteOrderMarker/</link>
+        <guid isPermaLink="true">http://udaytv.github.io/Endianness-ByteOrderMarker/</guid>
       </item>
     
       <item>
@@ -687,27 +687,51 @@ What I&amp;#39;m looking for: knowledge of traffic prioritization schemes, at le
 &lt;/en-note&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 04 Dec 2011 00:00:00 -0500</pubDate>
-        <link>http://udaytv.github.io/http:/www.ics.uci.edu/~eppstein/161/960123.html</link>
-        <guid isPermaLink="true">http://udaytv.github.io/http:/www.ics.uci.edu/~eppstein/161/960123.html</guid>
+        <link>http://udaytv.github.io/Bucketandradixsorting/</link>
+        <guid isPermaLink="true">http://udaytv.github.io/Bucketandradixsorting/</guid>
       </item>
     
       <item>
-        <title>Building this blog with Jekyll &amp; Evernote (Python SDK)</title>
-        <description>&lt;p&gt;I was able to build this blog using Jekyll in couple of hours, this is far from pixel perfect but alive w/o much effort. Thanks to &lt;a href=&quot;https://github.com/VitaliyRodnenko/geeknote&quot;&gt;Evernote &amp;amp; Geek Note&lt;/a&gt;, which pull all &amp;#39;blog&amp;#39; tagged notes from evernote and publish to this site.&lt;/p&gt;
-
-&lt;p&gt;Run into setting up posts using Jekyll and found quick answer on Stack Overflow. The easiest way to setup you your post headers is to add below yml at the top of your page. This is will override everything else.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;---
-layout: post
-title: Jekyll post.excerpt layout
-date: 4 March, 2010
-excerpt: I was able to build this blog using Jekyll ...
----
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;a href=&quot;http://jekyllrb.com/docs/posts/#post-excerpts&quot;&gt;Read Documentation&lt;/a&gt;&lt;/p&gt;
+        <title>Sorting</title>
+        <description>&lt;p&gt;&lt;en-note bgcolor=&quot;#FFFFFF&quot; style=&quot;word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;Using binary comparisons we have n! sub sets and hence we need n lg n to reach the leaf node of the binary tree. Integer sorting does not uses binary comparisons and can achieve O(n) for sorting n numbers. &lt;/li&gt;
+&lt;li&gt;Find mid element&lt;font face=&quot;monospace&quot;&gt;:   int mid = first + (last - first) / 2;&lt;/font&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div&gt;&lt;br/&gt;&lt;/div&gt;
+&lt;div&gt;&lt;b&gt;Bubble Sort&lt;/b&gt; - &lt;span style=&quot;border-collapse: separate; orphans: 2; widows: 2; border-spacing: 0px;&quot;&gt;After every pass the biggest* element is sifted to end.  Lot of swaps since each element is compared with next element.&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;br/&gt;&lt;/div&gt;
+&lt;div&gt;&lt;b&gt;Insertion Sort&lt;/b&gt; - Similar to human arranging cards. Elements are inserted into the sorted array [0 to k-1] and swap happens from inserted element to A[k]. We can use binary search to find position of kth element in [0 to k-1] sorted array. However actual insertion may cause k-1 swaps.&lt;/div&gt;
+&lt;div&gt;&lt;br/&gt;&lt;/div&gt;
+&lt;div&gt;&lt;b&gt;Selection Sort&lt;/b&gt; - Minimizes number of swaps. For every iteration k, find the smallest  element in A [k to k-1] and swap at the end of iteration.&lt;/div&gt;
+&lt;div&gt;&lt;br/&gt;&lt;/div&gt;
+&lt;div&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Quicksort&quot;&gt;&lt;b&gt;Quick Sort&lt;/b&gt;&lt;/a&gt; - Uses divide-and-conquer strategy, below are the recursion steps&lt;/div&gt;
+&lt;div&gt;&lt;br/&gt;&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Choose a pivot value.&lt;/strong&gt; Pick a random element k or middle element as pivot value.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Partition.&lt;/strong&gt; Rearrange elements in such a way, that all elements which are lesser than the pivot go to the left part of the array and vice-versa.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sort both parts.&lt;/strong&gt; Apply quicksort recursively to the left and the right parts.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div&gt;&lt;br/&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;div&gt;&lt;b&gt;Stability - &lt;/b&gt;Any comparison based sorting algorithm can be made stable by modifying the comparisons to break ties according to the original positions of the objects, but few are automatically stable.&lt;/div&gt;
+&lt;div&gt;&lt;b&gt;&lt;br/&gt;&lt;/b&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;Bucket sort? Yes. We add items to the lists Y[i] in order, and concatenating them preserves that order.&lt;/li&gt;
+&lt;li&gt;Heap sort? No. The act of placing objects into a heap (and heapifying them) destroys any initial ordering they might have.&lt;/li&gt;
+&lt;li&gt;Merge sort? Maybe. It depends on how we divide lists into two, and on how we merge them. For instance if we divide by choosing every other element to go into each list, it is unlikely to be stable. If we divide by splitting a list at its midpoint, and break ties when merging in favor of the first list, then the algorithm can be stable.&lt;/li&gt;
+&lt;li&gt;Quick sort? Again, maybe. It depends on how you do the partition step.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div&gt;&lt;br/&gt;&lt;/div&gt;
+&lt;div&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Sorting_algorithm&quot;&gt;https://en.wikipedia.org/wiki/Sorting_algorithm&lt;/a&gt;&lt;/div&gt;
+&lt;div&gt;&lt;a href=&quot;http://www.sorting-algorithms.com/&quot;&gt;http://www.sorting-algorithms.com/&lt;/a&gt;&lt;/div&gt;
+&lt;div&gt;&lt;a href=&quot;http://www.cs.ubc.ca/~harrison/Java/sorting-demo.html&quot;&gt;http://www.cs.ubc.ca/~harrison/Java/sorting-demo.html&lt;/a&gt;&lt;/div&gt;
+&lt;/en-note&gt;&lt;/p&gt;
 </description>
-        <pubDate>Mon, 01 Mar 2010 00:00:00 -0500</pubDate>
-        <link>http://udaytv.github.io/Jekyll-Post-Layout/</link>
-        <guid isPermaLink="true">http://udaytv.github.io/Jekyll-Post-Layout/</guid>
+        <pubDate>Tue, 17 Nov 2009 00:00:00 -0500</pubDate>
+        <link>http://udaytv.github.io/Sorting/</link>
+        <guid isPermaLink="true">http://udaytv.github.io/Sorting/</guid>
       </item>
     
   </channel>

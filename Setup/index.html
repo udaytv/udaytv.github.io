@@ -9,8 +9,8 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
 
     
-    <meta name="description" content="I was able to build this blog using Jekyll in less than an hour. Ran into setting up posts and found quick answer on Stack Overflow." />
-    <meta property="og:description" content="I was able to build this blog using Jekyll in less than an hour. Ran into setting up posts and found quick answer on Stack Overflow." />
+    <meta name="description" content="I was able to build this blog using Jekyll templating in couple of hours. If you are interested, hit the link below." />
+    <meta property="og:description" content="I was able to build this blog using Jekyll templating in couple of hours. If you are interested, hit the link below." />
     
     <meta name="author" content="Dhval Mudawal" />
 
@@ -49,7 +49,9 @@
 
           <div class="site-info">
             <h1 class="site-name"><a href="/">Dhval Mudawal</a></h1>
-            <p class="site-description">Rants</p>
+            <p class="site-description"> Building this blog with Jekyll & Evernote (Python SDK) 
+            
+            </p>
           </div>
 
           <nav>
@@ -62,25 +64,33 @@
 
     <div id="main" role="main" class="container">
       <article class="post">
-  <h1>Building this blog with Jekyll & Evernote (Python SDK)</h1>
+  <div class="date">
+  
+    Written on March  1, 2009
+  </div>
 
   <div class="entry">
-    <p>I was able to build this blog using Jekyll in couple of hours, this is far from pixel perfect but alive w/o much effort. Thanks to <a href="https://github.com/VitaliyRodnenko/geeknote">Evernote &amp; Geek Note</a>, which pull all &#39;blog&#39; tagged notes from evernote and publish to this site.</p>
+    <p>I was able to build this blog using <a href="http://jekyllrb.com/">Jekyll</a> templating in couple of hours, it is far from pixel perfect but simple enough to get running. Thanks to Evernote &amp; hints from <a href="https://github.com/VitaliyRodnenko/geeknote">Geeknote</a>, I pull all &#39;blog&#39; tagged notes from evernote and publish to this site. So after setup everything is automated and free :) yah! </p>
 
-<p>Run into setting up posts using Jekyll and found quick answer on Stack Overflow. The easiest way to setup you your post headers is to add below yml at the top of your page. This is will override everything else.</p>
+<p>Evernote has a python SDK that allows automating various note things, ofcourse when evernote is online, which is :( sadly not all the time.<br>
+Run into setting up posts using Jekyll and found quick answer on Stack Overflow. Below are the things I used for setting this blog -</p>
+
+<ol>
+<li><p>Used <a href="http://gruntjs.com/">Grunt</a> to automate Jekyll templating and organizing static html resources.</p></li>
+<li><p>Published on github using similar work flow as mentioned in this <a href="http://www.aymerick.com/2014/07/22/jekyll-github-pages-bower-bootstrap.html">post</a>. </p></li>
+<li><p>Hadn&#39;t used Jekyll <a href="http://jekyllrb.com/docs/posts/#post-excerpts">Documentation</a> before so ran into some issues but it is a wonderful templating framework. Below is yml markup for this pages&#39; meta data.</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">---
 layout: post
 title: Jekyll post.excerpt layout
 date: 4 March, 2010
 excerpt: I was able to build this blog using Jekyll ...
 ---
-</code></pre></div>
-<p><a href="http://jekyllrb.com/docs/posts/#post-excerpts">Read Documentation</a></p>
+</code></pre></div></li>
+<li><p>Modified <a href="https://github.com/VitaliyRodnenko/geeknote">Geeknote</a> Python SDK and used <a href="https://dev.evernote.com/doc/reference">Evernote API</a> to generate pages from my evernote&#39;s notebook. I am great fan of evernote, it is the most functional note taking software I have came across. I rely heavily on it for my work and home notes.</p></li>
+</ol>
 
-  </div>
+<p>All the notes here get updated automatically as I update in my evernote and run grunt task (weekly) to publish them.</p>
 
-  <div class="date">
-    Written on March  1, 2010
   </div>
 
   
@@ -105,7 +115,7 @@ excerpt: I was able to build this blog using Jekyll ...
 
         </footer>
       </div>
-      <p style="text-align:center;">© I do not claim ownership of this content. Please PM me, if this infringes any copyright. </p>
+      <p style="text-align:center;">© I do not claim ownership of this content. Please send me a <a href="/about">message</a>, if this infringes any copyright. </p>
     </div>
 
     
