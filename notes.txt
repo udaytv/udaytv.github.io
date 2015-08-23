@@ -1,8 +1,17 @@
 Search request: tag:"blog" 
-Total found: 6
-  1 : b5ef7d77-42ed-4387-b7c7-22386081f8b8 : 17 Aug, 2015 : Dot & Cross product of vectors 
-  2 : a17e5808-5325-4edb-9959-cf2058fc0a38 : 17 Nov, 2009 : Sorting 
-  3 : aa97852a-e48c-4ee9-81da-9a26269c5c8e : 08 Oct, 2012 : TCP-IP QA 
-  4 : 404881d8-7614-4206-9691-b3bca72e364c : 21 Aug, 2015 : Understanding IPv6 
-  5 : e02f3b38-bfe5-4302-b0d6-eca7ff55602e : 04 Dec, 2011 : Bucket and radix sorting 
-  6 : fc27b983-1c3e-411f-b3d2-3fc8bd9df9ff : 26 Jun, 2012 : Endianness - Byte Order Marker 
+Total found: 15
+  1 : bd08672f-d404-4ded-bc7e-6c2d91d367e9 : 23 Aug, 2012 : Network classes 
+  2 : 2784d125-d420-4753-b144-a4b38f36e95a : 18 May, 2015 : weblogic.Deployer - usage 
+  3 : 2c6a34de-2035-4bb3-ab54-d6f6b5795f0b : 10 May, 2014 : ufw - usage 
+  4 : 88d0a885-1af1-4322-b666-1ceba3ffa3d4 : 22 Jul, 2014 : tcpdump - usage 
+  5 : 12025ab9-5fb1-428f-891d-b2744357443c : 12 Jul, 2014 : pf, ipfw - usage 
+  6 : c611615b-fbc6-4baa-aed7-24b816c53a55 : 24 Oct, 2014 : iptables - usage 
+  7 : 05a38957-cb23-44a1-905b-e3f170fce877 : 07 Nov, 2013 : WebLogic Server 12c - Maven Usage Notes 
+  8 : 9aacaeea-b895-425e-89d7-1d7d468a7ad4 : 06 Jun, 2014 : for-each over an array in JavaScript 
+  9 : c27db6b0-c22d-4971-8f5e-12f3a0cf5b97 : 15 Nov, 2011 : Unicode - Character Encoding 
+ 10 : aa97852a-e48c-4ee9-81da-9a26269c5c8e : 08 Oct, 2012 : TCP-IP QA 
+ 11 : a17e5808-5325-4edb-9959-cf2058fc0a38 : 17 Nov, 2009 : Sorting Algorithms 
+ 12 : fc27b983-1c3e-411f-b3d2-3fc8bd9df9ff : 26 Jun, 2012 : Endianness - Byte Order Marker 
+ 13 : 404881d8-7614-4206-9691-b3bca72e364c : 21 Aug, 2015 : Understanding IPv6 
+ 14 : b5ef7d77-42ed-4387-b7c7-22386081f8b8 : 17 Aug, 2015 : Dot & Cross product of vectors 
+ 15 : 989e5faf-9277-494a-81a2-7a1129747457 : 10 Oct, 2014 : iptables - concepts 

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>for-each over an array in JavaScript – Dhval Mudawal – Rants</title>
+    <meta charset="utf-8" />
+<meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'> 
+<meta name="description" content="Some terse syntax of for loops in JavaScript." />
+<meta property="og:description" content="Some terse syntax of for loops in JavaScript." /> 
+<meta name="author" content="Dhval Mudawal" /> 
+<meta property="og:title" content="for-each over an array in JavaScript" />
+<meta property="twitter:title" content="for-each over an array in JavaScript" /> 
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- Twitter Bootstrap css -->
+    <link href="/css/font-awesome.min.css">
+    <link href="/dist/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!-- Your css -->
+    <link href="/css/base-war.css" rel="stylesheet">
+    <link href="/css/dhval.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/responsive.css" rel="stylesheet">
+    <!-- Vendor js -->
+    <script type="text/javascript" charset="utf-8" src="/dist/requirejs/require.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/dist/modernizr/modernizr.js"></script>
+    <!-- Your js -->
+    <script type="text/javascript" charset="utf-8" src="/js/require.config.js"></script>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Dhval Mudawal - Rants" href="/feed.xml" />
+</head>
+
+<body>
+    <div class="wrapper-masthead">
+    <div class="container">
+        <header class="masthead clearfix">
+            <a href="/" class="site-avatar"><img src="https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png" /></a>
+            <div class="site-info">
+                <h1 class="site-name"><a href="/">Dhval Mudawal</a></h1>
+                <p class="site-description"> for-each over an array in JavaScript 
+                </p>
+            </div>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+            </nav>
+        </header>
+    </div>
+</div>
+    <div id="main" role="main" class="container">
+        <article class="post">
+  <div class="date">
+   <a href="https://www.evernote.com/shard/s11/sh/9aacaeea-b895-425e-89d7-1d7d468a7ad4/2ecb3b8a7c35e961741ffce07aa70025/">View on Evernote.com</a> 
+    Modified: August 23, 2015
+  </div>
+
+  <div class="entry">
+    <p><en-note style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;">
+<div>Some terse syntax of for loops in JavaScript.</div>
+<div style="font-size:100%;vertical-align:baseline;background:transparent;">
+<div style="font-size:80%;vertical-align:baseline;background:rgb(255, 255, 255);color:rgb(0, 0, 0);font-family:Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif;text-align:center;">
+<div style="font-size:100%;vertical-align:baseline;background:transparent;text-align:left;zoom:1;">
+<div style="font-size:100%;vertical-align:baseline;background:transparent;">
+<div style="font-size:100%;vertical-align:baseline;background:transparent;">
+<div style="font-size:100%;vertical-align:baseline;background:transparent;">
+<div style="font-size:100%;vertical-align:baseline;background:transparent;">
+<div style="font-size:100%;vertical-align:baseline;background:transparent;">
+<table style="font-size:100%;font-weight:inherit;font-style:inherit;font-variant:inherit;vertical-align:baseline;background:transparent;">
+<tbody style="font-size:100%;vertical-align:baseline;background:transparent;">
+<tr style="font-size:100%;vertical-align:baseline;background:transparent;">
+<td style="vertical-align: baseline; background-color: transparent; background-position: initial initial; background-repeat: initial initial;">
+<div style="vertical-align: baseline; background-color: transparent; word-wrap: break-word;">
+<h2 style="margin: 0px 0px 1em; padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent; font-family: 'Trebuchet MS', 'Liberation Sans', 'DejaVu Sans', sans-serif; word-wrap: break-word;"><span style="font-size: 14px; font-weight: normal;">1. For Actual Arrays</span></h2>
+<div style="margin: 0px 0px 1em; padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent; clear: both;">
+<div><span style="font-size: 14px;"><span style="background-color: transparent; font-style: inherit; font-variant: inherit;">You currently have three options and will soon have a fourth and a fifth:</span></span></div>
+</div>
+<ol style="margin: 0px 0px 1em 30px; padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent; list-style: decimal;">
+<li style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent;"><span style="font-size: 14px;">Use <code style="margin: 0px; padding: 1px 5px; border: 0px; vertical-align: baseline; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; background-color: rgb(238, 238, 238); white-space: pre-wrap; background-position: initial initial; background-repeat: initial initial;">forEach</code> (ES5+)</span></li>
+<li style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent;"><span style="font-size: 14px;">Use a simple <code style="margin: 0px; padding: 1px 5px; border: 0px; vertical-align: baseline; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; background-color: rgb(238, 238, 238); white-space: pre-wrap; background-position: initial initial; background-repeat: initial initial;">for</code> loop</span></li>
+<li style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent;"><span style="font-size: 14px;">Use <code style="margin: 0px; padding: 1px 5px; border: 0px; vertical-align: baseline; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; background-color: rgb(238, 238, 238); white-space: pre-wrap; background-position: initial initial; background-repeat: initial initial;">for-in</code> <span style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent;"><i>correctly :--</i> <b>This approach is best when you have sparse array.</b></span></span></li>
+<li style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent;"><span style="font-size: 14px;">Use <code style="margin: 0px; padding: 1px 5px; border: 0px; vertical-align: baseline; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; background-color: rgb(238, 238, 238); white-space: pre-wrap; background-position: initial initial; background-repeat: initial initial;">for-of</code> (use an iterator implicitly) (ES6+)</span></li>
+<li style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent;"><span style="font-size: 14px;">Use an iterator explicitly (ES6+)</span></li>
+</ol>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<em style="font-family: Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif; font-size: 14px; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline;">2.</em> <span style="font-family: Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif; font-size: 14px; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline;"><i><u>For Array-Like Objects</u></i></span><br/>
+<div><em style="font-family: Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif; font-size: 14px; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline;"><br/></em></div>
+<div>
+<div><em style="font-family: Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif; font-size: 14px; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline;"><br/></em></div>
+<div><em style="font-family: Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif; font-size: 14px; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline;">So for instance, if you want to use <code style="padding: 1px 5px; border: 0px; vertical-align: baseline; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; white-space: pre-wrap; background-color: rgb(238, 238, 238); background-position: initial initial; background-repeat: initial initial;">forEach</code> on the <code style="padding: 1px 5px; border: 0px; vertical-align: baseline; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; white-space: pre-wrap; background-color: rgb(238, 238, 238); background-position: initial initial; background-repeat: initial initial;">NodeList</code> returned by <code style="padding: 1px 5px; border: 0px; vertical-align: baseline; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; white-space: pre-wrap; background-color: rgb(238, 238, 238); background-position: initial initial; background-repeat: initial initial;">querySelectorAll</code>, you can do this:</em></div>
+<div>
+<pre style="padding: 5px; border: 0px; vertical-align: baseline; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; overflow: auto; max-height: 600px; word-wrap: normal; font-style: normal; background-color: rgb(238, 238, 238); background-position: initial initial; background-repeat: initial initial;">
+<em style="font-family: Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif; font-size: 14px; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline;"><code style="padding: 0px; border: 0px; vertical-align: baseline; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; white-space: inherit; background-position: initial initial; background-repeat: initial initial;"><span style="padding: 0px; border: 0px; vertical-align: baseline; color: rgb(0, 0, 139); background-color: transparent; background-position: initial initial; background-repeat: initial initial;">var</span><span style="padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent; background-position: initial initial; background-repeat: initial initial;"> divs </span><span style="padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent; background-position: initial initial; background-repeat: initial initial;">=</span><span style="padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent; background-position: initial initial; background-repeat: initial initial;"> </span><span style="padding: 0px; border: 0px; vertical-align: baseline; color: rgb(43, 145, 175); background-color: transparent; background-position: initial initial; background-repeat: initial initial;">Array</span><span style="padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent; background-position: initial initial; background-repeat: initial initial;">.</span><span style="padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent; background-position: initial initial; background-repeat: initial initial;">prototype</span><span style="padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent; background-position: initial initial; background-repeat: initial initial;">.</span><span style="padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent; background-position: initial initial; background-repeat: initial initial;">slice</span><span style="padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent; background-position: initial initial; background-repeat: initial initial;">.</span><span style="padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent; background-position: initial initial; background-repeat: initial initial;">call</span><span style="padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent; background-position: initial initial; background-repeat: initial initial;">(</span><span style="padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent; background-position: initial initial; background-repeat: initial initial;">document</span><span style="padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent; background-position: initial initial; background-repeat: initial initial;">.</span><span style="padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent; background-position: initial initial; background-repeat: initial initial;">querySelectorAll</span><span style="padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent; background-position: initial initial; background-repeat: initial initial;">(</span><span style="padding: 0px; border: 0px; vertical-align: baseline; color: rgb(128, 0, 0); background-color: transparent; background-position: initial initial; background-repeat: initial initial;">&quot;div&quot;</span><span style="padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent; background-position: initial initial; background-repeat: initial initial;">),</span><span style="padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent; background-position: initial initial; background-repeat: initial initial;"> </span><span style="padding: 0px; border: 0px; vertical-align: baseline; color: rgb(128, 0, 0); background-color: transparent; background-position: initial initial; background-repeat: initial initial;">0</span><span style="padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent; background-position: initial initial; background-repeat: initial initial;">);</span><span style="padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent; background-position: initial initial; background-repeat: initial initial;">
+divs</span><span style="padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent; background-position: initial initial; background-repeat: initial initial;">.</span><span style="padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent; background-position: initial initial; background-repeat: initial initial;">forEach</span><span style="padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent; background-position: initial initial; background-repeat: initial initial;">(</span><span style="padding: 0px; border: 0px; vertical-align: baseline; color: rgb(0, 0, 139); background-color: transparent; background-position: initial initial; background-repeat: initial initial;">function</span><span style="padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent; background-position: initial initial; background-repeat: initial initial;">(</span><span style="padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent; background-position: initial initial; background-repeat: initial initial;">div</span><span style="padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent; background-position: initial initial; background-repeat: initial initial;">)</span><span style="padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent; background-position: initial initial; background-repeat: initial initial;"> </span><span style="padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent; background-position: initial initial; background-repeat: initial initial;">{</span><span style="padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent; background-position: initial initial; background-repeat: initial initial;">
+    </span><span style="padding: 0px; border: 0px; vertical-align: baseline; color: rgb(128, 128, 128); background-color: transparent; background-position: initial initial; background-repeat: initial initial;">// Use each <code>div</code> here</span><span style="padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent; background-position: initial initial; background-repeat: initial initial;">
+</span><span style="padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent; background-position: initial initial; background-repeat: initial initial;">});</span></code></em>
+</pre>
+<div><em style="font-family: Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif; font-size: 14px; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline;"><br/></em></div>
+</div>
+<div><em style="font-family: Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif; font-size: 14px; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline;"><br/></em></div>
+</div>
+3. <a href="http://www.sitepoint.com/jquery-each-examples/">http://www.sitepoint.com/jquery-each-examples/</a><br/>
+<div><br/></div>
+<div><code style="font-size: 16px; white-space: pre; box-sizing: content-box !important; font-family: Consolas, Monaco, 'Andale Mono', monospace !important; border-top-left-radius: 0px !important; border-top-right-radius: 0px !important; border-bottom-right-radius: 0px !important; border-bottom-left-radius: 0px !important; padding: 0px !important; border: 0px !important; bottom: auto !important; float: none !important; left: auto !important; outline: 0px !important; overflow: visible !important; right: auto !important; top: auto !important; vertical-align: baseline !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; background-image: none !important; background-position: initial initial !important; background-repeat: initial initial !important;">jQuery.each(arr,</code> <code style="font-size: 16px; white-space: pre; box-sizing: content-box !important; font-family: Consolas, Monaco, 'Andale Mono', monospace !important; font-weight: bold !important; color: rgb(0, 102, 153) !important; border-top-left-radius: 0px !important; border-top-right-radius: 0px !important; border-bottom-right-radius: 0px !important; border-bottom-left-radius: 0px !important; padding: 0px !important; border: 0px !important; bottom: auto !important; float: none !important; left: auto !important; outline: 0px !important; overflow: visible !important; right: auto !important; top: auto !important; vertical-align: baseline !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; background-image: none !important; background-position: initial initial !important; background-repeat: initial initial !important;">function</code><code style="font-size: 16px; white-space: pre; box-sizing: content-box !important; font-family: Consolas, Monaco, 'Andale Mono', monospace !important; border-top-left-radius: 0px !important; border-top-right-radius: 0px !important; border-bottom-right-radius: 0px !important; border-bottom-left-radius: 0px !important; padding: 0px !important; border: 0px !important; bottom: auto !important; float: none !important; left: auto !important; outline: 0px !important; overflow: visible !important; right: auto !important; top: auto !important; vertical-align: baseline !important; direction: ltr !important; -webkit-box-shadow: none !important; box-shadow: none !important; background-image: none !important; background-position: initial initial !important; background-repeat: initial initial !important;">(index, value) { ... }</code><br/></div>
+<div><br/></div>
+<div><br/></div>
+<div><br/></div>
+</en-note></p>
+
+  </div>
+
+  
+</article>
+
+    </div>
+    <div class="wrapper-footer">
+    <div class="container">
+        <footer class="footer">
+            
+
+<a href="http://facebook.com/dhval.mudawal"><i class="svg-icon facebook"></i></a>
+
+<a href="http://github.com/dhval"><i class="svg-icon github"></i></a>
+
+<a href="http://linkedin.com/in/dhvalmudawal"><i class="svg-icon linkedin"></i></a>
+
+
+<a href="http://twitter.com/jekyllrb"><i class="svg-icon twitter"></i></a>
+
+
+        </footer>
+    </div>
+    <p style="text-align:center;">© I do not claim ownership of this content. Please send me a <a href="/suggestions">message</a>, if this infringes any copyright. </p>
+</div>
+</body>
+
+</html>

@@ -1,28 +1,20 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>Endianness - Byte Order Marker – Dhval Mudawal – Rants</title>
-
-        <meta charset="utf-8" />
-    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
-
-    
-    <meta name="description" content="In one byte data encoding (ASCII) endianness do not matter. But when we use more than two bytes to represent a character we need to agree to store left to right or vice versa." />
-    <meta property="og:description" content="In one byte data encoding (ASCII) endianness do not matter. But when we use more than two bytes to represent a character we need to agree to store left to right or vice versa." />
-    
-    <meta name="author" content="Dhval Mudawal" />
-
-    
-    <meta property="og:title" content="Endianness - Byte Order Marker" />
-    <meta property="twitter:title" content="Endianness - Byte Order Marker" />
-    
-
+    <meta charset="utf-8" />
+<meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'> 
+<meta name="description" content="Endianness so simple and yet I confuse myself with Big vs Little endian." />
+<meta property="og:description" content="Endianness so simple and yet I confuse myself with Big vs Little endian." /> 
+<meta name="author" content="Dhval Mudawal" /> 
+<meta property="og:title" content="Endianness - Byte Order Marker" />
+<meta property="twitter:title" content="Endianness - Byte Order Marker" /> 
     <!--[if lt IE 9]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-
     <!-- Twitter Bootstrap css -->
     <link href="/css/font-awesome.min.css">
     <link href="/dist/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -38,35 +30,30 @@
     <script type="text/javascript" charset="utf-8" src="/js/require.config.js"></script>
     <link rel="stylesheet" type="text/css" href="/style.css" />
     <link rel="alternate" type="application/rss+xml" title="Dhval Mudawal - Rants" href="/feed.xml" />
+</head>
 
-  </head>
-
-  <body>
+<body>
     <div class="wrapper-masthead">
-      <div class="container">
+    <div class="container">
         <header class="masthead clearfix">
-          <a href="/" class="site-avatar"><img src="https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png" /></a>
-
-          <div class="site-info">
-            <h1 class="site-name"><a href="/">Dhval Mudawal</a></h1>
-            <p class="site-description"> Endianness - Byte Order Marker 
-            
-            </p>
-          </div>
-
-          <nav>
-            <a href="/">Home</a>
-            <a href="/about">About</a>
-          </nav>
+            <a href="/" class="site-avatar"><img src="https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png" /></a>
+            <div class="site-info">
+                <h1 class="site-name"><a href="/">Dhval Mudawal</a></h1>
+                <p class="site-description"> Endianness - Byte Order Marker 
+                </p>
+            </div>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+            </nav>
         </header>
-      </div>
     </div>
-
+</div>
     <div id="main" role="main" class="container">
-      <article class="post">
+        <article class="post">
   <div class="date">
    <a href="https://www.evernote.com/shard/s11/sh/fc27b983-1c3e-411f-b3d2-3fc8bd9df9ff/43b61d5be27f37eb52d7926e86d78481/">View on Evernote.com</a> 
-    Modified: August 20, 2015
+    Modified: August 23, 2015
   </div>
 
   <div class="entry">
@@ -74,14 +61,14 @@
 <div style="display: block; border-bottom-width: medium; border-bottom-style: none; margin: 0px; padding: 0px 0pt 0pt; position: relative; font-family: Verdana, sans-serif;">
 <div style="background-repeat: initial initial;display:block;width:68.9%;">
 <div style="border: 0pt none; font-style: inherit; margin: 0pt; outline: none 0pt; padding: 0pt; vertical-align: baseline; clear: both; text-decoration: none;">
-<div>
-<div style="background-attachment: scroll; background-color: transparent; background-image: none; border: 0px none rgb(0, 0, 0); border-collapse: separate; border-spacing: 0px; bottom: auto; caption-side: top; clear: none; clip: auto; content: none; counter-increment: none; counter-reset: none; cursor: auto; direction: ltr; display: block; empty-cells: show; float: none; font-family: Verdana, Arial, sans-serif; font-style: normal; font-variant: normal; font-weight: 400; height: auto; left: auto; letter-spacing: normal; list-style: disc outside none; margin: 13.3333px 0px; max-height: none; max-width: none; min-height: 0px; min-width: 0px; opacity: 1; outline: rgb(0, 0, 0) none 0px; outline-offset: 0px; overflow: visible; padding: 0px; page-break-after: auto; page-break-before: auto; pointer-events: auto; position: static; right: auto; table-layout: auto; text-align: start; text-decoration: none; text-indent: 0px; text-shadow: none; text-transform: none; top: auto; unicode-bidi: embed; vertical-align: baseline; visibility: visible; white-space: normal; width: auto; word-spacing: 0px; z-index: auto; background-clip: border-box; background-origin: padding-box; border-bottom-left-radius: 0px; border-bottom-right-radius: 0px; border-top-left-radius: 0px; border-top-right-radius: 0px; resize: none; word-wrap: normal; clip-path: none; clip-rule: nonzero; color-interpolation: srgb; color-interpolation-filters: linearrgb; dominant-baseline: auto; fill: #000000; fill-opacity: 1; fill-rule: nonzero; filter: none; flood-color: #000000; flood-opacity: 1; lighting-color: #ffffff; image-rendering: auto; mask: none; marker-end: none; marker-mid: none; marker-start: none; shape-rendering: auto; stop-color: #000000; stop-opacity: 1; stroke: none; stroke-dasharray: none; stroke-dashoffset: 0px; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-opacity: 1; stroke-width: 1px; text-anchor: start; text-rendering: auto; background-position: 0% 0%; background-repeat: repeat repeat;"></div>
+<div style="border: 0pt none; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0pt; outline: none 0pt; padding: 0pt; vertical-align: baseline;">
+<div>Endianness so simple and yet I confuse myself with Big vs Little endian.</div>
+</div>
+<div style="border: 0pt none; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0pt; outline: none 0pt; padding: 0pt; vertical-align: baseline;"><br/></div>
 <ul style="border: 0pt none; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0pt 0pt 1.625em 2.5em; outline: none 0pt; padding: 0pt; vertical-align: baseline; list-style: square outside none;">
 <li style="border: 0pt none; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0pt; outline: none 0pt; padding: 0pt; vertical-align: baseline;">Big endian machine: Stores data <strong style="border: 0pt none; font-family: inherit; font-style: inherit; font-weight: bold; margin: 0pt; outline: none 0pt; padding: 0pt; vertical-align: baseline;">big-end first</strong>. When looking at multiple bytes, the first byte (lowest address) is the biggest.</li>
 <li style="border: 0pt none; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0pt; outline: none 0pt; padding: 0pt; vertical-align: baseline;">Little endian machine: Stores data <strong style="border: 0pt none; font-family: inherit; font-style: inherit; font-weight: bold; margin: 0pt; outline: none 0pt; padding: 0pt; vertical-align: baseline;">little-end first</strong>. When looking at multiple bytes, the first byte is <strong style="border: 0pt none; font-family: inherit; font-style: inherit; font-weight: bold; margin: 0pt; outline: none 0pt; padding: 0pt; vertical-align: baseline;">smallest</strong>.</li>
 </ul>
-<div style="background-attachment: scroll; background-color: transparent; background-image: none; border: 0px none rgb(0, 0, 0); border-collapse: separate; border-spacing: 0px; bottom: auto; caption-side: top; clear: none; clip: auto; content: none; counter-increment: none; counter-reset: none; cursor: auto; direction: ltr; display: block; empty-cells: show; float: none; font-family: Verdana, Arial, sans-serif; font-style: normal; font-variant: normal; font-weight: 400; height: auto; left: auto; letter-spacing: normal; list-style: disc outside none; margin: 13.3333px 0px; max-height: none; max-width: none; min-height: 0px; min-width: 0px; opacity: 1; outline: rgb(0, 0, 0) none 0px; outline-offset: 0px; overflow: visible; padding: 0px; page-break-after: auto; page-break-before: auto; pointer-events: auto; position: static; right: auto; table-layout: auto; text-align: start; text-decoration: none; text-indent: 0px; text-shadow: none; text-transform: none; top: auto; unicode-bidi: embed; vertical-align: baseline; visibility: visible; white-space: normal; width: auto; word-spacing: 0px; z-index: auto; background-clip: border-box; background-origin: padding-box; border-bottom-left-radius: 0px; border-bottom-right-radius: 0px; border-top-left-radius: 0px; border-top-right-radius: 0px; resize: none; word-wrap: normal; clip-path: none; clip-rule: nonzero; color-interpolation: srgb; color-interpolation-filters: linearrgb; dominant-baseline: auto; fill: #000000; fill-opacity: 1; fill-rule: nonzero; filter: none; flood-color: #000000; flood-opacity: 1; lighting-color: #ffffff; image-rendering: auto; mask: none; marker-end: none; marker-mid: none; marker-start: none; shape-rendering: auto; stop-color: #000000; stop-opacity: 1; stroke: none; stroke-dasharray: none; stroke-dashoffset: 0px; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-opacity: 1; stroke-width: 1px; text-anchor: start; text-rendering: auto; background-position: 0% 0%; background-repeat: repeat repeat;"></div>
-</div>
 <div><span style="font-family: Georgia;">In one byte data encoding (ASCII) endianness do not matter. But when we use more than two bytes to represent a character we need to agree to store left to right or vice versa.</span></div>
 <div><span style="font-family: Georgia;"><br/></span></div>
 <div><span style="font-family: Georgia;">Endianess is also referred to as the NUXI problem. Imagine the word UNIX stored in two 2-byte words. In a Big-Endian system, it would be stored as UNIX. In a little-endian system, it would be stored as NUXI.</span></div>
@@ -193,11 +180,10 @@
 </article>
 
     </div>
-
     <div class="wrapper-footer">
-      <div class="container">
+    <div class="container">
         <footer class="footer">
-          
+            
 
 <a href="http://facebook.com/dhval.mudawal"><i class="svg-icon facebook"></i></a>
 
@@ -210,11 +196,9 @@
 
 
         </footer>
-      </div>
-      <p style="text-align:center;">© I do not claim ownership of this content. Please send me a <a href="/suggestions">message</a>, if this infringes any copyright. </p>
     </div>
+    <p style="text-align:center;">© I do not claim ownership of this content. Please send me a <a href="/suggestions">message</a>, if this infringes any copyright. </p>
+</div>
+</body>
 
-    
-
-  </body>
 </html>

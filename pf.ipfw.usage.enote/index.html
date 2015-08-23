@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>pf, ipfw - usage – Dhval Mudawal – Rants</title>
+    <meta charset="utf-8" />
+<meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'> 
+<meta name="description" content="OSX and unix like systems use pf instead of iptables and tc. Here are my frequently used commands. " />
+<meta property="og:description" content="OSX and unix like systems use pf instead of iptables and tc. Here are my frequently used commands. " /> 
+<meta name="author" content="Dhval Mudawal" /> 
+<meta property="og:title" content="pf, ipfw - usage" />
+<meta property="twitter:title" content="pf, ipfw - usage" /> 
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- Twitter Bootstrap css -->
+    <link href="/css/font-awesome.min.css">
+    <link href="/dist/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!-- Your css -->
+    <link href="/css/base-war.css" rel="stylesheet">
+    <link href="/css/dhval.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/responsive.css" rel="stylesheet">
+    <!-- Vendor js -->
+    <script type="text/javascript" charset="utf-8" src="/dist/requirejs/require.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/dist/modernizr/modernizr.js"></script>
+    <!-- Your js -->
+    <script type="text/javascript" charset="utf-8" src="/js/require.config.js"></script>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Dhval Mudawal - Rants" href="/feed.xml" />
+</head>
+
+<body>
+    <div class="wrapper-masthead">
+    <div class="container">
+        <header class="masthead clearfix">
+            <a href="/" class="site-avatar"><img src="https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png" /></a>
+            <div class="site-info">
+                <h1 class="site-name"><a href="/">Dhval Mudawal</a></h1>
+                <p class="site-description"> pf, ipfw - usage 
+                </p>
+            </div>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+            </nav>
+        </header>
+    </div>
+</div>
+    <div id="main" role="main" class="container">
+        <article class="post">
+  <div class="date">
+   <a href="https://www.evernote.com/shard/s11/sh/12025ab9-5fb1-428f-891d-b2744357443c/3ac3bb3a0ca628ae763259b9d3262566/">View on Evernote.com</a> 
+    Modified: August 23, 2015
+  </div>
+
+  <div class="entry">
+    <p><en-note style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;">
+<div style="border: 0px; vertical-align: baseline; clear: both; background-color: rgb(255, 255, 255);">
+<div><font face="Arial">OSX and unix like systems use pf instead of iptables and tc. Here are my frequently used commands. </font></div>
+<div><span style="font-family: Arial;"><br/></span></div>
+<div><a href="https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man8/pfctl.8.html#//apple_ref/doc/man/8/pfctl"><span style="font-family: Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif;">pfctl</span></a></div>
+<div>
+<div>
+<pre style="padding: 5px 5px 5px 10px; border-width: 0px 0px 0px 5px; border-left-style: solid; border-left-color: rgb(204, 204, 204); vertical-align: baseline; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; overflow: auto; max-height: 600px; word-wrap: normal; background-color: rgb(238, 238, 238); background-position: initial initial; background-repeat: initial initial;">
+<code style="border: 0px; vertical-align: baseline; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; white-space: inherit; background-position: initial initial; background-repeat: initial initial;">sudo pfctl -F all -ef /etc/pf.anchors/dhval.pf </code>
+</pre></div>
+<div style="border: 0px; vertical-align: baseline; clear: both; font-family: Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif; background-color: rgb(255, 255, 255); background-position: initial initial; background-repeat: initial initial;"></div>
+</div>
+</div>
+<ul style="border: 0px; vertical-align: baseline; list-style-position: initial; list-style-image: initial;">
+<li style="border: 0px; vertical-align: baseline;"><code style="font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; background-color: rgb(238, 238, 238); padding: 1px 5px; border: 0px; vertical-align: baseline; white-space: pre-wrap;">-e</code><font face="Arial, Liberation Sans, DejaVu Sans, sans-serif"> = Enable PF</font></li>
+<li style="font-family: Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif; background-color: transparent; border: 0px; vertical-align: baseline;"><code style="padding: 1px 5px; border: 0px; vertical-align: baseline; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; white-space: pre-wrap; background-color: rgb(238, 238, 238); background-position: initial initial; background-repeat: initial initial;">-d</code> = Disable PF</li>
+<li style="font-family: Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif; background-color: transparent; border: 0px; vertical-align: baseline;"><code style="padding: 1px 5px; border: 0px; vertical-align: baseline; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; white-space: pre-wrap; background-color: rgb(238, 238, 238); background-position: initial initial; background-repeat: initial initial;">-F all</code> = Flush all rules</li>
+<li style="font-family: Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif; background-color: transparent; border: 0px; vertical-align: baseline;"><code style="padding: 1px 5px; border: 0px; vertical-align: baseline; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; white-space: pre-wrap; background-color: rgb(238, 238, 238); background-position: initial initial; background-repeat: initial initial;">-s all | nat | rules</code> = Info, all | nat | rules</li>
+<li style="font-family: Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif; background-color: transparent; border: 0px; vertical-align: baseline;"><code style="padding: 1px 5px; border: 0px; vertical-align: baseline; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; white-space: pre-wrap; background-color: rgb(238, 238, 238); background-position: initial initial; background-repeat: initial initial;">-p</code> = name of the program</li>
+</ul>
+<div><b><span style="font-family: Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif;"><br/></span></b></div>
+<div><span style="text-align: justify; font-family: Monaco, Courier, monospace; letter-spacing: -0.23px; color: rgb(102, 102, 102);">Create a </span><span style="text-align: justify; letter-spacing: -0.23px; color: rgb(102, 102, 102); font-family: 'Lucida Grande', 'Lucida Sans Unicode', Helvetica, Arial, Verdana, sans-serif; font-weight: 700;"><a href="https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man4/pflog.4.html">pflog</a> </span><span style="text-align: justify; font-family: Monaco, Courier, monospace; letter-spacing: -0.23px; color: rgb(102, 102, 102);">interface and monitor all packets logged on it</span></div>
+<div>
+<div>
+<div>
+<pre style="padding: 5px 5px 5px 10px; border-width: 0px 0px 0px 5px; border-left-style: solid; border-left-color: rgb(204, 204, 204); vertical-align: baseline; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; overflow: auto; max-height: 600px; word-wrap: normal; background-color: rgb(238, 238, 238);">
+<code style="border: 0px; vertical-align: baseline; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; white-space: inherit;">ifconfig pflog create </code>
+</pre></div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<pre style="padding: 5px 5px 5px 10px; border-width: 0px 0px 0px 5px; border-left-style: solid; border-left-color: rgb(204, 204, 204); vertical-align: baseline; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; overflow: auto; max-height: 600px; word-wrap: normal; background-color: rgb(238, 238, 238);">
+tcpdump -nn -e -ttt -i pflog0
+</pre></div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<pre style="padding: 5px 5px 5px 10px; border-width: 0px 0px 0px 5px; border-left-style: solid; border-left-color: rgb(204, 204, 204); vertical-align: baseline; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; overflow: auto; max-height: 600px; word-wrap: normal; background-color: rgb(238, 238, 238);">
+<span style="background-color: rgb(248, 248, 248);"><span style="color: rgb(51, 51, 51);">tcpdump -nn -ttt -i en0 src port 22</span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div><span style="color: rgb(51, 51, 51);"><code style="box-sizing: border-box; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; border: 1px solid rgb(221, 221, 221); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; background-color: rgb(248, 248, 248);"><span style="letter-spacing: -0.2em;"> </span><a href="https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man5/pf.conf.5.html">pf</a><span style="letter-spacing: -0.2em;"> </span></code><span style="font-family: Helvetica, arial, freesans, clean, sans-serif;"> does not forward packets between interfaces.  </span></span></div>
+<div>
+<pre style="background-color: rgb(248, 248, 248); color: rgb(51, 51, 51); font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; box-sizing: border-box; margin-top: 15px; margin-bottom: 15px; border: 1px solid rgb(221, 221, 221); overflow: auto; padding: 6px 10px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; word-wrap: normal;">
+sysctl -a | grep forwarding
+</pre>
+<pre style="color: rgb(51, 51, 51); box-sizing: border-box; margin-top: 15px; margin-bottom: 15px; border: 1px solid rgb(221, 221, 221); overflow: auto; padding: 6px 10px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; word-wrap: normal;">
+<span style="white-space: inherit; background-color: rgb(248, 248, 248);"><font face="Consolas, Liberation Mono, Menlo, Courier, monospace">s</font></span><span style="font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; background-color: rgb(238, 238, 238); white-space: inherit;">ysctl -w net.inet.ip.forwarding=1   # Enable fwd</span><font face="Consolas, Liberation Mono, Menlo, Courier, monospace"><span style="background-color: rgb(248, 248, 248);">
+</span></font>
+</pre>
+<pre style="background-color: rgb(248, 248, 248); color: rgb(51, 51, 51); font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; box-sizing: border-box; margin-top: 15px; margin-bottom: 15px; border: 1px solid rgb(221, 221, 221); overflow: auto; padding: 6px 10px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; word-wrap: normal;">
+<code style="box-sizing: border-box; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; border: none; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; word-wrap: normal; display: inline; background-color: transparent;">net.inet.ip.forwarding=1
+net.inet6.ip6.forwarding=1 </code>
+</pre>
+<h4 style="background-color: rgb(255, 255, 255); color: rgb(51, 51, 51); font-family: Helvetica, arial, freesans, clean, sans-serif; box-sizing: border-box; margin: 1em 0px 15px; cursor: text; position: relative;"></h4>
+<div style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">
+<div style="font-size: 15px; font-family: Arial; box-sizing: border-box;">
+<div style="box-sizing: border-box;">
+<div style="box-sizing: border-box;">
+<div style="box-sizing: border-box;">
+<div style="box-sizing: border-box;">
+<div style="box-sizing: border-box;">
+<div style="box-sizing: border-box;">
+<div style="box-sizing: border-box;">
+<div style="box-sizing: border-box;">
+<div style="box-sizing: border-box; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px;">
+<div style="box-sizing: border-box; overflow-x: auto; overflow-y: hidden;">
+<div style="box-sizing: border-box;">
+<div style="box-sizing: border-box; overflow: hidden; word-wrap: break-word;">
+<h3 style="color: rgb(17, 17, 17); background-color: rgb(255, 255, 255);"></h3>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div><i><span style="font-family: Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif;"><span style="color: rgb(17, 17, 17);">sudo sysctl -w net.inet.ip.forwarding=1</span></span></i></div>
+<div><i><span style="font-family: Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif;"><span style="color: rgb(17, 17, 17);">sudo sysctl -w net.inet6.ip6.forwarding=1</span></span></i></div>
+<div><b><span style="font-family: Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif;"><span style="color: rgb(17, 17, 17);"><br/></span></span></b></div>
+<div><a href="http://serverfault.com/questions/421261/os-x-10-8-redirecting-locally-initiated-ssh-connections-to-localhost22"><span style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;"><span style="color: rgb(17, 17, 17);"><b><span style="font-family: Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif;">Forward any connection to google.com:22 to localhost:22</span></b></span></span></a></div>
+<div>
+<div><span style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;"><span style="color: rgb(17, 17, 17);"><span style="font-family: Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif;"><br/></span></span></span></div>
+<div><span style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;"><span style="color: rgb(17, 17, 17);"><span style="font-family: Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif;">rdr only accepts incoming packets. First route those packets to lo0, then add a rdr rule there (which will catch them as they will be routed in from &quot;somewhere&quot;) to send them to your local ssh server.</span></span></span></div>
+<div><span style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;"><span style="color: rgb(17, 17, 17);"><span style="font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;"><br/></span></span></span></div>
+<div><span style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;"><span style="color: rgb(17, 17, 17);"><span style="background-color: transparent; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; white-space: pre;">keep</span> <span style="font-family: sans-serif;">state information allows return traffic for those connections to pass back</span></span></span></div>
+<div>
+<div><span style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;"><span style="color: rgb(17, 17, 17);"><span style="font-family: Helvetica, arial, freesans, clean, sans-serif;"><span style="color: rgb(51, 51, 51);"><span style="background-color: transparent; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; white-space: pre;">Order of rules                                     </span><span style="font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; white-space: pre; background-color: transparent;">Scrub &gt; NAT &gt; RDR &gt; PASS</span></span></span></span></span></div>
+</div>
+<div><span style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;"><span style="color: rgb(17, 17, 17);"><span style="font-family: Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif;"><br/></span></span></span></div>
+<div><span style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;"><span style="color: rgb(17, 17, 17);"><span style="font-family: Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif;">The order is necessarily rdr stuff, then filter stuff (like pass), but chronologically the 2nd rule will hit first (on </span><code style="padding: 1px 5px; border: 0px; vertical-align: baseline; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; white-space: pre-wrap; background: rgb(238, 238, 238);">$Out</code><span style="font-family: Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif;">),</span></span></span></div>
+<div><span style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;"><span style="color: rgb(17, 17, 17);"><span style="font-family: Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif;">which will then activate the first rule (on </span><code style="padding: 1px 5px; border: 0px; vertical-align: baseline; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; white-space: pre-wrap; background: rgb(238, 238, 238);">lo0</code><span style="font-family: Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif;">).</span></span></span></div>
+<div style="border: 0px; vertical-align: baseline; word-wrap: break-word; font-family: Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif; text-align: left; background: rgb(255, 255, 255);">
+<pre style="padding: 5px; border: 0px; vertical-align: baseline; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; overflow: auto; max-height: 600px; word-wrap: normal; background: rgb(238, 238, 238);">
+<span style="color: rgb(17, 17, 17);"><code style="border: 0px; vertical-align: baseline; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; white-space: inherit; background: rgb(238, 238, 238);"># Output interface
+Out = en0
+Packets = &quot;proto tcp from $Out to any port 22&quot;</p>
+
+<h1>Step &quot;2&quot;. Rdr those same packets that were routed to lo0 below</h1>
+
+<p>rdr pass log on lo0 $Packets -&gt; 127.0.0.1</p>
+
+<h1>Step &quot;1&quot;. Route new IPv4 TCP connections leaving $Out to lo0</h1>
+
+<p>pass out on $Out  route-to lo0  inet $Packets keep state
+</code>
+</span>
+</pre></div>
+</div>
+<div><span style="background-color: rgb(255, 255, 255); color: rgb(17, 17, 17); font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">Forward requests from 192.168.99.100:80 to 127.0.0.1:8000. This is how I&#39;d do it in linux using </span><a href="http://manpages.ubuntu.com/manpages/natty/man8/iptables.8.html" style="background-color: rgb(255, 255, 255); font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">iptables</a><span style="background-color: rgb(255, 255, 255); color: rgb(17, 17, 17); font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">: </span></div>
+<div>
+<pre style="padding: 5px; border: 0px; vertical-align: baseline; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; overflow: auto; max-height: 600px; word-wrap: normal; background-color: rgb(238, 238, 238);">
+<code style="border: 0px; vertical-align: baseline; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; white-space: inherit;">iptables -t nat -A OUTPUT -p tcp --dport 80 -d 192.168.99.100 -j DNAT --to-destination 127.0.0.1:8000
+</code>
+</pre></div>
+<div><a href="https://gist.github.com/kujohn/7209628" style="font-family: Helvetica, arial, freesans, clean, sans-serif; background-color: rgb(255, 255, 255);">Re-routing</a><span style="color: rgb(51, 51, 51); font-family: Helvetica, arial, freesans, clean, sans-serif; background-color: rgb(255, 255, 255);"> </span><span style="color: rgb(51, 51, 51); font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; white-space: pre;">packets using pf. </span><br/></div>
+<div>
+<div style="color: rgb(51, 51, 51); font-family: Helvetica, arial, freesans, clean, sans-serif; background-color: rgb(255, 255, 255);"><br/></div>
+<div style="color: rgb(51, 51, 51); background-color: rgb(255, 255, 255);"><font face="Andale Mono">rdr pass on vnic0 inet proto tcp from any to 10.211.55.2 port 49201 -&gt; 127.0.0.1 port 49201</font><br/></div>
+<div style="color: rgb(51, 51, 51); font-family: Helvetica, arial, freesans, clean, sans-serif; background-color: rgb(255, 255, 255);"><br/></div>
+<div style="color: rgb(51, 51, 51); font-family: Helvetica, arial, freesans, clean, sans-serif; background-color: rgb(255, 255, 255);"><span style="background-color:rgb(255, 204, 102);-evernote-highlight:true; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; white-space: pre;"><span style="color: rgb(128, 128, 128); font-family: Monaco;">pass out on en1 route-to lo0 proto tcp to</span> <a href="http://justin.tv/" style="font-family: Monaco;">justin.tv</a> <span style="color: rgb(128, 128, 128); font-family: Monaco;">port {80, 443}</span></span> <a href="http://serverfault.com/questions/421261/os-x-10-8-redirecting-locally-initiated-ssh-connections-to-localhost22" style="white-space: pre;">keep state</a><span style="text-align: justify; font-family: Monaco, Courier, monospace; letter-spacing: -0.23px; color: rgb(102, 102, 102);"><br/></span></div>
+</div>
+<div><br/></div>
+<div>
+<div>
+<div style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">
+<div style="font-family: Arial; box-sizing: border-box;">
+<div style="box-sizing: border-box;">
+<div style="box-sizing: border-box;">
+<div style="box-sizing: border-box;">
+<div style="box-sizing: border-box;">
+<div style="box-sizing: border-box;">
+<div style="box-sizing: border-box;">
+<div style="box-sizing: border-box;">
+<div style="box-sizing: border-box;">
+<div style="box-sizing: border-box; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px;">
+<div style="box-sizing: border-box; overflow-x: auto; overflow-y: hidden;">
+<div style="box-sizing: border-box;">
+<div style="box-sizing: border-box; overflow: hidden; word-wrap: break-word;">
+<h3 style="color: rgb(17, 17, 17); background-color: rgb(255, 255, 255);"></h3>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p style="background-color: rgb(255, 255, 255); color: rgb(51, 51, 51); font-family: Helvetica, arial, freesans, clean, sans-serif; box-sizing: border-box; margin: 15px 0px;"><span style="font-family: Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif;">In Mac you need to manually </span><span style="font-family: Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif;">configure</span><span style="font-family: Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif;"> an alias for each ip address</span><br/></p>
+</div>
+<div>
+<div style="border: 0px; vertical-align: baseline; word-wrap: break-word; font-family: Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif; background-color: rgb(255, 255, 255);">
+<pre style="padding: 5px; border: 0px; vertical-align: baseline; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; overflow: auto; max-height: 600px; word-wrap: normal; background-color: rgb(238, 238, 238);">
+<code style="border: 0px; vertical-align: baseline; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; white-space: inherit;">sudo ifconfig lo0 10.0.0.1 alias</code>
+</pre>
+<pre style="padding: 5px; border: 0px; vertical-align: baseline; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; overflow: auto; max-height: 600px; word-wrap: normal; background-color: rgb(238, 238, 238);">
+<code style="border: 0px; vertical-align: baseline; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; white-space: inherit;">sudo ipfw add fwd 127.0.0.1,9090 tcp from me to 10.0.0.1 dst-port 80
+</code>
+</pre>
+<p style="border: 0px; vertical-align: baseline; clear: both; background-color: transparent;">(The alias to <code style="padding: 1px 5px; border: 0px; vertical-align: baseline; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; white-space: pre-wrap; background-color: rgb(238, 238, 238);">lo0</code> seems to be the missing part)</p>
+<p style="border: 0px; vertical-align: baseline; clear: both; background-color: transparent;">If you&#39;d like a (fake) domain to point to this new alias then make sure /etc/hosts contains the line:</p>
+<pre style="padding: 5px; border: 0px; vertical-align: baseline; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; overflow: auto; max-height: 600px; word-wrap: normal; background-color: rgb(238, 238, 238);">
+<code style="border: 0px; vertical-align: baseline; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; white-space: inherit;">10.0.0.1 <a href="http://www.your-domain.com/">www.your-domain.com</a>
+</code>
+</pre></div>
+<div><br/></div>
+</div>
+<div><a href="http://help.unc.edu/help/how-to-configure-a-firewall-for-mac-os-x-ipfw-for-snow-leopard/">http://help.unc.edu/help/how-to-configure-a-firewall-for-mac-os-x-ipfw-for-snow-leopard/</a></div>
+</div>
+<div>
+<div><br/></div>
+</div>
+<div style="border: 0px; vertical-align: baseline; word-wrap: break-word;"><b><span style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;"><a href="http://www.unixmen.com/pf-vs-iptables-untangle-pfsense-why-not-both/"><span style="color: rgb(51, 51, 51);">PF vs IPTABLES </span></a></span></b></div>
+<div style="border: 0px; vertical-align: baseline; word-wrap: break-word;">
+<div><br/></div>
+</div>
+<div style="border: 0px; vertical-align: baseline; word-wrap: break-word;"><span style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;"><span style="color: rgb(51, 51, 51);">In IPFW and iptables, the first rule in a ruleset what matches a packet &quot;wins&quot; - and next rulesets are not evaluated. In the PF the packet is matched with all rules and the last rule that matches the packet &quot;wins&quot;.</span></span></div>
+<div style="border: 0px; vertical-align: baseline; word-wrap: break-word;"><br/></div>
+<div>
+<div><span style="background-color: rgb(250, 250, 250);"><font color="#444444" face="Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif">in PF the default state is &quot;deny everything&quot;. You add rules step-by-step allowing passing some packets. In contrast in IPFW, the default state is open and the &quot;deny everything is usually the last rule”. </font></span></div>
+</div>
+<div><span style="background-color: rgb(250, 250, 250);"><font color="#444444" face="Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif"><br/></font></span></div>
+<div><span style="background-color: rgb(250, 250, 250);"><font color="#444444" face="Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif">PF or packet filter is used in bad world after licensing conflict with ipfw. It is like a programmatic language where you have scheduler class and queues, combination of tc (transmission control) </font></span><span style="color: rgb(68, 68, 68); font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif; background-color: rgb(250, 250, 250);"> </span><span style="color: rgb(68, 68, 68); font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif; background-color: rgb(250, 250, 250);">&amp; iptables.</span><span style="color: rgb(68, 68, 68); font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif; background-color: rgb(250, 250, 250);"> </span></div>
+<div><strong style="color: rgb(51, 51, 51); font-family: Verdana, Geneva, Tahoma, sans-serif; background-color: rgb(255, 255, 255);"><br/></strong></div>
+<div><span style="color: rgb(51, 51, 51); font-family: Verdana, Geneva, Tahoma, sans-serif; background-color: rgb(255, 255, 255);">Iptables has various tables at play, each with different chains that packets </span><a href="http://www.netfilter.org/documentation/HOWTO/packet-filtering-HOWTO-6.html" style="font-family: Verdana, Geneva, Tahoma, sans-serif; background-color: rgb(255, 255, 255); color: rgb(0, 136, 204); text-decoration: none;">traverse,</a><span style="color: rgb(51, 51, 51); font-family: Verdana, Geneva, Tahoma, sans-serif; background-color: rgb(255, 255, 255);"> whereas pf just processes the packets straight down to the config file. Only if a rule contains the “quick” option does pf stop the actual processing and take action before hitting the end of the set of rules. On the other hand if a packet makes it all the way to the end of the config file, the last action specified from a rule that matched this packet is taken.</span><br/></div>
+<div>
+<p style="color: rgb(51, 51, 51); font-family: Verdana, Geneva, Tahoma, sans-serif; background-color: rgb(255, 255, 255);">With iptables things are different, packets are processed by various “chains” in different order, depending on the source and destination in the actual packet. For example, normal outgoing packets are processed by the output chain on the table. Rules within this chain can create processing to jump over to a different set of rules on a user-defined chain for example, or might even take such an action on a packet. When a packet matches a rule, processing on that chain stops without hesitation and the action is taken into effect. </p>
+</div>
+<div><br/></div>
+<div><a href="https://gist.github.com/kujohn/7209628#caution">GUI frontends</a></div>
+<ul>
+<li><a href="http://www.hanynet.com/icefloor/index.html">IceFloor</a> (instead of the WaterRoof)</li>
+<li><a href="http://www.fwbuilder.org/">Firewall builder</a> (cross platform)</li>
+</ul>
+<div>References :</div>
+<div><br/></div>
+<div><a href="https://calomel.org/pf_config.html">https://calomel.org/pf<em>config.html</a></div>
+<div><a href="http://www.openbsd.org/faq/pf/filter.html">http://www.openbsd.org/faq/pf/filter.html</a></div>
+<div><a href="http://www.freebsd.org/doc/handbook/firewalls-pf.html">http://www.freebsd.org/doc/handbook/firewalls-pf.html</a></div>
+<div><a href="http://home.nuug.no/~peter/pf/en/index.html">http://home.nuug.no/~peter/pf/en/index.html</a></div>
+<div><a href="http://blog.scottlowe.org/2013/05/15/using-pf-on-os-x-mountain-lion/">http://blog.scottlowe.org/2013/05/15/using-pf-on-os-x-mountain-lion/</a></div>
+<div><a href="https://discussions.apple.com/thread/5685827">https://discussions.apple.com/thread/5685827</a></div>
+<div><a href="https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man5/pf.conf.5.html">https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man5/pf.conf.5.html</a></div>
+<div><a href="http://murusfirewall.com/Documentation/OS%20X%20PF%20Manual.pdf">http://murusfirewall.com/Documentation/OS%20X%20PF%20Manual.pdf</a></div>
+<div><br/></div>
+<div>Forward packet between interfaces :-</div>
+<div><br/></div>
+<div>&lt;a href=&quot;http://jurjenbokma.com/ApprenticesNotes/redirecting</em>ssh<em>through</em>pf.html&quot;&gt;http://jurjenbokma.com/ApprenticesNotes/redirecting<em>ssh</em>through<em>pf.html</a></div>
+<div><a href="http://serverfault.com/questions/421261/os-x-10-8-redirecting-locally-initiated-ssh-connections-to-localhost22">http://serverfault.com/questions/421261/os-x-10-8-redirecting-locally-initiated-ssh-connections-to-localhost22</a></div>
+<div><a href="http://www.openbsd.org/faq/pf/rdr.html">http://www.openbsd.org/faq/pf/rdr.html</a></div>
+<div><a href="http://superuser.com/questions/473039/pfctl-port-forwarding-in-mac-osx">http://superuser.com/questions/473039/pfctl-port-forwarding-in-mac-osx</a></div>
+<div><br/></div>
+<div><br/></div>
+<div>&lt;a href=&quot;http://www.onlamp.com/pub/a/bsd/2003/03/06/ssn</em>openbsd.html?page=2&quot;&gt;http://www.onlamp.com/pub/a/bsd/2003/03/06/ssn_openbsd.html?page=2</a></div>
+<div><a href="https://support.apple.com/en-us/HT200188">https://support.apple.com/en-us/HT200188</a></div>
+<div><a href="http://kfigiela.github.io/2014/11/07/using-native-os-x-nat-with-virutalbox/">http://kfigiela.github.io/2014/11/07/using-native-os-x-nat-with-virutalbox/</a></div>
+<div><a href="https://forums.openvpn.net/topic11401.html">https://forums.openvpn.net/topic11401.html</a></div>
+<div><a href="https://discussions.apple.com/thread/6645172">https://discussions.apple.com/thread/6645172</a></div>
+<div><br/></div>
+</en-note></p>
+
+  </div>
+
+  
+</article>
+
+    </div>
+    <div class="wrapper-footer">
+    <div class="container">
+        <footer class="footer">
+            
+
+<a href="http://facebook.com/dhval.mudawal"><i class="svg-icon facebook"></i></a>
+
+<a href="http://github.com/dhval"><i class="svg-icon github"></i></a>
+
+<a href="http://linkedin.com/in/dhvalmudawal"><i class="svg-icon linkedin"></i></a>
+
+
+<a href="http://twitter.com/jekyllrb"><i class="svg-icon twitter"></i></a>
+
+
+        </footer>
+    </div>
+    <p style="text-align:center;">© I do not claim ownership of this content. Please send me a <a href="/suggestions">message</a>, if this infringes any copyright. </p>
+</div>
+</body>
+
+</html>

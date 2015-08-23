@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Network classes – Dhval Mudawal – Rants</title>
+    <meta charset="utf-8" />
+<meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'> 
+<meta name="description" content="Classes D and E exist, but are not generally used by end users." />
+<meta property="og:description" content="Classes D and E exist, but are not generally used by end users." /> 
+<meta name="author" content="Dhval Mudawal" /> 
+<meta property="og:title" content="Network classes" />
+<meta property="twitter:title" content="Network classes" /> 
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- Twitter Bootstrap css -->
+    <link href="/css/font-awesome.min.css">
+    <link href="/dist/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!-- Your css -->
+    <link href="/css/base-war.css" rel="stylesheet">
+    <link href="/css/dhval.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/responsive.css" rel="stylesheet">
+    <!-- Vendor js -->
+    <script type="text/javascript" charset="utf-8" src="/dist/requirejs/require.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/dist/modernizr/modernizr.js"></script>
+    <!-- Your js -->
+    <script type="text/javascript" charset="utf-8" src="/js/require.config.js"></script>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Dhval Mudawal - Rants" href="/feed.xml" />
+</head>
+
+<body>
+    <div class="wrapper-masthead">
+    <div class="container">
+        <header class="masthead clearfix">
+            <a href="/" class="site-avatar"><img src="https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png" /></a>
+            <div class="site-info">
+                <h1 class="site-name"><a href="/">Dhval Mudawal</a></h1>
+                <p class="site-description"> Network classes 
+                </p>
+            </div>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+            </nav>
+        </header>
+    </div>
+</div>
+    <div id="main" role="main" class="container">
+        <article class="post">
+  <div class="date">
+   <a href="https://www.evernote.com/shard/s11/sh/bd08672f-d404-4ded-bc7e-6c2d91d367e9/57cf4d8f869f6c7583f1333e9e3912b9/">View on Evernote.com</a> 
+    Modified: August 23, 2015
+  </div>
+
+  <div class="entry">
+    <p><en-note style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;">
+<div><span style="font-family: Arial;">I</span>nternet addresses are allocated by the InterNIC (<a href="http://www.internic.net/">http://www.internic.net</a> ). Each address classes has a default subnet mask. You can identify the class of an IP address by looking at its first octet. </div>
+<div><br/></div>
+<ul>
+<li>Class A networks use a default subnet mask of 255.0.0.0 and have 0-127 as their first octet. The address 10.52.36.11 is a class A address. Its first octet is 10, between 1 and 126, inclusive.</li>
+<li>Class B networks use a default subnet mask of 255.255.0.0 and have first octet between 128-191, inclusive. The address 172.16.52.63 is a class B address, its first octet is 172.</li>
+<li>Class C networks use a default subnet mask of 255.255.255.0 and have first octet between 192-223. The address 192.168.123.132 is a class C address, its first octet being 192.</li>
+</ul>
+<div><br/></div>
+<div>Classes D and E exist, but are not generally used by end users.</div>
+<div><br/></div>
+<div><span style="background-color: rgb(255, 255, 255);">There are three <b>Private IP addresses</b>. </span><span style="background-color: rgb(255, 255, 255);">Private means that these will not be forwarded on the internet as a whole.</span></div>
+<div><br/></div>
+<div><span style="background-color: rgb(255, 255, 255);">Class A - 10.x.x.x - 16,777,216 addresses </span></div>
+<div><span style="background-color: rgb(255, 255, 255);">Class B - 172.16.x.x - 172.31.x.x - 16 blocks of 65536 addresses </span></div>
+<div><span style="background-color: rgb(255, 255, 255);">Class C - 192.168.x.x - 255 blocks of 256 addresses. </span></div>
+<div><span style="background-color: rgb(255, 255, 255);"><br/></span></div>
+<div><span style="color: rgb(51, 51, 51);"><b>Subnet</b> or Host/Network Discriminator</span></div>
+<div><span style="color: rgb(51, 51, 51);"><br/></span></div>
+<div><span style="color: rgb(51, 51, 51); background-color: rgb(255, 255, 255);">Using a subnet mask of 255.255.255.192, your 192.168.123.0 network then becomes the four networks 192.168.123.0, 192.168.123.64, 192.168.123.128 and 192.168.123.192. These four networks would have as valid host addresses:</span></div>
+<div><font color="#333333"><span style="background-color: rgb(255, 255, 255);"><br/></span></font>
+<div style="padding: 0px; overflow-x: auto; color: rgb(51, 51, 51); background-color: rgb(245, 245, 245);">
+<div style="padding: 0px;">
+<pre style="padding: 10px;">
+  <span style="font-family: 'Helvetica Neue';">192.168.123.1-62
+   192.168.123.65-126
+   192.168.123.129-190
+   192.168.123.193-254 </span>
+</pre></div>
+</div>
+<div><span style="color: rgb(51, 51, 51); background-color: rgb(255, 255, 255);"><span style="color: rgb(51, 51, 51); background-color: rgb(255, 255, 255);"><br/></span></span></div>
+Remember with /26 or 255.255.255.192 , host addresses with all ones ( BROADCAST ) or all zeros ( NETWORK ADDRESS ) are invalid, so you cannot use addresses with the last octet of 0, 63, 64, 127, 128, 191, 192, or 255.</div>
+<div>
+<div><br/></div>
+<div><span style="color: rgb(51, 51, 51); background-color: rgb(255, 255, 255);">You can see how this works by looking at two host addresses, 192.168.123.71 and 192.168.123.133. If you used the default Class C subnet mask of 255.255.255.0, both addresses are on the 192.168.123.0 network. However, if you use the subnet mask of 255.255.255.192, they are on different networks; 192.168.123.71 is on the 192.168.123.64 network, 192.168.123.133 is on the 192.168.123.128 network.</span></div>
+</div>
+<div><span style="color: rgb(51, 51, 51); font-size: 13px; background-color: rgb(255, 255, 255);"><br/></span></div>
+<div><a href="http://www.tcpipguide.com/free/t_IPAddressClassABandCNetworkandHostCapacities.htm">http://www.tcpipguide.com/free/t_IPAddressClassABandCNetworkandHostCapacities.htm</a><span style="color: rgb(51, 51, 51); font-family: 'Segoe UI', Arial, Verdana, Tahoma, sans-serif; font-size: 13px; background-color: rgb(255, 255, 255);"><br/></span></div>
+</en-note></p>
+
+  </div>
+
+  
+</article>
+
+    </div>
+    <div class="wrapper-footer">
+    <div class="container">
+        <footer class="footer">
+            
+
+<a href="http://facebook.com/dhval.mudawal"><i class="svg-icon facebook"></i></a>
+
+<a href="http://github.com/dhval"><i class="svg-icon github"></i></a>
+
+<a href="http://linkedin.com/in/dhvalmudawal"><i class="svg-icon linkedin"></i></a>
+
+
+<a href="http://twitter.com/jekyllrb"><i class="svg-icon twitter"></i></a>
+
+
+        </footer>
+    </div>
+    <p style="text-align:center;">© I do not claim ownership of this content. Please send me a <a href="/suggestions">message</a>, if this infringes any copyright. </p>
+</div>
+</body>
+
+</html>

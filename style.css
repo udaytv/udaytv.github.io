@@ -163,7 +163,7 @@ img {
 .date {
   font-style: italic;
   color: #666;
-  text-align: right;
+  float: right;
 }
 
 ::-moz-selection {

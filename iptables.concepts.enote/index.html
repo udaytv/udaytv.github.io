@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>iptables - concepts – Dhval Mudawal – Rants</title>
+    <meta charset="utf-8" />
+<meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'> 
+<meta name="description" content="Chains" />
+<meta property="og:description" content="Chains" /> 
+<meta name="author" content="Dhval Mudawal" /> 
+<meta property="og:title" content="iptables - concepts" />
+<meta property="twitter:title" content="iptables - concepts" /> 
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- Twitter Bootstrap css -->
+    <link href="/css/font-awesome.min.css">
+    <link href="/dist/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!-- Your css -->
+    <link href="/css/base-war.css" rel="stylesheet">
+    <link href="/css/dhval.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/responsive.css" rel="stylesheet">
+    <!-- Vendor js -->
+    <script type="text/javascript" charset="utf-8" src="/dist/requirejs/require.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/dist/modernizr/modernizr.js"></script>
+    <!-- Your js -->
+    <script type="text/javascript" charset="utf-8" src="/js/require.config.js"></script>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Dhval Mudawal - Rants" href="/feed.xml" />
+</head>
+
+<body>
+    <div class="wrapper-masthead">
+    <div class="container">
+        <header class="masthead clearfix">
+            <a href="/" class="site-avatar"><img src="https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png" /></a>
+            <div class="site-info">
+                <h1 class="site-name"><a href="/">Dhval Mudawal</a></h1>
+                <p class="site-description"> iptables - concepts 
+                </p>
+            </div>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+            </nav>
+        </header>
+    </div>
+</div>
+    <div id="main" role="main" class="container">
+        <article class="post">
+  <div class="date">
+   <a href="https://www.evernote.com/shard/s11/sh/989e5faf-9277-494a-81a2-7a1129747457/5d169cb1032b8216f24707dbeb998be1/">View on Evernote.com</a> 
+    Modified: May  5, 2015
+  </div>
+
+  <div class="entry">
+    <p><en-note style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;"><span style="font-size: 14px;"><span style="line-height: 1.5em; background-color: white; font-family: sans-serif;">iptables are used to inspect, modify, forward, redirect, and/or drop IPv4 packets. The code for filtering IPv4 packets is already built into the kernel and is organized into a collection of</span> <i style="line-height: 1.5em; font-family: sans-serif;">tables</i><span style="line-height: 1.5em; background-color: white; font-family: sans-serif;">, each with a specific purpose. The tables are made up of a set of predefined</span> <i style="line-height: 1.5em; font-family: sans-serif;">chains</i><span style="line-height: 1.5em; background-color: white; font-family: sans-serif;">, and the chains contain rules which are traversed in order. Each rule consists of a predicate of potential matches and a corresponding action (called a</span> <i style="line-height: 1.5em; font-family: sans-serif;">target</i><span style="line-height: 1.5em; background-color: white; font-family: sans-serif;">) which is executed if the predicate is true; i.e. the conditions are matched. </span></span><div><font face="sans-serif"><span style="font-size: 14px; line-height: 21px; background-color: rgb(255, 255, 255);"><br/></span></font></div><div style="font-size: 15px;"><b>Route vs IP Tables</b><br/></div><div style="font-size: 15px;"><div><br/></div><div><code style="padding: 1px 5px; border: 0px; vertical-align: baseline; font-family: Consolas, Menlo, Monaco, &amp;apos;Lucida Console&amp;apos;, &amp;apos;Liberation Mono&amp;apos;, &amp;apos;DejaVu Sans Mono&amp;apos;, &amp;apos;Bitstream Vera Sans Mono&amp;apos;, &amp;apos;Courier New&amp;apos;, monospace, serif; white-space: pre-wrap; background-color: rgb(238, 238, 238);">route</code>  displays, adds and deletes entries from the kernel&amp;apos;s TCP/IP <u>routing table</u> (aka &quot;Forwarding Information Base”).</div><div><br/></div><div><code style="line-height: 17.8048000335693px; padding: 1px 5px; border: 0px; vertical-align: baseline; font-family: Consolas, Menlo, Monaco, &amp;apos;Lucida Console&amp;apos;, &amp;apos;Liberation Mono&amp;apos;, &amp;apos;DejaVu Sans Mono&amp;apos;, &amp;apos;Bitstream Vera Sans Mono&amp;apos;, &amp;apos;Courier New&amp;apos;, monospace, serif; white-space: pre-wrap; background-color: rgb(238, 238, 238);">iptables</code><span style="line-height: 17.8048000335693px;">  displays, adds, and deletes entries from <u>Netfilter</u>, the Linux kernel&amp;apos;s packet filtering and manipulating subsystem.</span></div><div><span style="line-height: 17.8048000335693px;"><br/></span></div><div><span style="font-family: sans-serif; line-height: 1.5em; font-size: 14px;">The lowercase word on top is the table and the upper case word below is the chain. Every IP packet  passes through this flow chart from top to bottom. T</span><span style="font-family: sans-serif; line-height: 1.5em; font-size: 14px;">he first routing decision at nat ( PREROUTING ) involves deciding if the final destination of the packet is the local machine (in which case the packet traverses through the </span><code style="line-height: 1.5em; font-size: 14px; background-color: rgb(235, 241, 245); color: rgb(34, 34, 34); padding: 0.1em 0.3em; display: inline-block;">INPUT</code><span style="font-family: sans-serif; line-height: 1.5em; font-size: 14px;"> chains) or elsewhere (in which case the packet traverses through the </span><code style="line-height: 1.5em; font-size: 14px; background-color: rgb(235, 241, 245); color: rgb(34, 34, 34); padding: 0.1em 0.3em; display: inline-block;">FORWARD</code><span style="font-family: sans-serif; line-height: 1.5em; font-size: 14px;"> chains). Subsequent routing decisions involve deciding what interface to assign to an outgoing packet.</span><br/></div></div><div><div style="font-variant: normal; line-height: normal; color: rgb(34, 34, 34); direction: ltr; unicode-bidi: embed; background-color: rgb(246, 249, 252);"><div style="color: black; line-height: 1.5em; background-color: white;"><div dir="ltr" lang="en" style="direction: ltr;" xml:lang="en"><pre style="font-family: monospace; font-style: normal; font-weight: normal; padding: 1em; border: 1px solid rgb(187, 204, 221); color: rgb(34, 34, 34); background-color: rgb(235, 241, 245); line-height: 1.1em; overflow: auto;"><span style="font-size: 14px;">                               XXXXXXXXXXXXXXXXXX
+                             XXX     Network    XXX
+                               XXXXXXXXXXXXXXXXXX
+                                       +
+                                       |
+                                       v
+ +-------------+              +------------------+
+ |table: filter| &lt;---+        | table: nat       |
+ |chain: INPUT |     |        | chain: PREROUTING|
+ +-----+-------+     |        +--------+---------+
+       |             |                 |
+       v             |                 v
+ [local process]     |           ****************          +--------------+
+       |             +---------+ Routing decision +------&gt; |table: filter |
+       v                         ****************          |chain: FORWARD|
+****************                                           +------+-------+
+Routing decision                                                  |
+****************                                                  |
+       |                                                          |
+       v                        ****************                  |
++-------------+       +------&gt;  Routing decision  &lt;---------------+
+|table: nat   |       |         ****************
+|chain: OUTPUT|       |               +
++-----+-------+       |               |
+      |               |               v
+      v               |      +-------------------+
++--------------+      |      | table: nat        |
+|table: filter | +----+      | chain: POSTROUTING|
+|chain: OUTPUT |             +--------+----------+
++--------------+                      |
+                                      v
+                               XXXXXXXXXXXXXXXXXX
+                             XXX    Network     XXX
+                               XXXXXXXXXXXXXXXXXX
+</span></pre><h3 style="font-family: sans-serif; font-style: normal; color: rgb(34, 34, 34); margin: 0px 0px 0.3em; overflow: hidden; padding-top: 0.5em; padding-bottom: 0.17em; border-bottom-width: 1px; border-bottom-style: none; border-bottom-color: rgb(170, 170, 170); background-image: none;"><span style="font-weight: bold; font-size: 14px;">Tables -  </span><span style="color: black; line-height: 1.5em; font-size: 14px;"><span style="font-weight: normal;">Packets flow in/out tables in the order for PREROUTING chain.</span>  <span style="line-height: 1.5em;">RAW &gt; MANGLE &gt; NAT &gt; FILTER </span></span><a href="http://www.iptables.info/en/structure-of-iptables.html" style="line-height: 1.5em;">see</a>. <span style="font-weight: normal;"><span style="background-color: white; color: black; line-height: 1.5em; font-size: 14px;">In most common use cases you will only use two of these: </span><span style="background-color: white; color: black; line-height: 1.5em; font-size: 14px;">filter</span><span style="background-color: white; color: black; line-height: 1.5em; font-size: 14px;"> and </span><span style="background-color: white; color: black; line-height: 1.5em; font-size: 14px;">nat</span><span style="background-color: white; color: black; line-height: 1.5em; font-size: 14px;">. </span></span></h3><div><br/></div><ol style="font-family: sans-serif; font-style: normal; font-weight: normal; line-height: 1.5em; margin: 0.3em 0px 0px 3.2em; padding: 0px; list-style-image: none;"><li style="margin-bottom:0.1em;"><span style="font-size: 14px;"><code style="font-family:monospace;background-color:rgb(235, 241, 245);color:rgb(34, 34, 34);padding:0.1em 0.3em;display:inline-block;">raw</code> is used only for configuring packets so that they are exempt from connection tracking.</span></li><li style="margin-bottom:0.1em;"><span style="font-size: 14px;"><code style="font-family:monospace;background-color:rgb(235, 241, 245);color:rgb(34, 34, 34);padding:0.1em 0.3em;display:inline-block;">filter</code> is the default table, and is where all the actions typically associated with a firewall take place.</span></li><li style="margin-bottom:0.1em;"><span style="font-size: 14px;"><code style="font-family:monospace;background-color:rgb(235, 241, 245);color:rgb(34, 34, 34);padding:0.1em 0.3em;display:inline-block;">nat</code> is used for <a href="http://en.wikipedia.org/wiki/Network_address_translation" style="text-decoration:none;color:rgb(51, 102, 187);background:none;outline:none;font-weight:bold;" title="wikipedia:Network address translation">network address translation</a> (e.g. port forwarding).</span></li><li style="margin-bottom:0.1em;"><span style="font-size: 14px;"><code style="font-family:monospace;background-color:rgb(235, 241, 245);color:rgb(34, 34, 34);padding:0.1em 0.3em;display:inline-block;">mangle</code> is used for specialized packet alterations (see <a href="http://en.wikipedia.org/wiki/Mangled_packet" style="text-decoration:none;color:rgb(51, 102, 187);background:none;outline:none;font-weight:bold;" title="wikipedia:Mangled packet">Mangled packet</a>).</span></li><li style="margin-bottom:0.1em;"><span style="font-size: 14px;"><code style="font-family:monospace;background-color:rgb(235, 241, 245);color:rgb(34, 34, 34);padding:0.1em 0.3em;display:inline-block;">security</code> is used for <a href="https://wiki.archlinux.org/index.php/Security#Mandatory_access_control" style="text-decoration:none;color:rgb(0, 119, 187);background:none;outline:none;font-weight:bold;" title="Security">Mandatory Access Control</a> networking rules (e.g. SELinux -- see <a href="http://lwn.net/Articles/267140/" rel="nofollow" style="text-decoration:none;color:rgb(0, 119, 187);background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAVElEQVR42n3PgQkAIAhEUXdqJ3dqJ3e6IoTPUSQcgj4EQ5IlUiLE0Jil3PECXhcHGBhZ8kg4hwxAu3MZeCGeyFnAXp4hqNQPnt7QL0nADpD6wHccLvnAKksq8iiaAAAAAElFTkSuQmCC) 100% 50% no-repeat;outline:none;padding-right:13px;font-weight:bold;">this article</a> for more details).</span></li></ol><div><span style="font-size: 14px;"><br/></span></div><div><span style="font-size: 14px; color: rgb(34, 34, 34); font-family: sans-serif; font-weight: bold; background-color: white; line-height: 1.5em;">Chains</span></div><p style="font-style: normal; margin: 0.4em 0px 0.5em; line-height: 1.5em;"><span style="font-size: 14px;">Tables consist of <i style="font-weight: normal;">chains</i>, which are lists of rules which are followed in order. The <b>default</b> table, <code style="font-weight: normal; background-color: rgb(235, 241, 245); color: rgb(34, 34, 34); padding: 0.1em 0.3em; display: inline-block;">filter</code>, contains three built-in chains: <code style="font-weight: normal; background-color: rgb(235, 241, 245); color: rgb(34, 34, 34); padding: 0.1em 0.3em; display: inline-block;">INPUT</code>, <code style="font-weight: normal; background-color: rgb(235, 241, 245); color: rgb(34, 34, 34); padding: 0.1em 0.3em; display: inline-block;">OUTPUT</code> and <code style="font-weight: normal; background-color: rgb(235, 241, 245); color: rgb(34, 34, 34); padding: 0.1em 0.3em; display: inline-block;">FORWARD</code>. The nat table includes <code style="font-weight: normal; background-color: rgb(235, 241, 245); color: rgb(34, 34, 34); padding: 0.1em 0.3em; display: inline-block;">PREROUTING</code>, <code style="font-weight: normal; background-color: rgb(235, 241, 245); color: rgb(34, 34, 34); padding: 0.1em 0.3em; display: inline-block;">POSTROUTING</code>, and <code style="font-weight: normal; background-color: rgb(235, 241, 245); color: rgb(34, 34, 34); padding: 0.1em 0.3em; display: inline-block;">OUTPUT</code> chains.</span></p><p style="font-style: normal; font-weight: normal; margin: 0.4em 0px 0.5em; line-height: 1.5em;"><span style="font-size: 14px;"><font style="line-height: 1.5em;">Chains</font> <span style="line-height: 1.5em;">do</span> <font style="line-height: 1.5em;">have a default policy</font> <font style="line-height: 1.5em;"><b>-P</b></font><font style="line-height: 1.5em;">, which is generally set to</font> <code style="line-height: 1.5em; background-color: rgb(235, 241, 245); color: rgb(34, 34, 34); padding: 0.1em 0.3em; display: inline-block;">ACCEPT</code><font style="line-height: 1.5em;">, but can be reset to</font> <code style="line-height: 1.5em; background-color: rgb(235, 241, 245); color: rgb(34, 34, 34); padding: 0.1em 0.3em; display: inline-block;">DROP</code><font style="line-height: 1.5em;">, if you want to be sure that nothing slips through your ruleset. The default policy always applies at the end of a chain only. </font><br/></span></p><p style="font-style: normal; font-weight: normal; margin: 0.4em 0px 0.5em; line-height: 1.5em;"><span style="font-size: 14px;">User-defined chains can be added to make rulesets more efficient or more easily modifiable. However<span style="font-family: sans-serif; line-height: 24.764999389648438px;"> user-defined chains can not have default policies.</span></span></p><h3 style="font-family: sans-serif; font-style: normal; font-weight: bold; color: rgb(34, 34, 34); margin: 0px 0px 0.3em; overflow: hidden; padding-top: 0.5em; padding-bottom: 0.17em; border-bottom-width: 1px; border-bottom-style: none; border-bottom-color: rgb(170, 170, 170); background-image: none;"><span style="font-size: 14px;">Rules</span></h3><p style="font-family: sans-serif; font-style: normal; font-weight: normal; margin: 0.4em 0px 0.5em; line-height: 1.5em;"><span style="font-size: 14px;">Packet filtering is based on <i>rules</i>, which are specified by multiple <i>matches</i> (conditions the packet must satisfy so that the rule can be applied), and one <i>target</i> (action taken when the packet matches all conditions). The typical things a rule might match on are what interface the packet came in on (e.g eth0 or eth1), what type of packet it is (ICMP, TCP, or UDP), or the destination port of the packet.</span></p><div><span style="font-size: 14px;">Targets are specified using the <code style="font-family:monospace;background-color:rgb(235, 241, 245);color:rgb(34, 34, 34);padding:0.1em 0.3em;display:inline-block;">-j</code> or <code style="font-family:monospace;background-color:rgb(235, 241, 245);color:rgb(34, 34, 34);padding:0.1em 0.3em;display:inline-block;">--jump</code> option. Targets can be either user-defined chains (i.e. if these conditions are matched, jump to the following user-defined chain and continue processing there), one of the special built-in targets, or a target extension.</span></div><div><span style="font-size: 14px;"><br/></span></div><div><span style="font-size: 14px;">Built-in targets are <code style="font-family:monospace;background-color:rgb(235, 241, 245);color:rgb(34, 34, 34);padding:0.1em 0.3em;display:inline-block;">ACCEPT</code>, <code style="font-family:monospace;background-color:rgb(235, 241, 245);color:rgb(34, 34, 34);padding:0.1em 0.3em;display:inline-block;">DROP</code>, <code style="font-family:monospace;background-color:rgb(235, 241, 245);color:rgb(34, 34, 34);padding:0.1em 0.3em;display:inline-block;">QUEUE</code> and <code style="font-family:monospace;background-color:rgb(235, 241, 245);color:rgb(34, 34, 34);padding:0.1em 0.3em;display:inline-block;">RETURN</code>, <u>target extensions</u> are, for example, <code style="font-family:monospace;background-color:rgb(235, 241, 245);color:rgb(34, 34, 34);padding:0.1em 0.3em;display:inline-block;">REJECT</code> and <code style="font-family:monospace;background-color:rgb(235, 241, 245);color:rgb(34, 34, 34);padding:0.1em 0.3em;display:inline-block;">LOG</code>. If the target is a built-in target, the fate of the packet is decided immediately and processing of the packet in current table is stopped. Target extensions can be either <i>terminating</i> (as built-in targets) or <i>non-terminating</i> (as user-defined chains), see <code style="font-family:monospace;background-color:rgb(235, 241, 245);color:rgb(34, 34, 34);padding:0.1em 0.3em;display:inline-block;">man 8 iptables-extensions</code> for details.</span></div><div><br/></div><h3 style="font-family: sans-serif; font-style: normal; font-weight: bold; color: rgb(34, 34, 34); margin: 0px 0px 0.3em; overflow: hidden; padding-top: 0.5em; padding-bottom: 0.17em; border-bottom-width: 1px; border-bottom-style: none; border-bottom-color: rgb(170, 170, 170); background-image: none;"><span style="font-size: 14px;">Traversing Chains</span></h3><div><span style="font-size: 14px; line-height: 1.5em;">If the target is a user-defined chain and the packet passes successfully through this second chain, it will move to the next rule in the original chain. </span><span style="font-size: 14px;"> If every rule in a chain that you jumped fails to provide a complete match, the packet is dropped back into the calling chain as illustrated <a href="http://www.frozentux.net/iptables-tutorial/images/table_subtraverse.jpg" rel="nofollow" style="text-decoration:none;color:rgb(0, 119, 187);background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAVElEQVR42n3PgQkAIAhEUXdqJ3dqJ3e6IoTPUSQcgj4EQ5IlUiLE0Jil3PECXhcHGBhZ8kg4hwxAu3MZeCGeyFnAXp4hqNQPnt7QL0nADpD6wHccLvnAKksq8iiaAAAAAElFTkSuQmCC) 100% 50% no-repeat;outline:none;padding-right:13px;font-weight:bold;">here</a>. If at any time a complete match is achieved for a rule with a <code style="font-family:monospace;background-color:rgb(235, 241, 245);color:rgb(34, 34, 34);padding:0.1em 0.3em;display:inline-block;">DROP</code> target, the packet is dropped and no further processing is done. If a packet is <code style="font-family:monospace;background-color:rgb(235, 241, 245);color:rgb(34, 34, 34);padding:0.1em 0.3em;display:inline-block;">ACCEPT</code>ed within a chain, it will be <code style="font-family:monospace;background-color:rgb(235, 241, 245);color:rgb(34, 34, 34);padding:0.1em 0.3em;display:inline-block;">ACCEPT</code>ed in all superset chains also and it will not traverse any of the superset chains any further. However, be aware that the packet will continue to traverse all other chains in other tables in the normal fashion. </span><span style="line-height: 1.5em; font-size: 14px;">A packet which is </span><code style="line-height: 1.5em; font-size: 14px; background-color: rgb(235, 241, 245); color: rgb(34, 34, 34); padding: 0.1em 0.3em; display: inline-block;">RETURN</code><span style="line-height: 1.5em; font-size: 14px;">ed within a chain will match default policy, within a sub chain it will move to originating chain. </span></div><div><br/></div><h3 style="font-family: sans-serif; font-style: normal; font-weight: bold; color: rgb(34, 34, 34); margin: 0px 0px 0.3em; overflow: hidden; padding-top: 0.5em; padding-bottom: 0.17em; border-bottom-width: 1px; border-bottom-style: none; border-bottom-color: rgb(170, 170, 170); background-image: none;"><span style="font-size: 14px;">-m Modules</span></h3><p style="font-family: sans-serif; font-style: normal; font-weight: normal; margin: 0.4em 0px 0.5em; line-height: 1.5em;"><span style="font-size: 14px;">There are many modules which can be used to extend iptables such as <u>connlimit, conntrack, limit and recent</u>. These modules add extra functionality to allow complex filtering rules.</span></p></div></div></div><a href="https://help.ubuntu.com/community/IptablesHowTo" style="font-size: 14px;">https://help.ubuntu.com/community/IptablesHowTo</a><br/></div></en-note></p>
+
+  </div>
+
+  
+</article>
+
+    </div>
+    <div class="wrapper-footer">
+    <div class="container">
+        <footer class="footer">
+            
+
+<a href="http://facebook.com/dhval.mudawal"><i class="svg-icon facebook"></i></a>
+
+<a href="http://github.com/dhval"><i class="svg-icon github"></i></a>
+
+<a href="http://linkedin.com/in/dhvalmudawal"><i class="svg-icon linkedin"></i></a>
+
+
+<a href="http://twitter.com/jekyllrb"><i class="svg-icon twitter"></i></a>
+
+
+        </footer>
+    </div>
+    <p style="text-align:center;">© I do not claim ownership of this content. Please send me a <a href="/suggestions">message</a>, if this infringes any copyright. </p>
+</div>
+</body>
+
+</html>

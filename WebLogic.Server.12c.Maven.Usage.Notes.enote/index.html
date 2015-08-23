@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>WebLogic Server 12c - Maven Usage Notes – Dhval Mudawal – Rants</title>
+    <meta charset="utf-8" />
+<meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'> 
+<meta name="description" content="Here are quick notes on setting up hot bootable version of Oracle Weblogic using Maven plugins." />
+<meta property="og:description" content="Here are quick notes on setting up hot bootable version of Oracle Weblogic using Maven plugins." /> 
+<meta name="author" content="Dhval Mudawal" /> 
+<meta property="og:title" content="WebLogic Server 12c - Maven Usage Notes" />
+<meta property="twitter:title" content="WebLogic Server 12c - Maven Usage Notes" /> 
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- Twitter Bootstrap css -->
+    <link href="/css/font-awesome.min.css">
+    <link href="/dist/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!-- Your css -->
+    <link href="/css/base-war.css" rel="stylesheet">
+    <link href="/css/dhval.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/responsive.css" rel="stylesheet">
+    <!-- Vendor js -->
+    <script type="text/javascript" charset="utf-8" src="/dist/requirejs/require.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/dist/modernizr/modernizr.js"></script>
+    <!-- Your js -->
+    <script type="text/javascript" charset="utf-8" src="/js/require.config.js"></script>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Dhval Mudawal - Rants" href="/feed.xml" />
+</head>
+
+<body>
+    <div class="wrapper-masthead">
+    <div class="container">
+        <header class="masthead clearfix">
+            <a href="/" class="site-avatar"><img src="https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png" /></a>
+            <div class="site-info">
+                <h1 class="site-name"><a href="/">Dhval Mudawal</a></h1>
+                <p class="site-description"> WebLogic Server 12c - Maven Usage Notes 
+                </p>
+            </div>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+            </nav>
+        </header>
+    </div>
+</div>
+    <div id="main" role="main" class="container">
+        <article class="post">
+  <div class="date">
+   <a href="https://www.evernote.com/shard/s11/sh/05a38957-cb23-44a1-905b-e3f170fce877/aef5a079d3a42f808d2da33a06eae011/">View on Evernote.com</a> 
+    Modified: August 23, 2015
+  </div>
+
+  <div class="entry">
+    <p><en-note style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;">
+<div>Here are quick notes on setting up hot bootable version of Oracle Weblogic using Maven plugins.</div>
+<div><br/></div>
+<div>Oracle Enterprise Pack for Eclipse </div>
+<div><br/></div>
+<div><a href="http://download.oracle.com/otn_software/oepe/kepler">http://download.oracle.com/otn<em>software/oepe/kepler</a><br/></div>
+<div><br/></div>
+<div>wls-dev server download page</div>
+<div><br/></div>
+<div><a href="http://www.oracle.com/technetwork/middleware/fusion-middleware/downloads/index.html">http://www.oracle.com/technetwork/middleware/fusion-middleware/downloads/index.html</a><br/></div>
+<div><br/></div>
+<div>Use exploded deployment with auto deployment mode</div>
+<div><br/></div>
+<br/>
+<div style="position: relative; max-width: 692px;">
+<div style="font-size: 16px">
+&lt;div style=&quot;font-style:normal;font-variant:normal;font-weight:normal;font-size:15px;font-family:Arial, Tahoma, Helvetica, FreeSans, sans-serif;color:rgb(51, 51, 51);background-image:url(http://3.bp.blogspot.com/-RsBgCRmd0lY/UjKdn</em>JX4cI/AAAAAAAAAbw/vWRVmXHH27w/s0/IMG<em>0158.jpg);background-attachment:fixed;background-color:transparent;background-position:50% 0%;background-repeat:no-repeat repeat;&quot;&gt;
+<div style="word-wrap:break-word;">
+<div style="font-size:90%;background-image:none;background-attachment:scroll;background-color:transparent;border-top-left-radius:0px;border-top-right-radius:0px;border-bottom-right-radius:0px;border-bottom-left-radius:0px;-webkit-box-shadow:rgba(0, 0, 0, 0.14902) 0px 0px 0px;box-shadow:rgba(0, 0, 0, 0.14902) 0px 0px 0px;background-position:0% 0%;background-repeat:repeat repeat;">
+<div style="background-position:0% 0%;background-repeat:no-repeat repeat;">
+<div style="background-image:url(http://www.blogblog.com/1kt/transparent/white80.png);background-attachment:scroll;background-color:transparent;border-top-left-radius:20px;border-top-right-radius:20px;border-bottom-right-radius:0px;border-bottom-left-radius:0px;-webkit-box-shadow:rgba(0, 0, 0, 0.14902) 0px 1px 3px;box-shadow:rgba(0, 0, 0, 0.14902) 0px 1px 3px;background-position:0% 0%;background-repeat:repeat repeat;">
+<div style="background-position:0% 0%;background-repeat:no-repeat repeat;">
+<div style="zoom:1;">
+<div>
+<div style="background-color:rgb(255, 255, 255);border-top-left-radius:5px;border-top-right-radius:5px;border-bottom-right-radius:5px;border-bottom-left-radius:5px;">
+<div style="font-size:110%;">
+<div style="margin:0cm 0cm 0.0001pt;font-size:12pt;font-family:'Times New Roman';">As an example, it’s possible to issue the following commands that all use the same WLS installation and domain without specifying any repetitive values:</div>
+<div style="margin:0cm 0cm 0.0001pt;font-size:12pt;font-family:'Times New Roman';"><br/></div>
+<div style="margin:0cm 0cm 0.0001pt;font-size:12pt;font-family:'Times New Roman';">$ wls:install -DartifactLocation=/Users/sbutton/wls1211</em>dev.zip</div>
+<div style="margin:0cm 0cm 0.0001pt;font-size:12pt;font-family:'Times New Roman';">cd wls1220 &amp;&amp; ./configure.sh</div>
+<div style="margin:0cm 0cm 0.0001pt;font-size:12pt;font-family:'Times New Roman';">$ wls:create-domain –Duser=weblogic –Dpassword=welcome1</div>
+<div style="margin:0cm 0cm 0.0001pt;font-size:12pt;font-family:'Times New Roman';">$ wls:start-server</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div><br/></div>
+<div><br/></div>
+<div><a href="http://saltnlight5.blogspot.com/2014/02/developing-java-ee-applications-with.html">http://saltnlight5.blogspot.com/2014/02/developing-java-ee-applications-with.html</a></div>
+<div><a href="http://buttso.blogspot.com/2011/12/weblogic-server-12c-maven-usage-notes.html">http://buttso.blogspot.com/2011/12/weblogic-server-12c-maven-usage-notes.html</a></div>
+</en-note></p>
+
+  </div>
+
+  
+</article>
+
+    </div>
+    <div class="wrapper-footer">
+    <div class="container">
+        <footer class="footer">
+            
+
+<a href="http://facebook.com/dhval.mudawal"><i class="svg-icon facebook"></i></a>
+
+<a href="http://github.com/dhval"><i class="svg-icon github"></i></a>
+
+<a href="http://linkedin.com/in/dhvalmudawal"><i class="svg-icon linkedin"></i></a>
+
+
+<a href="http://twitter.com/jekyllrb"><i class="svg-icon twitter"></i></a>
+
+
+        </footer>
+    </div>
+    <p style="text-align:center;">© I do not claim ownership of this content. Please send me a <a href="/suggestions">message</a>, if this infringes any copyright. </p>
+</div>
+</body>
+
+</html>

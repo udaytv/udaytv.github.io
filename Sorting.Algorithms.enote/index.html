@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sorting Algorithms – Dhval Mudawal – Rants</title>
+    <meta charset="utf-8" />
+<meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'> 
+<meta name="description" content="Quick overview of simple sorting algorithms. We cannot simple ignore them as the form the base of many algorithms." />
+<meta property="og:description" content="Quick overview of simple sorting algorithms. We cannot simple ignore them as the form the base of many algorithms." /> 
+<meta name="author" content="Dhval Mudawal" /> 
+<meta property="og:title" content="Sorting Algorithms" />
+<meta property="twitter:title" content="Sorting Algorithms" /> 
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- Twitter Bootstrap css -->
+    <link href="/css/font-awesome.min.css">
+    <link href="/dist/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!-- Your css -->
+    <link href="/css/base-war.css" rel="stylesheet">
+    <link href="/css/dhval.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/responsive.css" rel="stylesheet">
+    <!-- Vendor js -->
+    <script type="text/javascript" charset="utf-8" src="/dist/requirejs/require.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/dist/modernizr/modernizr.js"></script>
+    <!-- Your js -->
+    <script type="text/javascript" charset="utf-8" src="/js/require.config.js"></script>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Dhval Mudawal - Rants" href="/feed.xml" />
+</head>
+
+<body>
+    <div class="wrapper-masthead">
+    <div class="container">
+        <header class="masthead clearfix">
+            <a href="/" class="site-avatar"><img src="https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png" /></a>
+            <div class="site-info">
+                <h1 class="site-name"><a href="/">Dhval Mudawal</a></h1>
+                <p class="site-description"> Sorting Algorithms 
+                </p>
+            </div>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+            </nav>
+        </header>
+    </div>
+</div>
+    <div id="main" role="main" class="container">
+        <article class="post">
+  <div class="date">
+   <a href="https://www.evernote.com/shard/s11/sh/a17e5808-5325-4edb-9959-cf2058fc0a38/ba0d44833b1082ce14490429a1f069dd/">View on Evernote.com</a> 
+    Modified: August 23, 2015
+  </div>
+
+  <div class="entry">
+    <p><en-note bgcolor="#FFFFFF" style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;">
+<div><font face="Arial">Quick overview of simple sorting algorithms. We cannot simple ignore them as the form the base of many algorithms.</font></div>
+<div><span style="font-family: Arial;"><br/></span></div>
+<ul>
+<li><span style="font-family: Arial;">Using binary comparisons we have n! sub sets and hence we need n lg n to reach the leaf node of the binary tree. Integer sorting does not uses binary comparisons and can achieve O(n) for sorting n numbers. </span></li>
+<li><span style="font-family: Arial;">Avoiding overflow when looking middle element:   int mid = first + (last - first) / 2;</span></li>
+</ul>
+<div><span style="font-family: Arial;"><br/></span></div>
+<div><span style="font-family: Arial;"><b>Bubble Sort</b> - <span style="border-collapse: separate; orphans: 2; widows: 2; border-spacing: 0px;">After every pass the biggest* element is sifted to end.  Lot of swaps since each element is compared with next element.</span></span></div>
+<div><span style="font-family: Arial;"><br/></span></div>
+<div><span style="font-family: Arial;"><b>Insertion Sort</b> - Similar to human arranging cards. Elements are inserted into the sorted array [0 to k-1] and swap happens from inserted element to A[k]. We can use binary search to find position of kth element in [0 to k-1] sorted array. However actual insertion may cause k-1 swaps.</span></div>
+<div><span style="font-family: Arial;"><br/></span></div>
+<div><span style="font-family: Arial;"><b>Selection Sort</b> - Minimizes number of swaps. For every iteration k, find the smallest  element in A [k to k-1] and swap at the end of iteration.</span></div>
+<div><span style="font-family: Arial;"><br/></span></div>
+<div><span style="font-family: Arial;"><a href="https://en.wikipedia.org/wiki/Quicksort"><b>Quick Sort</b></a> - Uses divide-and-conquer strategy, below are the recursion steps</span></div>
+<div><span style="font-family: Arial;"><br/></span></div>
+<ol>
+<li><span style="font-family: Arial;"><strong>Choose a pivot value.</strong> Pick a random element k or middle element as pivot value.</span></li>
+<li><span style="font-family: Arial;"><strong>Partition.</strong> Rearrange elements in such a way, that all elements which are lesser than the pivot go to the left part of the array and vice-versa.</span></li>
+<li><span style="font-family: Arial;"><strong>Sort both parts.</strong> Apply quicksort recursively to the left and the right parts.</span></li>
+</ol>
+<div><span style="font-family: Arial;"><br/></span></div>
+<div><span style="font-family: Arial;"><b>Counting or Bucket Sort   </b></span></div>
+<div>
+<div><span style="font-family: Arial;"><b><br/></b></span></div>
+</div>
+<div><span style="font-family: Arial;">We can implement a simple counting sort using array[k] when sorting 1…k numbers. <span style="font-family: Arial;">We need an ARRAY[k] to hold frequency of each number occurrence and then merge at end.</span></span></div>
+<div><span style="font-family: Arial;"><br/></span></div>
+<div><span style="font-family: Arial;">When to use Counting sort ?     <span style="font-family: Arial;">When k is smaller than n  ( k&lt;&lt;n )</span></span></div>
+<div><span style="font-family: Arial;"><br/></span></div>
+<div><span style="font-family: Arial;">e.g. Suppose you want to sort 10000 people by birthday; n=10000, k=366, so time = O(n) and memory O(k).</span></div>
+<div><span style="font-family: Arial;"><b><br/></b></span></div>
+<div>
+<div><span style="font-family: Arial;"><b>Radix sort   -  <a href="http://www.geeksforgeeks.org/how-to-efficiently-sort-a-big-list-dates-in-20s/" style="padding: 0px; border: 0px; vertical-align: baseline; outline: none; color: rgb(236, 78, 32); text-decoration: none;" title="How to efficiently sort a big list dates in 20’s">How to efficiently sort a big list dates in 20’s</a></b></span></div>
+<div><span style="font-family: Arial;"><b><br/></b></span></div>
+</div>
+<div><span style="font-family: Arial;">What to do when k is large ?</span></div>
+<div><span style="font-family: Arial;"><br/></span></div>
+<div><span style="font-family: Arial;">Think about the decimal representation of a number. For any number we need <u>log(number) digits</u>.</span></div>
+<div><span style="font-family: Arial;"><br/></span></div>
+<div><span style="font-family: Arial;">x = a + 10 b + 100 c + 1000 d + … where a, b, c etc all in range 0..9.</span></div>
+<div>
+<div><span style="font-family: Arial;"><br/></span></div>
+<div><span style="font-family: Arial;">    radix sort(L):</span></div>
+</div>
+<div><span style="font-family: Arial;">    {</span></div>
+<div><span style="font-family: Arial;">    bucket sort by a; </span><span style="font-family: Arial;">bucket sort by b; </span><span style="font-family: Arial;">bucket sort by c</span></div>
+<div><span style="font-family: Arial;">    ...<br/>
+    }</span></div>
+<div>
+<div><span style="font-family: Arial;"><br/></span></div>
+<ul>
+<li><span style="font-family: Arial;">We do k passes where k is the number of digit. Hence we would need 10 passes in 32 bit number.</span></li>
+<li><span style="font-family: Arial;">Start from LSD so in last pass we handle the MSB and it is when all numbers settle in the final place. For MSB first we would need recursion similar to merge sort. By contrast to bucket sort, radix sorting never splits up the list; it just applies bucket sorting several times to the same list.</span></li>
+</ul>
+<div><span style="font-family: Arial;"><b><br/></b></span></div>
+<div><span style="font-family: Arial;"><b>Sorting floating point numbers</b></span></div>
+<div><span style="font-family: Arial;"><b><br/></b></span></div>
+<div><span style="font-family: Arial;">Floating point represents numbers roughly in the form x = a * 2^b. If all numbers had same value of b, we could just bucket sort by a. Different b&#39;s complicate the picture but basically b is more important than a so sort by a first (radix sort) then one more bucket sort by b.</span></div>
+</div>
+<div><span style="font-family: Arial;"><b><br/></b></span></div>
+<div><span style="font-family: Arial;"><b>Stability - </b>Any comparison based sorting algorithm can be made stable by modifying the comparisons to break ties according to the original positions of the objects, but few are automatically stable.</span></div>
+<div>
+<div><span style="font-family: Arial;"><b><br/></b></span></div>
+<ul>
+<li><span style="font-family: Arial;">Bucket sort? Yes. We add items to the lists Y[i] in order, and concatenating them preserves that order.</span></li>
+<li><span style="font-family: Arial;">Heap sort? No. The act of placing objects into a heap (and heapifying them) destroys any initial ordering they might have.</span></li>
+<li><span style="font-family: Arial;">Merge sort? Maybe. It depends on how we divide lists into two, and on how we merge them. For instance if we divide by choosing every other element to go into each list, it is unlikely to be stable. If we divide by splitting a list at its midpoint, and break ties when merging in favor of the first list, then the algorithm can be stable.</span></li>
+<li><span style="font-family: Arial;">Quick sort? Again, maybe. It depends on how you do the partition step.</span></li>
+</ul>
+</div>
+<div><span style="font-family: Arial;"><br/></span></div>
+<div><span style="font-family: Arial;"><a href="https://en.wikipedia.org/wiki/Sorting_algorithm">https://en.wikipedia.org/wiki/Sorting_algorithm</a></span></div>
+<div><span style="font-family: Arial;"><a href="http://www.sorting-algorithms.com/">http://www.sorting-algorithms.com/</a></span></div>
+<div><span style="font-family: Arial;"><a href="http://www.cs.ubc.ca/~harrison/Java/sorting-demo.html">http://www.cs.ubc.ca/~harrison/Java/sorting-demo.html</a></span></div>
+</en-note></p>
+
+  </div>
+
+  
+</article>
+
+    </div>
+    <div class="wrapper-footer">
+    <div class="container">
+        <footer class="footer">
+            
+
+<a href="http://facebook.com/dhval.mudawal"><i class="svg-icon facebook"></i></a>
+
+<a href="http://github.com/dhval"><i class="svg-icon github"></i></a>
+
+<a href="http://linkedin.com/in/dhvalmudawal"><i class="svg-icon linkedin"></i></a>
+
+
+<a href="http://twitter.com/jekyllrb"><i class="svg-icon twitter"></i></a>
+
+
+        </footer>
+    </div>
+    <p style="text-align:center;">© I do not claim ownership of this content. Please send me a <a href="/suggestions">message</a>, if this infringes any copyright. </p>
+</div>
+</body>
+
+</html>

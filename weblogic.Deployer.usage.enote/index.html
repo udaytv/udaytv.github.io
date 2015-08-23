@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>weblogic.Deployer - usage – Dhval Mudawal – Rants</title>
+    <meta charset="utf-8" />
+<meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'> 
+<meta name="description" content="Quick links on using wlst, Oracle WEBLOGIC’s scripting API. " />
+<meta property="og:description" content="Quick links on using wlst, Oracle WEBLOGIC’s scripting API. " /> 
+<meta name="author" content="Dhval Mudawal" /> 
+<meta property="og:title" content="weblogic.Deployer - usage" />
+<meta property="twitter:title" content="weblogic.Deployer - usage" /> 
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- Twitter Bootstrap css -->
+    <link href="/css/font-awesome.min.css">
+    <link href="/dist/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!-- Your css -->
+    <link href="/css/base-war.css" rel="stylesheet">
+    <link href="/css/dhval.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/responsive.css" rel="stylesheet">
+    <!-- Vendor js -->
+    <script type="text/javascript" charset="utf-8" src="/dist/requirejs/require.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/dist/modernizr/modernizr.js"></script>
+    <!-- Your js -->
+    <script type="text/javascript" charset="utf-8" src="/js/require.config.js"></script>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Dhval Mudawal - Rants" href="/feed.xml" />
+</head>
+
+<body>
+    <div class="wrapper-masthead">
+    <div class="container">
+        <header class="masthead clearfix">
+            <a href="/" class="site-avatar"><img src="https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png" /></a>
+            <div class="site-info">
+                <h1 class="site-name"><a href="/">Dhval Mudawal</a></h1>
+                <p class="site-description"> weblogic.Deployer - usage 
+                </p>
+            </div>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+            </nav>
+        </header>
+    </div>
+</div>
+    <div id="main" role="main" class="container">
+        <article class="post">
+  <div class="date">
+   <a href="https://www.evernote.com/shard/s11/sh/2784d125-d420-4753-b144-a4b38f36e95a/09241df91177ef5d6a4fdfffc16085ca/">View on Evernote.com</a> 
+    Modified: August 23, 2015
+  </div>
+
+  <div class="entry">
+    <p><en-note>
+<div><span style="font-family: Arial;"><b><font color="#777777">Quick links on using wlst, Oracle WEBLOGIC’s scripting API. </font></b></span></div>
+<div><b><span style="color: rgb(119, 119, 119);"><br/></span></b></div>
+<div><span style="color: rgb(119, 119, 119);"><strong style="margin:0px;padding:0px;border:0px;font-family:inherit;font-size:inherit;font-style:inherit;font-variant:inherit;font-weight:bold;font-stretch:inherit;vertical-align:baseline;">Deploy application on admin server:</strong></span></div>
+<div style="font-family:inherit;font-size:inherit;font-style:inherit;font-variant:inherit;font-weight:inherit;font-stretch:inherit;vertical-align:baseline;-webkit-font-smoothing:antialiased;overflow-x:hidden;">
+<div style="font-family:'Droid Serif';font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;vertical-align:baseline;color:rgb(119, 119, 119);background-color:rgb(240, 242, 243);background-image:url(http://weblogic-wonders.com/weblogic/wp-content/themes/truepixel/images/pattern3.png);">
+<div style="font-family:inherit;font-size:inherit;font-style:inherit;font-variant:inherit;font-weight:inherit;font-stretch:inherit;vertical-align:baseline;box-shadow:rgba(0, 0, 0, 0.298039) 0px 1px 3px;background:rgb(245, 245, 245);">
+<div style="font-family:inherit;font-size:inherit;font-style:inherit;font-variant:inherit;font-weight:inherit;font-stretch:inherit;vertical-align:baseline;">
+<div style="font-family:inherit;font-size:inherit;font-style:inherit;font-variant:inherit;font-weight:inherit;font-stretch:inherit;vertical-align:baseline;box-sizing:border-box;background:rgb(255, 255, 255);">
+<div style="font-family:inherit;font-size:inherit;font-style:inherit;font-variant:inherit;font-weight:inherit;font-stretch:inherit;vertical-align:baseline;">
+<div style="font-family:inherit;font-size:inherit;font-style:inherit;font-variant:inherit;font-weight:inherit;font-stretch:inherit;vertical-align:baseline;">
+<div style="margin:0px;padding:0px;border:0px;font-family:inherit;font-size:inherit;font-style:inherit;font-variant:inherit;font-weight:inherit;font-stretch:inherit;vertical-align:baseline;float:left;width:100%;margin-bottom:30px;background-color:rgb(255, 255, 255);">
+<div style="margin:0px;padding:0px;border:0px;font-family:inherit;font-size:inherit;font-style:inherit;font-variant:inherit;font-weight:inherit;font-stretch:inherit;vertical-align:baseline;clear:both;position:relative;">
+<div style="margin:0px;padding:0px;border:0px;font-family:inherit;font-size:inherit;font-style:inherit;font-variant:inherit;font-weight:inherit;font-stretch:inherit;vertical-align:baseline;">
+<div style="margin:0px;padding:0px;border:0px;font-family:inherit;font-size:inherit;font-style:inherit;font-variant:inherit;font-weight:inherit;font-stretch:inherit;vertical-align:baseline;">
+<div style="margin:1em 0px;padding:1px;border:0px;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-size:12px;font-style:inherit;font-variant:inherit;font-weight:inherit;font-stretch:inherit;vertical-align:baseline;width:100%;position:relative;overflow:auto;background-color:white;overflow-y:hidden;">
+<div style="margin:0px;padding:0px;border:none;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-size:10px;font-style:normal;font-variant:inherit;font-weight:normal;font-stretch:inherit;vertical-align:baseline;border-radius:0px;bottom:auto;float:none;height:11px;left:auto;outline:0px;overflow:visible;position:absolute;right:1px;text-align:left;top:1px;width:11px;box-sizing:content-box;min-height:inherit;background:rgb(108, 226, 108);z-index:10;color:white;"><span style="margin:0px;padding:0px;border:0px;font-family:inherit;font-size:inherit;font-style:inherit;font-variant:inherit;font-weight:inherit;font-stretch:inherit;vertical-align:baseline;"><a href="http://weblogic-wonders.com/weblogic/2010/12/18/weblogic-deployer-usage/#" style="margin:0px;padding:0px;border:0px;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-size:12px;font-style:normal;font-variant:inherit;font-weight:normal;font-stretch:inherit;vertical-align:baseline;text-decoration:none;color:white;transition:all 0.2s linear;-webkit-transition:all 0.2s linear;border-radius:0px;bottom:auto;float:none;height:auto;left:auto;outline:0px;overflow:visible;position:static;right:auto;text-align:center;top:auto;width:auto;box-sizing:content-box;min-height:inherit;background:none;display:block;padding-top:1px;">?</a></span></div>
+<table border="0" cellpadding="0" cellspacing="0" style="font-size:12px;font-weight:normal;font-style:normal;font-variant:inherit;margin:0px;padding:0px;border:0px;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-stretch:inherit;vertical-align:baseline;border-collapse:collapse;border-spacing:0px;text-align:left;border-radius:0px;bottom:auto;float:none;height:auto;left:auto;outline:0px;overflow:visible;position:static;right:auto;top:auto;box-sizing:content-box;min-height:inherit;background:none;width:99.86062717770035%;">
+<tbody style="margin:0px;padding:0px;border:0px;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-size:12px;font-style:normal;font-variant:inherit;font-weight:normal;font-stretch:inherit;vertical-align:baseline;border-radius:0px;bottom:auto;float:none;height:auto;left:auto;outline:0px;overflow:visible;position:static;right:auto;text-align:left;top:auto;width:auto;box-sizing:content-box;min-height:inherit;background:none;">
+<tr style="margin:0px;padding:0px;border:0px;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-size:12px;font-style:normal;font-variant:inherit;font-weight:normal;font-stretch:inherit;vertical-align:baseline;border-radius:0px;bottom:auto;float:none;height:auto;left:auto;outline:0px;overflow:visible;position:static;right:auto;text-align:left;top:auto;width:auto;box-sizing:content-box;min-height:inherit;background:none;">
+<td style="margin:0px;padding:0px;border:0px;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-size:12px;font-style:normal;font-variant:inherit;font-weight:normal;font-stretch:inherit;vertical-align:baseline;text-align:left;border-radius:0px;bottom:auto;float:none;height:auto;left:auto;outline:0px;overflow:visible;position:static;right:auto;top:auto;box-sizing:content-box;min-height:inherit;background:none;color:rgb(175, 175, 175);width:2.4424284717376135%;">
+<div style="margin:0px;padding:0px 0.5em 0px 1em;border:0px;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-size:12px;font-style:normal;font-variant:inherit;font-weight:normal;font-stretch:inherit;vertical-align:baseline;border-radius:0px;bottom:auto;float:none;height:auto;left:auto;outline:0px;overflow:visible;position:static;right:auto;text-align:right;top:auto;width:auto;box-sizing:content-box;min-height:inherit;background:none;white-space:pre;background-color:white;border-right-width:3px;border-right-style:solid;border-right-color:rgb(108, 226, 108);">1</div>
+</td>
+<td style="margin:0px;padding:0px;border:0px;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-size:12px;font-style:normal;font-variant:inherit;font-weight:normal;font-stretch:inherit;vertical-align:baseline;text-align:left;border-radius:0px;bottom:auto;float:none;height:auto;left:auto;outline:0px;overflow:visible;position:static;right:auto;top:auto;box-sizing:content-box;min-height:inherit;background:none;width:98.00458201738853%;">
+<div style="margin:0px;padding:0px;border:0px;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-size:12px;font-style:normal;font-variant:inherit;font-weight:normal;font-stretch:inherit;vertical-align:baseline;position:relative;width:auto;min-width:240px;max-width:100%;border-radius:0px;bottom:auto;float:none;height:auto;left:auto;outline:0px;overflow:visible;right:auto;text-align:left;top:auto;box-sizing:content-box;min-height:inherit;background:none;">
+<div style="margin:0px;padding:0px 1em;border:0px;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-size:12px;font-style:normal;font-variant:inherit;font-weight:normal;font-stretch:inherit;vertical-align:baseline;border-radius:0px;bottom:auto;float:none;height:auto;left:auto;outline:0px;overflow:visible;position:static;right:auto;text-align:left;top:auto;width:auto;box-sizing:content-box;min-height:inherit;background:none;white-space:pre;background-color:white;"><code style="margin:0px;padding:0px;border:0px;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-size:12px;font-style:normal;font-variant:inherit;font-weight:normal;font-stretch:inherit;vertical-align:baseline;border-radius:0px;bottom:auto;float:none;height:auto;left:auto;outline:0px;overflow:visible;position:static;right:auto;text-align:left;top:auto;width:auto;box-sizing:content-box;min-height:inherit;background:none;color:black;">java weblogic.Deployer -adminurl url -username username -password password -name myapp -deploy c:/myapps/myapp.ear</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p style="margin:0px;padding:0px;border:0px;font-family:inherit;font-size:inherit;font-style:inherit;font-variant:inherit;font-weight:inherit;font-stretch:inherit;vertical-align:baseline;margin-bottom:20px;"><strong style="margin:0px;padding:0px;border:0px;font-family:inherit;font-size:inherit;font-style:inherit;font-variant:inherit;font-weight:bold;font-stretch:inherit;vertical-align:baseline;">Deploy individual modules in application to different targets:</strong></p>
+<div style="margin:0px;padding:0px;border:0px;font-family:inherit;font-size:inherit;font-style:inherit;font-variant:inherit;font-weight:inherit;font-stretch:inherit;vertical-align:baseline;">
+<div style="margin:1em 0px;padding:1px;border:0px;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-size:12px;font-style:inherit;font-variant:inherit;font-weight:inherit;font-stretch:inherit;vertical-align:baseline;width:100%;position:relative;overflow:auto;background-color:white;overflow-y:hidden;">
+<div style="margin:0px;padding:0px;border:none;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-size:10px;font-style:normal;font-variant:inherit;font-weight:normal;font-stretch:inherit;vertical-align:baseline;border-radius:0px;bottom:auto;float:none;height:11px;left:auto;outline:0px;overflow:visible;position:absolute;right:1px;text-align:left;top:1px;width:11px;box-sizing:content-box;min-height:inherit;background:rgb(108, 226, 108);z-index:10;color:white;"><span style="margin:0px;padding:0px;border:0px;font-family:inherit;font-size:inherit;font-style:inherit;font-variant:inherit;font-weight:inherit;font-stretch:inherit;vertical-align:baseline;"><a href="http://weblogic-wonders.com/weblogic/2010/12/18/weblogic-deployer-usage/#" style="margin:0px;padding:0px;border:0px;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-size:12px;font-style:normal;font-variant:inherit;font-weight:normal;font-stretch:inherit;vertical-align:baseline;text-decoration:none;color:white;transition:all 0.2s linear;-webkit-transition:all 0.2s linear;border-radius:0px;bottom:auto;float:none;height:auto;left:auto;outline:0px;overflow:visible;position:static;right:auto;text-align:center;top:auto;width:auto;box-sizing:content-box;min-height:inherit;background:none;display:block;padding-top:1px;">?</a></span></div>
+<table border="0" cellpadding="0" cellspacing="0" style="font-size:12px;font-weight:normal;font-style:normal;font-variant:inherit;margin:0px;padding:0px;border:0px;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-stretch:inherit;vertical-align:baseline;border-collapse:collapse;border-spacing:0px;text-align:left;border-radius:0px;bottom:auto;float:none;height:auto;left:auto;outline:0px;overflow:visible;position:static;right:auto;top:auto;box-sizing:content-box;min-height:inherit;background:none;width:99.86062717770035%;">
+<tbody style="margin:0px;padding:0px;border:0px;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-size:12px;font-style:normal;font-variant:inherit;font-weight:normal;font-stretch:inherit;vertical-align:baseline;border-radius:0px;bottom:auto;float:none;height:auto;left:auto;outline:0px;overflow:visible;position:static;right:auto;text-align:left;top:auto;width:auto;box-sizing:content-box;min-height:inherit;background:none;">
+<tr style="margin:0px;padding:0px;border:0px;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-size:12px;font-style:normal;font-variant:inherit;font-weight:normal;font-stretch:inherit;vertical-align:baseline;border-radius:0px;bottom:auto;float:none;height:auto;left:auto;outline:0px;overflow:visible;position:static;right:auto;text-align:left;top:auto;width:auto;box-sizing:content-box;min-height:inherit;background:none;">
+<td style="margin:0px;padding:0px;border:0px;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-size:12px;font-style:normal;font-variant:inherit;font-weight:normal;font-stretch:inherit;vertical-align:baseline;text-align:left;border-radius:0px;bottom:auto;float:none;height:auto;left:auto;outline:0px;overflow:visible;position:static;right:auto;top:auto;box-sizing:content-box;min-height:inherit;background:none;color:rgb(175, 175, 175);width:2.4424284717376135%;">
+<div style="margin:0px;padding:0px 0.5em 0px 1em;border:0px;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-size:12px;font-style:normal;font-variant:inherit;font-weight:normal;font-stretch:inherit;vertical-align:baseline;border-radius:0px;bottom:auto;float:none;height:auto;left:auto;outline:0px;overflow:visible;position:static;right:auto;text-align:right;top:auto;width:auto;box-sizing:content-box;min-height:inherit;background:none;white-space:pre;background-color:white;border-right-width:3px;border-right-style:solid;border-right-color:rgb(108, 226, 108);">1</div>
+</td>
+<td style="margin:0px;padding:0px;border:0px;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-size:12px;font-style:normal;font-variant:inherit;font-weight:normal;font-stretch:inherit;vertical-align:baseline;text-align:left;border-radius:0px;bottom:auto;float:none;height:auto;left:auto;outline:0px;overflow:visible;position:static;right:auto;top:auto;box-sizing:content-box;min-height:inherit;background:none;width:98.00458201738853%;">
+<div style="margin:0px;padding:0px;border:0px;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-size:12px;font-style:normal;font-variant:inherit;font-weight:normal;font-stretch:inherit;vertical-align:baseline;position:relative;width:auto;min-width:240px;max-width:100%;border-radius:0px;bottom:auto;float:none;height:auto;left:auto;outline:0px;overflow:visible;right:auto;text-align:left;top:auto;box-sizing:content-box;min-height:inherit;background:none;">
+<div style="margin:0px;padding:0px 1em;border:0px;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-size:12px;font-style:normal;font-variant:inherit;font-weight:normal;font-stretch:inherit;vertical-align:baseline;border-radius:0px;bottom:auto;float:none;height:auto;left:auto;outline:0px;overflow:visible;position:static;right:auto;text-align:left;top:auto;width:auto;box-sizing:content-box;min-height:inherit;background:none;white-space:pre;background-color:white;"><code style="margin:0px;padding:0px;border:0px;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-size:12px;font-style:normal;font-variant:inherit;font-weight:normal;font-stretch:inherit;vertical-align:baseline;border-radius:0px;bottom:auto;float:none;height:auto;left:auto;outline:0px;overflow:visible;position:static;right:auto;text-align:left;top:auto;width:auto;box-sizing:content-box;min-height:inherit;background:none;color:black;">java weblogic.Deployer -adminurl url -username username -password password -name myapp -targets mywar</code><code style="margin:0px;padding:0px;border:0px;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-size:12px;font-style:normal;font-variant:inherit;font-weight:normal;font-stretch:inherit;vertical-align:baseline;border-radius:0px;bottom:auto;float:none;height:auto;left:auto;outline:0px;overflow:visible;position:static;right:auto;text-align:left;top:auto;width:auto;box-sizing:content-box;min-height:inherit;background:none;color:gray;">@webserver</code><code style="margin:0px;padding:0px;border:0px;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-size:12px;font-style:normal;font-variant:inherit;font-weight:normal;font-stretch:inherit;vertical-align:baseline;border-radius:0px;bottom:auto;float:none;height:auto;left:auto;outline:0px;overflow:visible;position:static;right:auto;text-align:left;top:auto;width:auto;box-sizing:content-box;min-height:inherit;background:none;color:black;">,myjar</code><code style="margin:0px;padding:0px;border:0px;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-size:12px;font-style:normal;font-variant:inherit;font-weight:normal;font-stretch:inherit;vertical-align:baseline;border-radius:0px;bottom:auto;float:none;height:auto;left:auto;outline:0px;overflow:visible;position:static;right:auto;text-align:left;top:auto;width:auto;box-sizing:content-box;min-height:inherit;background:none;color:gray;">@ejbserver</code> <code style="margin:0px;padding:0px;border:0px;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-size:12px;font-style:normal;font-variant:inherit;font-weight:normal;font-stretch:inherit;vertical-align:baseline;border-radius:0px;bottom:auto;float:none;height:auto;left:auto;outline:0px;overflow:visible;position:static;right:auto;text-align:left;top:auto;width:auto;box-sizing:content-box;min-height:inherit;background:none;color:black;">-deploy c:/myapps/myapp.ear</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p style="margin:0px;padding:0px;border:0px;font-family:inherit;font-size:inherit;font-style:inherit;font-variant:inherit;font-weight:inherit;font-stretch:inherit;vertical-align:baseline;margin-bottom:20px;"><strong style="margin:0px;padding:0px;border:0px;font-family:inherit;font-size:inherit;font-style:inherit;font-variant:inherit;font-weight:bold;font-stretch:inherit;vertical-align:baseline;">Undeploy application from specified targets:</strong></p>
+<div style="margin:0px;padding:0px;border:0px;font-family:inherit;font-size:inherit;font-style:inherit;font-variant:inherit;font-weight:inherit;font-stretch:inherit;vertical-align:baseline;">
+<div style="margin:1em 0px;padding:1px;border:0px;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-size:12px;font-style:inherit;font-variant:inherit;font-weight:inherit;font-stretch:inherit;vertical-align:baseline;width:100%;position:relative;overflow:auto;background-color:white;overflow-y:hidden;">
+<div style="margin:0px;padding:0px;border:none;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-size:10px;font-style:normal;font-variant:inherit;font-weight:normal;font-stretch:inherit;vertical-align:baseline;border-radius:0px;bottom:auto;float:none;height:11px;left:auto;outline:0px;overflow:visible;position:absolute;right:1px;text-align:left;top:1px;width:11px;box-sizing:content-box;min-height:inherit;background:rgb(108, 226, 108);z-index:10;color:white;"><span style="margin:0px;padding:0px;border:0px;font-family:inherit;font-size:inherit;font-style:inherit;font-variant:inherit;font-weight:inherit;font-stretch:inherit;vertical-align:baseline;"><a href="http://weblogic-wonders.com/weblogic/2010/12/18/weblogic-deployer-usage/#" style="margin:0px;padding:0px;border:0px;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-size:12px;font-style:normal;font-variant:inherit;font-weight:normal;font-stretch:inherit;vertical-align:baseline;text-decoration:none;color:white;transition:all 0.2s linear;-webkit-transition:all 0.2s linear;border-radius:0px;bottom:auto;float:none;height:auto;left:auto;outline:0px;overflow:visible;position:static;right:auto;text-align:center;top:auto;width:auto;box-sizing:content-box;min-height:inherit;background:none;display:block;padding-top:1px;">?</a></span></div>
+<table border="0" cellpadding="0" cellspacing="0" style="font-size:12px;font-weight:normal;font-style:normal;font-variant:inherit;margin:0px;padding:0px;border:0px;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-stretch:inherit;vertical-align:baseline;border-collapse:collapse;border-spacing:0px;text-align:left;border-radius:0px;bottom:auto;float:none;height:auto;left:auto;outline:0px;overflow:visible;position:static;right:auto;top:auto;box-sizing:content-box;min-height:inherit;background:none;width:99.86062717770035%;">
+<tbody style="margin:0px;padding:0px;border:0px;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-size:12px;font-style:normal;font-variant:inherit;font-weight:normal;font-stretch:inherit;vertical-align:baseline;border-radius:0px;bottom:auto;float:none;height:auto;left:auto;outline:0px;overflow:visible;position:static;right:auto;text-align:left;top:auto;width:auto;box-sizing:content-box;min-height:inherit;background:none;">
+<tr style="margin:0px;padding:0px;border:0px;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-size:12px;font-style:normal;font-variant:inherit;font-weight:normal;font-stretch:inherit;vertical-align:baseline;border-radius:0px;bottom:auto;float:none;height:auto;left:auto;outline:0px;overflow:visible;position:static;right:auto;text-align:left;top:auto;width:auto;box-sizing:content-box;min-height:inherit;background:none;">
+<td style="margin:0px;padding:0px;border:0px;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-size:12px;font-style:normal;font-variant:inherit;font-weight:normal;font-stretch:inherit;vertical-align:baseline;text-align:left;border-radius:0px;bottom:auto;float:none;height:auto;left:auto;outline:0px;overflow:visible;position:static;right:auto;top:auto;box-sizing:content-box;min-height:inherit;background:none;color:rgb(175, 175, 175);width:2.4424284717376135%;">
+<div style="margin:0px;padding:0px 0.5em 0px 1em;border:0px;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-size:12px;font-style:normal;font-variant:inherit;font-weight:normal;font-stretch:inherit;vertical-align:baseline;border-radius:0px;bottom:auto;float:none;height:auto;left:auto;outline:0px;overflow:visible;position:static;right:auto;text-align:right;top:auto;width:auto;box-sizing:content-box;min-height:inherit;background:none;white-space:pre;background-color:white;border-right-width:3px;border-right-style:solid;border-right-color:rgb(108, 226, 108);">1</div>
+</td>
+<td style="margin:0px;padding:0px;border:0px;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-size:12px;font-style:normal;font-variant:inherit;font-weight:normal;font-stretch:inherit;vertical-align:baseline;text-align:left;border-radius:0px;bottom:auto;float:none;height:auto;left:auto;outline:0px;overflow:visible;position:static;right:auto;top:auto;box-sizing:content-box;min-height:inherit;background:none;width:98.00458201738853%;">
+<div style="margin:0px;padding:0px;border:0px;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-size:12px;font-style:normal;font-variant:inherit;font-weight:normal;font-stretch:inherit;vertical-align:baseline;position:relative;width:auto;min-width:240px;max-width:100%;border-radius:0px;bottom:auto;float:none;height:auto;left:auto;outline:0px;overflow:visible;right:auto;text-align:left;top:auto;box-sizing:content-box;min-height:inherit;background:none;">
+<div style="margin:0px;padding:0px 1em;border:0px;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-size:12px;font-style:normal;font-variant:inherit;font-weight:normal;font-stretch:inherit;vertical-align:baseline;border-radius:0px;bottom:auto;float:none;height:auto;left:auto;outline:0px;overflow:visible;position:static;right:auto;text-align:left;top:auto;width:auto;box-sizing:content-box;min-height:inherit;background:none;white-space:pre;background-color:white;"><code style="margin:0px;padding:0px;border:0px;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-size:12px;font-style:normal;font-variant:inherit;font-weight:normal;font-stretch:inherit;vertical-align:baseline;border-radius:0px;bottom:auto;float:none;height:auto;left:auto;outline:0px;overflow:visible;position:static;right:auto;text-align:left;top:auto;width:auto;box-sizing:content-box;min-height:inherit;background:none;color:black;">java weblogic.Deployer -adminurl url -username username -password password -name myapp -undeploy -targets server1,server2..</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p style="margin:0px;padding:0px;border:0px;font-family:inherit;font-size:inherit;font-style:inherit;font-variant:inherit;font-weight:inherit;font-stretch:inherit;vertical-align:baseline;margin-bottom:20px;"><strong style="margin:0px;padding:0px;border:0px;font-family:inherit;font-size:inherit;font-style:inherit;font-variant:inherit;font-weight:bold;font-stretch:inherit;vertical-align:baseline;">Redeploy application on current targets:</strong></p>
+<div style="margin:0px;padding:0px;border:0px;font-family:inherit;font-size:inherit;font-style:inherit;font-variant:inherit;font-weight:inherit;font-stretch:inherit;vertical-align:baseline;">
+<div style="margin:1em 0px;padding:1px;border:0px;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-size:12px;font-style:inherit;font-variant:inherit;font-weight:inherit;font-stretch:inherit;vertical-align:baseline;width:100%;position:relative;overflow:auto;background-color:white;overflow-y:hidden;">
+<div style="margin:0px;padding:0px;border:none;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-size:10px;font-style:normal;font-variant:inherit;font-weight:normal;font-stretch:inherit;vertical-align:baseline;border-radius:0px;bottom:auto;float:none;height:11px;left:auto;outline:0px;overflow:visible;position:absolute;right:1px;text-align:left;top:1px;width:11px;box-sizing:content-box;min-height:inherit;background:rgb(108, 226, 108);z-index:10;color:white;"><span style="margin:0px;padding:0px;border:0px;font-family:inherit;font-size:inherit;font-style:inherit;font-variant:inherit;font-weight:inherit;font-stretch:inherit;vertical-align:baseline;"><a href="http://weblogic-wonders.com/weblogic/2010/12/18/weblogic-deployer-usage/#" style="margin:0px;padding:0px;border:0px;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-size:12px;font-style:normal;font-variant:inherit;font-weight:normal;font-stretch:inherit;vertical-align:baseline;text-decoration:none;color:white;transition:all 0.2s linear;-webkit-transition:all 0.2s linear;border-radius:0px;bottom:auto;float:none;height:auto;left:auto;outline:0px;overflow:visible;position:static;right:auto;text-align:center;top:auto;width:auto;box-sizing:content-box;min-height:inherit;background:none;display:block;padding-top:1px;">?</a></span></div>
+<table border="0" cellpadding="0" cellspacing="0" style="font-size:12px;font-weight:normal;font-style:normal;font-variant:inherit;margin:0px;padding:0px;border:0px;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-stretch:inherit;vertical-align:baseline;border-collapse:collapse;border-spacing:0px;text-align:left;border-radius:0px;bottom:auto;float:none;height:auto;left:auto;outline:0px;overflow:visible;position:static;right:auto;top:auto;box-sizing:content-box;min-height:inherit;background:none;width:99.86062717770035%;">
+<tbody style="margin:0px;padding:0px;border:0px;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-size:12px;font-style:normal;font-variant:inherit;font-weight:normal;font-stretch:inherit;vertical-align:baseline;border-radius:0px;bottom:auto;float:none;height:auto;left:auto;outline:0px;overflow:visible;position:static;right:auto;text-align:left;top:auto;width:auto;box-sizing:content-box;min-height:inherit;background:none;">
+<tr style="margin:0px;padding:0px;border:0px;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-size:12px;font-style:normal;font-variant:inherit;font-weight:normal;font-stretch:inherit;vertical-align:baseline;border-radius:0px;bottom:auto;float:none;height:auto;left:auto;outline:0px;overflow:visible;position:static;right:auto;text-align:left;top:auto;width:auto;box-sizing:content-box;min-height:inherit;background:none;">
+<td style="margin:0px;padding:0px;border:0px;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-size:12px;font-style:normal;font-variant:inherit;font-weight:normal;font-stretch:inherit;vertical-align:baseline;text-align:left;border-radius:0px;bottom:auto;float:none;height:auto;left:auto;outline:0px;overflow:visible;position:static;right:auto;top:auto;box-sizing:content-box;min-height:inherit;background:none;color:rgb(175, 175, 175);width:2.4424284717376135%;">
+<div style="margin:0px;padding:0px 0.5em 0px 1em;border:0px;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-size:12px;font-style:normal;font-variant:inherit;font-weight:normal;font-stretch:inherit;vertical-align:baseline;border-radius:0px;bottom:auto;float:none;height:auto;left:auto;outline:0px;overflow:visible;position:static;right:auto;text-align:right;top:auto;width:auto;box-sizing:content-box;min-height:inherit;background:none;white-space:pre;background-color:white;border-right-width:3px;border-right-style:solid;border-right-color:rgb(108, 226, 108);">1</div>
+</td>
+<td style="margin:0px;padding:0px;border:0px;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-size:12px;font-style:normal;font-variant:inherit;font-weight:normal;font-stretch:inherit;vertical-align:baseline;text-align:left;border-radius:0px;bottom:auto;float:none;height:auto;left:auto;outline:0px;overflow:visible;position:static;right:auto;top:auto;box-sizing:content-box;min-height:inherit;background:none;width:98.00458201738853%;">
+<div style="margin:0px;padding:0px;border:0px;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-size:12px;font-style:normal;font-variant:inherit;font-weight:normal;font-stretch:inherit;vertical-align:baseline;position:relative;width:auto;min-width:240px;max-width:100%;border-radius:0px;bottom:auto;float:none;height:auto;left:auto;outline:0px;overflow:visible;right:auto;text-align:left;top:auto;box-sizing:content-box;min-height:inherit;background:none;">
+<div style="margin:0px;padding:0px 1em;border:0px;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-size:12px;font-style:normal;font-variant:inherit;font-weight:normal;font-stretch:inherit;vertical-align:baseline;border-radius:0px;bottom:auto;float:none;height:auto;left:auto;outline:0px;overflow:visible;position:static;right:auto;text-align:left;top:auto;width:auto;box-sizing:content-box;min-height:inherit;background:none;white-space:pre;background-color:white;"><code style="margin:0px;padding:0px;border:0px;font-family:Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;font-size:12px;font-style:normal;font-variant:inherit;font-weight:normal;font-stretch:inherit;vertical-align:baseline;border-radius:0px;bottom:auto;float:none;height:auto;left:auto;outline:0px;overflow:visible;position:static;right:auto;text-align:left;top:auto;width:auto;box-sizing:content-box;min-height:inherit;background:none;color:black;">java weblogic.Deployer -adminurl url -username username -password password  -name myapp -redeploy</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>java -cp /Users/Dhval/java/wls12120/wlserver/server/lib/weblogic.jar weblogic.WLST</div>
+<div><br/></div>
+<div><br/></div>
+<div><br/></div>
+<div><a href="http://docs.oracle.com/cd/E13222_01/wls/docs103/deployment/wldeployer.html">http://docs.oracle.com/cd/E13222<em>01/wls/docs103/deployment/wldeployer.html</a></div>
+<div>&lt;a href=&quot;http://docs.oracle.com/cd/E13222</em>01/wls/docs92/config<em>scripting/reference.html#wp1005383&quot;&gt;http://docs.oracle.com/cd/E13222</em>01/wls/docs92/config_scripting/reference.html#wp1005383</a></div>
+<div><a href="http://java.dzone.com/articles/deploying-applications-or">http://java.dzone.com/articles/deploying-applications-or</a></div>
+<div><a href="http://stackoverflow.com/questions/11355642/remote-upload-using-wlst">http://stackoverflow.com/questions/11355642/remote-upload-using-wlst</a></div>
+</en-note></p>
+
+  </div>
+
+  
+</article>
+
+    </div>
+    <div class="wrapper-footer">
+    <div class="container">
+        <footer class="footer">
+            
+
+<a href="http://facebook.com/dhval.mudawal"><i class="svg-icon facebook"></i></a>
+
+<a href="http://github.com/dhval"><i class="svg-icon github"></i></a>
+
+<a href="http://linkedin.com/in/dhvalmudawal"><i class="svg-icon linkedin"></i></a>
+
+
+<a href="http://twitter.com/jekyllrb"><i class="svg-icon twitter"></i></a>
+
+
+        </footer>
+    </div>
+    <p style="text-align:center;">© I do not claim ownership of this content. Please send me a <a href="/suggestions">message</a>, if this infringes any copyright. </p>
+</div>
+</body>
+
+</html>
