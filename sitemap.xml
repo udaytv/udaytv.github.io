@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://udaytv.github.io/Understanding.IPv6/</loc>
+    <loc>http://udaytv.github.io/Understanding.IPv6.enote/</loc>
     <lastmod>2015-08-21T00:00:00-04:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://udaytv.github.io/Dot.Cross.product.of.vectors/</loc>
+    <loc>http://udaytv.github.io/Dot.Cross.product.of.vectors.enote/</loc>
     <lastmod>2015-08-17T00:00:00-04:00</lastmod>
     <priority>0.8</priority>
   </url>
@@ -31,22 +31,22 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://udaytv.github.io/TCP.IP.QA/</loc>
+    <loc>http://udaytv.github.io/TCP.IP.QA.enote/</loc>
     <lastmod>2012-10-08T00:00:00-04:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://udaytv.github.io/Endianness.Byte.Order.Marker/</loc>
+    <loc>http://udaytv.github.io/Endianness.Byte.Order.Marker.enote/</loc>
     <lastmod>2012-06-26T00:00:00-04:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://udaytv.github.io/Bucket.and.radix.sorting/</loc>
+    <loc>http://udaytv.github.io/Bucket.and.radix.sorting.enote/</loc>
     <lastmod>2011-12-04T00:00:00-05:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://udaytv.github.io/Sorting/</loc>
+    <loc>http://udaytv.github.io/Sorting.enote/</loc>
     <lastmod>2009-11-17T00:00:00-05:00</lastmod>
     <priority>0.8</priority>
   </url>
@@ -57,19 +57,19 @@
   </url>
   <url>
     <loc>http://udaytv.github.io/404.html</loc>
-    <lastmod>2015-08-23T13:02:53-04:00</lastmod>
+    <lastmod>2015-08-23T14:01:09-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://udaytv.github.io/about/</loc>
-    <lastmod>2015-08-23T13:02:53-04:00</lastmod>
+    <lastmod>2015-08-23T14:01:09-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://udaytv.github.io/</loc>
-    <lastmod>2015-08-23T13:02:53-04:00</lastmod>
+    <lastmod>2015-08-23T14:01:09-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
