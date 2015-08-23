@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+    {% include meta.html %}
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- Twitter Bootstrap css -->
+    <link href="{{ site.baseurl }}/css/font-awesome.min.css">
+    <link href="{{ site.baseurl }}/dist/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!-- Your css -->
+    <link href="{{ site.baseurl }}/css/base-war.css" rel="stylesheet">
+    <link href="{{ site.baseurl }}/css/dhval.css" rel="stylesheet">
+    <link href="{{ site.baseurl }}/css/style.css" rel="stylesheet">
+    <link href="{{ site.baseurl }}/css/responsive.css" rel="stylesheet">
+    <!-- Vendor js -->
+    <script type="text/javascript" charset="utf-8" src="{{ site.baseurl }}/dist/requirejs/require.js"></script>
+    <script type="text/javascript" charset="utf-8" src="{{ site.baseurl }}/dist/modernizr/modernizr.js"></script>
+    <!-- Your js -->
+    <script type="text/javascript" charset="utf-8" src="{{ site.baseurl }}/js/require.config.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+</head>
+
+<body>
+    {% include header.html %}
+    <div id="main" role="main" class="container">
+        {{ content }}
+    </div>
+    {% include footer.html %}
+</body>
+
+</html>

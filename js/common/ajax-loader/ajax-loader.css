@@ -1,0 +1,40 @@
+.ajax-blocker-container .ajax-blocker-bg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    -ms-filter: "alpha(opacity=65)";
+    filter: alpha(opacity=65);
+    opacity: .65;
+    z-index: 20;
+}
+
+.ajax-blocker-container .ajax-blocker {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 60px;
+    height: 60px;
+    margin-left: -30px;
+    margin-top: -30px;
+    background: white;
+    -webkit-box-shadow: 0 0 10px 0 black;
+    box-shadow: 0 0 10px 0 black;
+    border-radius: 10px;
+    -ms-filter: -;
+    opacity: 1;
+    overflow: hidden;
+    -webkit-animation: bounce-in .4s ease;
+    -moz-animation: bounce-in .4s ease;
+    animation: bounce-in .4s ease;
+}
+
+@-moz-keyframes bounce-in { 0% { width: 0%; height: 0%; margin-left: 0px; margin-top: 0px; } 50% { width: 70px; height: 70px; margin-left: -35px; margin-top: -35px; } 100% { width: 60px; height: 60px; margin-left: -30px; margin-top: -30px; } }
+@-webkit-keyframes bounce-in { 0% { width: 0%; height: 0%; margin-left: 0px; margin-top: 0px; } 50% { width: 70px; height: 70px; margin-left: -35px; margin-top: -35px; } 100% { width: 60px; height: 60px; margin-left: -30px; margin-top: -30px; } }
+@keyframes bounce-in {
+    0% { width: 0%; height: 0%; margin-left: 0px; margin-top: 0px; }
+    50% { width: 70px; height: 70px; margin-left: -35px; margin-top: -35px; }
+    100% { width: 60px; height: 60px; margin-left: -30px; margin-top: -30px; }
+}

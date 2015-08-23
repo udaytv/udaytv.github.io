@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+<article class="post">
+  <div class="date">
+  {% if page.evernote %} <a href="{{ page.evernote }}/">View on Evernote.com</a> {% endif %}
+    Modified: {{ page.update | date: "%B %e, %Y" }}
+  </div>
+
+  <div class="entry">
+    {{ content }}
+  </div>
+
+  {% include disqus.html %}
+</article>

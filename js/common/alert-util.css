@@ -1,0 +1,76 @@
+.jnet-alert-container {
+    position: fixed;
+    z-index: 9999;
+    top: 10px;
+    right: 10px;
+    left: 50%;
+}
+
+@media (min-width: 1200px) {
+    .jnet-alert-container {
+        left: 60%;
+    }
+}
+
+@media (max-width: 768px) {
+    .jnet-alert-container {
+        left: 10px;
+    }
+}
+
+.jnet-alert:first-child {
+    margin-top: 0;
+}
+.jnet-alert {
+    position: relative;
+    margin-top: 10px;
+    padding-left: 50px;
+    box-shadow: 0 0 4px;
+    border-radius: 6px;
+    overflow: hidden;
+    opacity: .9;
+    cursor: pointer;
+}
+.jnet-alert:hover {
+    opacity: 1;
+}
+.jnet-alert-icon {
+    background: #c77;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+}
+.jnet-alert-icon > i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: white;
+    font-size: 32px;
+    text-shadow: 1px 1px #000;
+}
+.jnet-alert-icon > .fa-exclamation {
+    margin-top: -16px;
+    margin-left: -5.5px;
+}
+.jnet-alert-body {
+    color: #900;
+    background: #fcc;
+    font-size: 18px;
+    text-shadow: 0px 1px #fee;
+    padding: 12px 20px;
+    line-height: 24px;
+}
+.jnet-alert-body > p {
+    margin: 0;
+    font-size: 16px;
+}
+.jnet-alert-notitle > .jnet-alert-body > p {
+    font-size: 18px;
+}
+.jnet-alert-notitle > .jnet-alert-body {
+    padding: 0 20px;
+    line-height: 20px;
+    line-height: 60px;
+}

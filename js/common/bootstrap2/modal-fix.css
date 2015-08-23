@@ -1,0 +1,21 @@
+.modals-fill-viewport.modal-active #container {
+    overflow: hidden;
+}
+
+.modals-fill-viewport .modal {
+    left: 0;
+    right: 0;
+    top: 0 !important;
+    bottom: 0;
+    position: fixed;
+    margin: 0;
+    width: auto;
+}
+.modals-fill-viewport .modal-body {
+    max-height: none;
+}
+.modals-fill-viewport .modal-footer {
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
