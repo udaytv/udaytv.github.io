@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>new keyword in JavaScript - Stack Overflow – Dhval Mudawal – Rants</title>
+    <meta charset="utf-8" />
+<meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'> 
+<meta name="description" content="Objects have prototype and [[prototype]] property. [[prototype]] property is set at object creation time." />
+<meta property="og:description" content="Objects have prototype and [[prototype]] property. [[prototype]] property is set at object creation time." /> 
+<meta name="author" content="Dhval Mudawal" /> 
+<meta property="og:title" content="new keyword in JavaScript - Stack Overflow" />
+<meta property="twitter:title" content="new keyword in JavaScript - Stack Overflow" /> 
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- Twitter Bootstrap css -->
+    <link href="/css/font-awesome.min.css">
+    <link href="/dist/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!-- Your css -->
+    <link href="/css/base-war.css" rel="stylesheet">
+    <link href="/css/dhval.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/responsive.css" rel="stylesheet">
+    <!-- Vendor js -->
+    <script type="text/javascript" charset="utf-8" src="/dist/requirejs/require.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/dist/modernizr/modernizr.js"></script>
+    <!-- Your js -->
+    <script type="text/javascript" charset="utf-8" src="/js/require.config.js"></script>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Dhval Mudawal - Rants" href="/feed.xml" />
+</head>
+
+<body>
+    <div class="wrapper-masthead">
+    <div class="container">
+        <header class="masthead clearfix">
+            <a href="/" class="site-avatar"><img class="img-thumbnail" src="https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png" /></a>
+            <div class="site-info">
+                <h1 class="site-name"><a href="/">Dhval Mudawal</a></h1>
+                <p class="site-description">
+                     new keyword in JavaScript - Stack Overflow 
+                     | Updated: August 23, 2015
+                    
+                </p>
+            </div>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+            </nav>
+        </header>
+    </div>
+</div>
+    <div id="main" role="main" class="container">
+        <article class="post">
+  <div class="date">
+	 <a href="https://www.evernote.com/shard/s11/sh/64cc18fb-dfb0-4154-986f-30bddf3976f7/2bb0424c41e9cfbf3f50bcb6d62ea4e9/">View on Evernote.com</a> 
+  </div>
+
+  <div class="entry">
+    <p><en-note style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;">
+<div style="position: relative;">
+<div style="vertical-align: baseline; background-color: transparent; background-position: initial initial; background-repeat: initial initial;">
+<div style="vertical-align: baseline; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif; text-align: center; background-position: initial initial; background-repeat: initial initial;">
+<div style="vertical-align: baseline; background-color: transparent; text-align: left; zoom: 1; background-position: initial initial; background-repeat: initial initial;">
+<div style="vertical-align: baseline; background-color: transparent; background-position: initial initial; background-repeat: initial initial;">
+<div style="vertical-align: baseline; background-color: transparent; background-position: initial initial; background-repeat: initial initial;">
+<div style="vertical-align: baseline; background-color: transparent; background-position: initial initial; background-repeat: initial initial;">
+<div style="vertical-align: baseline; background-color: transparent; background-position: initial initial; background-repeat: initial initial;">
+<div style="vertical-align: baseline; background-color: transparent; background-position: initial initial; background-repeat: initial initial;">
+<table style="font-weight: inherit; font-style: inherit; font-variant: inherit; vertical-align: baseline; background-color: transparent; background-position: initial initial; background-repeat: initial initial;">
+<tbody style="vertical-align: baseline; background-color: transparent; background-position: initial initial; background-repeat: initial initial;">
+<tr style="vertical-align: baseline; background-color: transparent; background-position: initial initial; background-repeat: initial initial;">
+<td style="vertical-align: baseline; background-color: transparent; background-position: initial initial; background-repeat: initial initial;">
+<div style="vertical-align: baseline; background-color: transparent; word-wrap: break-word;">
+<div style="margin: 0px 0px 1em; padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent; clear: both;">
+<div>Objects have prototype and [[prototype]] property. [[prototype]] property is set at object creation time.</div>
+<div><br/></div>
+<div><span style="background-color: transparent; font-style: inherit; font-variant: inherit;">Every object (including functions) has this internal property called</span><em style="background-color: transparent; font-variant: inherit; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline;">[[prototype]]</em><span style="background-color: transparent; font-style: inherit; font-variant: inherit;">. It can </span><em style="background-color: transparent; font-variant: inherit; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline;">only </em><span style="background-color: transparent; font-style: inherit; font-variant: inherit;">be set at object creation time, either with</span><em style="background-color: transparent; font-variant: inherit; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline;">new</em><span style="background-color: transparent; font-style: inherit; font-variant: inherit;">, with</span><em style="background-color: transparent; font-variant: inherit; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline;">Object.create</em><span style="background-color: transparent; font-style: inherit; font-variant: inherit;">, or based on the literal (functions default to Function.prototype, numbers to Number.prototype, etc.). It can only be read with</span><em style="background-color: transparent; font-variant: inherit; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline;">Object.getPrototypeOf(someObject)</em><span style="background-color: transparent; font-style: inherit; font-variant: inherit;">. There is</span><em style="background-color: transparent; font-variant: inherit; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline;">no</em><span style="background-color: transparent; font-style: inherit; font-variant: inherit;">other way to set or read this value.</span></div>
+</div>
+<p style="margin: 0px 0px 1em; padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent; clear: both;">Functions, in addition to the hidden <em style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent; font-style: italic; background-position: initial initial; background-repeat: initial initial;">[[prototype]]</em> property, also have a property called <em style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent; font-style: italic; background-position: initial initial; background-repeat: initial initial;">prototype</em>, and it is this that you can access, and modify, to provide inherited properties and methods for the objects you make.</p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<p style="margin: 0px 0px 1em; padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent; clear: both;"><font face="Arial">T</font>he <code style="margin: 0px; padding: 1px 5px; border: 0px; vertical-align: baseline; background-color: rgb(238, 238, 238); font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; white-space: pre-wrap; background-position: initial initial; background-repeat: initial initial;">new</code> keyword does 4 things:</p>
+<ol style="margin: 0px 0px 1em 30px; padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent; list-style: decimal;">
+<li style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent; background-position: initial initial; background-repeat: initial initial;">It creates a new object. The type of this object, is simply <em style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent; font-style: italic; background-position: initial initial; background-repeat: initial initial;">object</em>.</li>
+<li style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent; background-position: initial initial; background-repeat: initial initial;">It sets this new object&#39;s internal, inaccessible, <em style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent; font-style: italic; background-position: initial initial; background-repeat: initial initial;">[[prototype]]</em> property to be the constructor function&#39;s external, accessible, <em style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent; font-style: italic; background-position: initial initial; background-repeat: initial initial;">prototype</em> object.</li>
+<li style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent; background-position: initial initial; background-repeat: initial initial;">It executes the constructor function, using the newly created object whenever <code style="margin: 0px; padding: 1px 5px; border: 0px; vertical-align: baseline; background-color: rgb(238, 238, 238); font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; white-space: pre-wrap; background-position: initial initial; background-repeat: initial initial;">this</code> is mentioned.</li>
+<li style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent; background-position: initial initial; background-repeat: initial initial;">It returns the newly created object, unless the constructor function returns a non-primitive value. In this case, that non-primitive value will be returned.</li>
+</ol>
+</div>
+<div style="margin: 0px 0px 1em; padding: 0px; border: 0px; vertical-align: baseline; background-color: transparent; clear: both;">
+<div><span style="font-size: 100%;">Recommended articles:</span></div>
+</div>
+<div><br/></div>
+<ul style="margin:0px;padding:0px;border:0px;font-size:100%;vertical-align:baseline;background-color:transparent;list-style:disc;margin-left:30px;margin-bottom:1em;">
+<li style="margin:0px;padding:0px;border:0px;font-size:100%;vertical-align:baseline;background-color:transparent;word-wrap:break-word;"><a href="http://joost.zeekat.nl/constructors-considered-mildly-confusing.html" shape="rect" style="margin:0px;padding:0px;border:0px;font-size:100%;vertical-align:baseline;background-color:transparent;color:rgb(0, 119, 204);text-decoration:none;cursor:pointer;">Constructors considered mildly confusing</a></li>
+<li style="margin:0px;padding:0px;border:0px;font-size:100%;vertical-align:baseline;background-color:transparent;word-wrap:break-word;"><a href="http://www.3site.eu/doc/" shape="rect" style="margin:0px;padding:0px;border:0px;font-size:100%;vertical-align:baseline;background-color:transparent;color:rgb(0, 119, 204);text-decoration:none;cursor:pointer;">JavaScript Prototypal Inheritance</a></li>
+<li style="margin:0px;padding:0px;border:0px;font-size:100%;vertical-align:baseline;background-color:transparent;word-wrap:break-word;"><a href="http://stackoverflow.com/questions/1646698/what-is-the-new-keyword-in-javascript">SO - new keyword</a></li>
+<li style="margin:0px;padding:0px;border:0px;font-size:100%;vertical-align:baseline;background-color:transparent;word-wrap:break-word;"><a href="http://stackoverflow.com/questions/383402/is-javascript-s-new-keyword-considered-harmful">SO - is keyword harmful</a></li>
+</ul>
+<div><br/></div>
+</en-note></p>
+
+  </div>
+
+  
+</article>
+
+    </div>
+    <div class="wrapper-footer">
+    <div class="container">
+        <footer class="footer">
+            
+
+<a href="http://facebook.com/dhval.mudawal"><i class="svg-icon facebook"></i></a>
+
+<a href="http://github.com/dhval"><i class="svg-icon github"></i></a>
+
+<a href="http://linkedin.com/in/dhvalmudawal"><i class="svg-icon linkedin"></i></a>
+
+
+<a href="http://twitter.com/jekyllrb"><i class="svg-icon twitter"></i></a>
+
+
+        </footer>
+    </div>
+    <p style="text-align:center;">© I do not claim ownership of this content. Please send me a <a href="/suggestions">message</a>, if this infringes any copyright. </p>
+</div>
+</body>
+
+</html>

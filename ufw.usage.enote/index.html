@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ufw - usage – Dhval Mudawal – Rants</title>
+    <meta charset="utf-8" />
+<meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'> 
+<meta name="description" content="ufw - usage" />
+<meta property="og:description" content="ufw - usage" /> 
+<meta name="author" content="Dhval Mudawal" /> 
+<meta property="og:title" content="ufw - usage" />
+<meta property="twitter:title" content="ufw - usage" /> 
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- Twitter Bootstrap css -->
+    <link href="/css/font-awesome.min.css">
+    <link href="/dist/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!-- Your css -->
+    <link href="/css/base-war.css" rel="stylesheet">
+    <link href="/css/dhval.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/responsive.css" rel="stylesheet">
+    <!-- Vendor js -->
+    <script type="text/javascript" charset="utf-8" src="/dist/requirejs/require.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/dist/modernizr/modernizr.js"></script>
+    <!-- Your js -->
+    <script type="text/javascript" charset="utf-8" src="/js/require.config.js"></script>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Dhval Mudawal - Rants" href="/feed.xml" />
+</head>
+
+<body>
+    <div class="wrapper-masthead">
+    <div class="container">
+        <header class="masthead clearfix">
+            <a href="/" class="site-avatar"><img class="img-thumbnail" src="https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png" /></a>
+            <div class="site-info">
+                <h1 class="site-name"><a href="/">Dhval Mudawal</a></h1>
+                <p class="site-description">
+                     ufw - usage 
+                     | Updated: August 23, 2015
+                    
+                </p>
+            </div>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+            </nav>
+        </header>
+    </div>
+</div>
+    <div id="main" role="main" class="container">
+        <article class="post">
+  <div class="date">
+	 <a href="https://www.evernote.com/shard/s11/sh/2c6a34de-2035-4bb3-ab54-d6f6b5795f0b/0c9ae8725112850dc696fe7c6db5b509/">View on Evernote.com</a> 
+  </div>
+
+  <div class="entry">
+    <p><en-note style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;">
+<div style="background-color: rgb(211, 202, 170); background-position: 50% 0%;">
+<div style="background-color: rgb(255, 255, 255); background-position: 50% 0%;">
+<div style="padding-right: 1em;">
+<div style="margin: 0px; padding: 2px 0px; font-weight: normal; color: rgb(90, 51, 32); font-size: 16px;">
+<div><font face="Verdana" style="font-size: 14px;">The default firewall configuration tool for Ubuntu is <strong>ufw</strong> (Uncomplicated Firewall). Developed to ease iptables firewall configuration, <strong>ufw</strong> provides a user friendly way to create an IPv4 or IPv6 host-based firewall. </font></div>
+</div>
+</div>
+<div><br/></div>
+<div><font face="Verdana" style="font-size: 14px;"><font face="Verdana" style="font-size: 14px;">It is initially disabled. </font>ufw is not intended to provide complete firewall functionality via its command interface, but instead provides an easy way to add or remove simple rules. It is currently mainly used for host-based firewalls.</font></div>
+<div title="ufw - Uncomplicated Firewall">
+<div style="font-family: 'Helvetica Neue', 'Lucida Grande', Helvetica, Arial, Verdana, sans-serif;">
+<ul style="margin-left: 5px;" type="disc">
+<li>
+<p><strong>ufw</strong> needs to be enabled</p>
+<pre style="font-size: 90%; background-color: rgb(240, 238, 230); border: 1pt solid rgb(193, 180, 150); padding: 5px;">
+<strong>sudo ufw enable</strong>
+</pre></li>
+<li style="font-size: 90%;">
+<p>To open a port (ssh in this example):</p>
+<pre style="background-color:rgb(240, 238, 230);border:1pt solid rgb(193, 180, 150);padding:5px;">
+<strong>sudo ufw allow 22</strong>
+</pre></li>
+<li style="font-size: 90%;">
+<p>Rules can also be added using a <em>numbered</em> format:</p>
+<pre style="background-color:rgb(240, 238, 230);border:1pt solid rgb(193, 180, 150);padding:5px;">
+<strong>sudo ufw insert 1 allow 80</strong>
+</pre></li>
+<li style="font-size: 90%;">
+<p>Similarly, to close an opened port:</p>
+<pre style="background-color:rgb(240, 238, 230);border:1pt solid rgb(193, 180, 150);padding:5px;">
+<strong>sudo ufw deny 22</strong>
+</pre></li>
+<li style="font-size: 90%;">
+<p>To remove a rule, use delete followed by the rule:</p>
+<pre style="background-color:rgb(240, 238, 230);border:1pt solid rgb(193, 180, 150);padding:5px;">
+<strong>sudo ufw delete deny 22</strong>
+</pre></li>
+<li style="font-size: 90%;">
+<p>It is also possible to allow access from specific hosts or networks to a port. The following example allows ssh access</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<br/></en-note></p>
+
+  </div>
+
+  
+</article>
+
+    </div>
+    <div class="wrapper-footer">
+    <div class="container">
+        <footer class="footer">
+            
+
+<a href="http://facebook.com/dhval.mudawal"><i class="svg-icon facebook"></i></a>
+
+<a href="http://github.com/dhval"><i class="svg-icon github"></i></a>
+
+<a href="http://linkedin.com/in/dhvalmudawal"><i class="svg-icon linkedin"></i></a>
+
+
+<a href="http://twitter.com/jekyllrb"><i class="svg-icon twitter"></i></a>
+
+
+        </footer>
+    </div>
+    <p style="text-align:center;">© I do not claim ownership of this content. Please send me a <a href="/suggestions">message</a>, if this infringes any copyright. </p>
+</div>
+</body>
+
+</html>
